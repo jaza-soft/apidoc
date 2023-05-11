@@ -1,245 +1,158 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
+language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+#toc_footers:
+#  - <a href='#'>Sign Up for a Developer Key</a>
+#  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
+  #  - report
+  - orders
+  #  - fabrics
+  - customers
+  - seasons
+  - products
+  - suppliers
+  - fabricCategory
+  - fabricPattern
   - errors
 
 search: true
-
-code_clipboard: true
-
-meta:
-  - name: description
-    content: Documentation for the Kittn API
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the OptaCut API! You can use our API to access OptaCut API endpoints.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+We have language bindings in Shell. You can view code examples in the dark area to the right, and you can switch the
+programming language of the examples with the tabs in the top right.
 
 # Authentication
 
+In order to access OptaCut API, you will need authenticate. We support two modes of authentication
+
+- `OAuth 2.0`: When client is user who have user account and can enter username and password
+- `API Key`: When client is Machine/Application etc.
+
+## OAuth 2.0
+
 > To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+curl "{IAM_BASE_URL}/oauth/token?grant_type=password&appId=optacut&username={username}&password={password}"
+  -H "Authorization: Basic Y2xpZW50OnNlY3JldA=="
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+> Make sure to replace `IAM_BASE_URL` with actual IAM Url and `username`, `password` with your username and password.
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5c...oXLVc6YA",
+  "token_type": "bearer",
+  "refresh_token": "eyJhbGciOiJSUzI1NiIsIn...zbi3zCTTniTpmbJ1KeA",
+  "expires_in": 43199,
+  "scope": "read,write",
+  "application": "optacut",
+  "user_id": 7,
+  "resources": {},
+  "tenant": "dev",
+  "jti": "62e24a85-1e53-4797-a3cc-4d0e3357be45"
+}
 ```
-
-This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET {IAM_BASE_URL}/oauth/token`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+| Parameter  | Default | Description                 |
+|------------|---------|-----------------------------|
+| grant_type |         | value should be  `password` |
+| appId      |         | value should be  `optacut`  |
+| username   |         | Your Username               |
+| password   |         | Your Password               |
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+OptaCut expects the Access Token to be included in all API requests to the server in a header that looks like the
+following:
 
-## Get a Specific Kitten
+`Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ...oXLVc6YA`
 
-```ruby
-require 'kittn'
+## API Key
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+We will issue API Key with the appropriate privilege which can be used to access OptaCut endpoints by including API Key
+in
+HTTP Request header which will look like:
 
-```python
-import kittn
+`x-api-key: p4VXJhzNZVujvqX2l1d9IJp9.b3B0YWN1dA==`
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+# Pagination and Sort
 
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Response of Fetch all call looks like this
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "content": [
+    {
+      "id": 1,
+      "name": "Name 1"
+    },
+    {
+      "id": 2,
+      "name": "Name 2"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageSize": 20,
+    "pageNumber": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 2,
+  "last": true,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 20,
+  "first": true,
+  "numberOfElements": 2,
+  "empty": false
 }
 ```
 
-This endpoint retrieves a specific kitten.
+All Fetch/Get API (with few exceptions) on each resource support pagination and sorting. Following parameters are used -
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+| Parameter | Default | Description                                                                               |                                                                               
+|-----------|---------|-------------------------------------------------------------------------------------------|
+| page      | 0       | `Zero` indexed page number                                                                |                                                                
+| pageSize  | 20      | Number of records to fetch in one Page                                                    |                                                    
+| sort      | id,desc | `id`: field on which sorting is applied, `desc`: Sort Direction. values - [`asc`, `desc`] | 
 
-### HTTP Request
+# Filter and Search
 
-`GET http://example.com/kittens/<ID>`
+All Fetch/Get (with few exceptions) API on each resource support filtering and searching. Following parameters are
+used -
 
-### URL Parameters
+| Parameter | Default | Description                                      |                                      
+|-----------|---------|--------------------------------------------------|
+| search    |         | filter and Search criteria using RSQL formating. | 
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+API uses `RSQL Parser` to achieve this. Refer [RSQL](https://github.com/jirutka/rsql-parser) documentation for more
+details.
 
