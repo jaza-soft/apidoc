@@ -18,7 +18,7 @@ This endpoint retrieves all fabrics. It supports pagination, sort, search and fi
 ## Get a Specific Fabric
 
 ```shell
-curl "~/api/fabrics/{costinId}" \
+curl "~/api/fabrics/1" \
   -H "Authorization: Bearer <access_token>"
 ```
 
@@ -26,46 +26,27 @@ curl "~/api/fabrics/{costinId}" \
 
 ```json
 {
-
-    "id": 65,
-    "modifiedAt": 1586263862921,
-    "lastModifiedBy": "su_dev",
-    "itemCode": "TEST FABBIPO 101",
-    "articleName": "JETBLACK",
-    "color": "BLACK",
-    "width": 145,
-    "construction": null,
-    "content": null,
-    "repeatLength": null,
-    "repeatWidth": null,
-    "desc": null,
-    "fabricCategory": {
-           "id": 3, 
-           "modifiedAt": 1570210572910, 
-           "lastModifiedBy": null, 
-           "name": "Yarn Dyed", 
-           "desc": null
-     },
-    "fabricType": {
-           "id": 4, 
-           "modifiedAt": 1570210513111, 
-           "lastModifiedBy": null, 
-           "name": "Solid", 
-           "desc": null
-     },
-    "mill": {
-           "id": 4, 
-           "modifiedAt": 1570210266729, 
-           "lastModifiedBy": null, 
-           "name": "Arvind Mills", 
-           "desc": null
-     },
-    "millId": 4,
-    "fabricTypeId": null,
-    "fabricCategoryId": null,
-    "uid": "Fabric-TEST FABBIPO 101",
-    "rollInfoList": "[]",
-    "ledgerList": "[]"
+  "id": 1,
+  "itemCode": "HO/200",
+  "supplierItemCode": "200",
+  "articleName": "200",
+  "classification": "Woven",
+  "repeatLength": 2,
+  "repeatWidth": 2,
+  "construction": "Test construction",
+  "content": "100% cotton",
+  "width": 147.0,
+  "gsm": null,
+  "warpShrinkage": null,
+  "weftShrinkage": null,
+  "remarks": null,
+  "fabricPatternId": 4,
+  "fabricCategoryId": 5,
+  "supplierIds": [10],
+  "colorList": [
+    { "id": 10, "color": "Black", "swatchImage": null },
+    { "id": 11,"color": "White", "swatchImage": null }
+  ]
 }
 ```
 
@@ -77,9 +58,9 @@ This endpoint retrieves a specific fabric.
 
 ### URL Parameters
 
-| Parameter | Description                     |
-| --------- | ------------------------------- |
-| fabricId   | The Id of the fabric to retrieve |
+| Parameter | Description                      |
+|-----------|----------------------------------|
+| fabricId  | The Id of the fabric to retrieve |
 
 ## Create Fabric
 
@@ -101,18 +82,26 @@ This endpoint creates a fabric.
 
 <pre class="center-column">
 {
-    "itemCode": "Test Item Code for API Docs",
-    "articleName": "Test Article ",
-    "color": "Color A",
-    "width": "127",
-    "repeatLength": 1,
-    "fabricTypeId": 1,
-    "repeatWidth": 1,
-    "millId": 5,
-    "desc": "Test Description",
-    "fabricCategoryId": 3,
-    "construction": "1*1",
-    "content": "Test",
+  "itemCode": "HO/200",
+  "supplierItemCode": "200",
+  "articleName": "200",
+  "classification": "Woven",
+  "repeatLength": 2,
+  "repeatWidth": 2,
+  "construction": "Test construction",
+  "content": "100% cotton",
+  "width": 147.0,
+  "gsm": null,
+  "warpShrinkage": null,
+  "weftShrinkage": null,
+  "remarks": null,
+  "fabricPatternId": 4,
+  "fabricCategoryId": 5,
+  "supplierIds": [10],
+  "colorList": [
+    { "color": "Black"},
+    { "color": "White"}
+  ]
 }
 </pre>
 
@@ -120,53 +109,34 @@ This endpoint creates a fabric.
 
 ```json
 {
-
-    "id": 66,
-    "modifiedAt": 1586263862921,
-    "lastModifiedBy": "su_dev",
-    "itemCode": "Test Item Code for API Docs",
-    "articleName": "Test Article",
-    "color": "Color A",
-    "width": 127,
-    "construction": "1*1",
-    "content": "Test",
-    "repeatLength": 1,
-    "repeatWidth": 1,
-    "desc": null,
-    "fabricCategory": {
-           "id": 3, 
-           "modifiedAt": 1570210572910, 
-           "lastModifiedBy": null, 
-           "name": "Yarn Dyed", 
-           "desc": null
-     },
-    "fabricType": {
-           "id": 4, 
-           "modifiedAt": 1570210513111, 
-           "lastModifiedBy": null, 
-           "name": "Solid", 
-           "desc": null
-     },
-    "mill": {
-           "id": 4, 
-           "modifiedAt": 1570210266729, 
-           "lastModifiedBy": null, 
-           "name": "Arvind Mills", 
-           "desc": null
-     },
-    "millId": 4,
-    "fabricTypeId": null,
-    "fabricCategoryId": null,
-    "uid": "Fabric-TEST FABBIPO 101",
-    "rollInfoList": "[]",
-    "ledgerList": "[]"
+  "id": 1,
+  "itemCode": "HO/200",
+  "supplierItemCode": "200",
+  "articleName": "200",
+  "classification": "Woven",
+  "repeatLength": 2,
+  "repeatWidth": 2,
+  "construction": "Test construction",
+  "content": "100% cotton",
+  "width": 147.0,
+  "gsm": null,
+  "warpShrinkage": null,
+  "weftShrinkage": null,
+  "remarks": null,
+  "fabricPatternId": 4,
+  "fabricCategoryId": 5,
+  "supplierIds": [10],
+  "colorList": [
+    { "id": 10, "color": "Black", "swatchImage": null },
+    { "id": 11,"color": "White", "swatchImage": null }
+  ]
 }
 ```
 
 ## Update a Specific Fabric
 
 ```shell
-curl "~/api/fabrics/{fabricId}" \
+curl "~/api/fabrics/1" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -179,25 +149,35 @@ This endpoint updates an existing fabric.
 
 `PUT ~/api/fabrics/{fabricId}`
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id of the fabric to update |
+| Parameter | Description                    |
+|-----------|--------------------------------|
+| fabricId  | The Id of the fabric to update |
 
 ### JSON Payload
 
 <pre class="center-column">
 {
-    "id": 66,
-    "modifiedAt": 1586263862921,
-    "lastModifiedBy": "su_dev",
-    "itemCode": "Test Item Code for API Docs",
-    "articleName": "Test Article",
-    "color": "Color A",
-    "width": 127,
-    "construction": "1*1",
-    "content": "Test",
-    "repeatLength": 1,
-    "repeatWidth": 1,
+  "id": 1,
+  "itemCode": "HO/200-updated",
+  "supplierItemCode": "200",
+  "articleName": "200",
+  "classification": "Woven",
+  "repeatLength": 2,
+  "repeatWidth": 2,
+  "construction": "Test construction",
+  "content": "100% cotton",
+  "width": 147.0,
+  "gsm": null,
+  "warpShrinkage": null,
+  "weftShrinkage": null,
+  "remarks": null,
+  "fabricPatternId": 4,
+  "fabricCategoryId": 5,
+  "supplierIds": [10],
+  "colorList": [
+    { "id": 10, "color": "Black", "swatchImage": null },
+    { "id": 11,"color": "White", "swatchImage": null }
+  ]
 }
 </pre>
 
@@ -205,779 +185,29 @@ This endpoint updates an existing fabric.
 
 ```json
 {
-
-    "id": 66,
-    "modifiedAt": 1586263862921,
-    "lastModifiedBy": "su_dev",
-    "itemCode": "Test Item Code for API Docs",
-    "articleName": "Test Article",
-    "color": "Color A",
-    "width": 127,
-    "construction": "1*1",
-    "content": "Test",
-    "repeatLength": 1,
-    "repeatWidth": 1,
-    "desc": null,
-    "fabricCategory": {
-           "id": 3, 
-           "modifiedAt": 1570210572910, 
-           "lastModifiedBy": null, 
-           "name": "Yarn Dyed", 
-           "desc": null
-     },
-    "fabricType": {
-           "id": 4, 
-           "modifiedAt": 1570210513111, 
-           "lastModifiedBy": null, 
-           "name": "Solid", 
-           "desc": null
-     },
-    "mill": {
-           "id": 4, 
-           "modifiedAt": 1570210266729, 
-           "lastModifiedBy": null, 
-           "name": "Arvind Mills", 
-           "desc": null
-     },
-    "millId": 4,
-    "fabricTypeId": null,
-    "fabricCategoryId": null,
-    "uid": "Fabric-TEST FABBIPO 101",
-    "rollInfoList": "[]",
-    "ledgerList": "[]"
+  "id": 1,
+  "itemCode": "HO/200-updated",
+  "supplierItemCode": "200",
+  "articleName": "200",
+  "classification": "Woven",
+  "repeatLength": 2,
+  "repeatWidth": 2,
+  "construction": "Test construction",
+  "content": "100% cotton",
+  "width": 147.0,
+  "gsm": null,
+  "warpShrinkage": null,
+  "weftShrinkage": null,
+  "remarks": null,
+  "fabricPatternId": 4,
+  "fabricCategoryId": 5,
+  "supplierIds": [10],
+  "colorList": [
+    { "id": 10, "color": "Black", "swatchImage": null },
+    { "id": 11,"color": "White", "swatchImage": null }
+  ]
 }
 ```
-
-## Update a Specific Fabrics by CAD (Repeat Overide on CutPlan)
-
-```shell
-curl "~/api/fabrics?action=cad" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-  -d '<JSON Payload>'
-```
-
-This endpoint updates an existing fabric.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/?action=cad`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id of the fabric to update |
-| action     | default value is cad
-
-### JSON Payload
-
-<pre class="center-column">
-[{
-    "id": 62,
-    "fabricTypeId": 2,
-    "repeatLength": "1",
-    "repeatWidth": null,
-}]
-</pre>
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-
-    "id": 62,
-    "modifiedAt": 1586263862921,
-    "lastModifiedBy": "su_dev",
-    "itemCode": "Test Item Code for API Docs",
-    "articleName": "Test Article",
-    "color": "Color A",
-    "width": 127,
-    "construction": "1*1",
-    "content": "Test",
-    "repeatLength": 1,
-    "repeatWidth": null,
-    "desc": null,
-    "fabricCategory": {
-           "id": 3, 
-           "modifiedAt": 1570210572910, 
-           "lastModifiedBy": null, 
-           "name": "Yarn Dyed", 
-           "desc": null
-     },
-    "fabricType": {
-           "id": 4, 
-           "modifiedAt": 1570210513111, 
-           "lastModifiedBy": null, 
-           "name": "Solid", 
-           "desc": null
-     },
-    "mill": {
-           "id": 4, 
-           "modifiedAt": 1570210266729, 
-           "lastModifiedBy": null, 
-           "name": "Arvind Mills", 
-           "desc": null
-     },
-    "millId": 4,
-    "fabricTypeId": 2,
-    "fabricCategoryId": null,
-    "uid": "Fabric-TEST FABBIPO 101",
-    "rollInfoList": "[]",
-    "ledgerList": "[]"
-}]
-```
-
-## Get FabricsRolls [Default and Download]
-
-```shell
-curl "~/api/fabrics/{fabricId}/rolls?action=download&ledgerId={ledgerId}" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/estimations/{estimationId}?action=cad}`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric to get rolls |
-| ledgerId   | default value is -1 it will fetch the ledger id assigned to any ledger |
-| action*    | values - [`default`, `download`]
-
-
-### Actions
-
-Action    | Description
--------   | -----------
-`default`    | When default parameter is called then it will fetch all rolls detail
-`download`  | When download parameter is sent then it will prepare all the roll detail data in excel and will return excel sheet
-
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "Will Return Roll details and Excel will be downloaded with rolls": ""
-}
-```
-
-##Fabric [ Upload and Update Rolls]
-
-```shell
-curl "~/api/fabrics/66/rolls/upload?action=upload-and-save" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/66/rolls/upload?action=upload-and-save`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric to get rolls |
-| file   | Excel File Which will be Uploaded|
-|action*  |  values - [`upload`, `upload-and-update`]
-
-
-### Actions
-
-Action    | Description
--------   | -----------
-`upload`    | when upload is called will upload the excel while Update by excel
-`upload-and-update`  | This will upload and save the excel while fabric inward
-
-### JSON Payload
-
-<pre class="center-column">
-  Excel File
-</pre>
-
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-      "id": 2004,
-      "createdAt": 1587457763302,
-      "modifiedAt": 1587457763302,
-      "createdBy": "su_dev",
-      "lastModifiedBy": "su_dev",
-      "rollNumber": "500019",
-      "millLength": 106.3,
-      "millWidth": 144,
-      "length": 106.3,
-      "width": 144,
-      "shade": "A",
-      "effectiveShade": "A",
-      "color": null,
-      "csv": "No",
-      "warpShrinkage": null,
-      "weftShrinkage": null,
-      "qcStatus": false,
-      "reserveType": null,
-      "reserved": 0,
-      "rollType": "NORMAL",
-      "rakeNo": "Floor",
-      "used": 0,
-      "available": 106.3,
-      "unused": 106.3,
-      "shortageExcess": 0,
-      "endBits": 0,
-      "lost": 0,
-      "reCutGarment": 0,
-      "reCutPart": 0,
-      "status": "NOT_USED",
-      "remarks": "",
-      "uid": "RollInfo-Test Item Code for API Docs-500019",
-      "fabricId": null,
-      "orderId": null,
-      "ledgerInId": null,
-      "ledgerOutId": null,
-      "groupId": null,
-      "remnantGroupId": null,
-      "rejected": null,
-      "found": null,
-      "tempId": null,
-      "recutting": 0,
-      "chunkLength": null,
-      "left": 0,
-      "split": false,
-      "qty": 0,
-      "returned": false,
-      "returnedLength": 0,
-      "missed": false,
-      "index": 0
-}]
-```
-
-## Fabric [Upload and Save Rolls]
-
-```shell
-curl "~/api/fabrics/66/rolls/upload?action=upload-and-save" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-  -d '<JSON Payload>'
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/66/rolls/upload?action=upload-and-save&invoiceNo=Test&invoiceQty=391`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric to get rolls |
-| invoiceNo   | Invoice Number|
-| invoiceQty   | Invoice Qty|
-| remarks   | Remarks |
-
-### JSON Payload
-
-<pre class="center-column">
-   {
-   Excel File
-   }
-</pre>
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-      "id": 2004,
-      "createdAt": 1587457763302,
-      "modifiedAt": 1587457763302,
-      "createdBy": "su_dev",
-      "lastModifiedBy": "su_dev",
-      "rollNumber": "500019",
-      "millLength": 106.3,
-      "millWidth": 144,
-      "length": 106.3,
-      "width": 144,
-      "shade": "A",
-      "effectiveShade": "A",
-      "color": null,
-      "csv": "No",
-      "warpShrinkage": null,
-      "weftShrinkage": null,
-      "qcStatus": false,
-      "reserveType": null,
-      "reserved": 0,
-      "rollType": "NORMAL",
-      "rakeNo": "Floor",
-      "used": 0,
-      "available": 106.3,
-      "unused": 106.3,
-      "shortageExcess": 0,
-      "endBits": 0,
-      "lost": 0,
-      "reCutGarment": 0,
-      "reCutPart": 0,
-      "status": "NOT_USED",
-      "remarks": "",
-      "uid": "RollInfo-Test Item Code for API Docs-500019",
-      "fabricId": null,
-      "orderId": null,
-      "ledgerInId": null,
-      "ledgerOutId": null,
-      "groupId": null,
-      "remnantGroupId": null,
-      "rejected": null,
-      "found": null,
-      "tempId": null,
-      "recutting": 0,
-      "chunkLength": null,
-      "left": 0,
-      "split": false,
-      "qty": 0,
-      "returned": false,
-      "returnedLength": 0,
-      "missed": false,
-      "index": 0
-}]
-```
-
-## Fabric [Save Rolls]
-
-```shell
-curl "~/api/fabrics/66/rolls/upload?action=upload-and-save" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-  -d '<JSON Payload>'
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/{fabricId}/rolls/upload?action=upload-and-save&invoiceNo=Test&invoiceQty=391`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric to get rolls |
-| invoiceNo   | Invoice Number|
-| invoiceQty   | Invoice Qty|
-| remarks   | Remarks |
-
-
-### JSON Payload
-
-<pre class="center-column">
-[{
-      "rollNumber": "500019",
-      "millLength": 106.3,
-      "millWidth": 144,
-      "length": 106.3,
-      "width": 144,
-      "shade": "A",
-      "effectiveShade": "A",
-      "color": null,
-      "csv": "No",
-      "warpShrinkage": null,
-      "weftShrinkage": null,
-      "qcStatus": false,
-      "reserveType": null,
-      "reserved": 0,
-      "rollType": "NORMAL",
-      "rakeNo": "Floor",
-      "used": 0,
-      "available": 106.3,
-      "unused": 106.3,
-      "shortageExcess": 0,
-      "endBits": 0,
-      "lost": 0,
-      "reCutGarment": 0,
-      "reCutPart": 0,
-      "status": "NOT_USED",
-      "remarks": "",
-      "uid": "RollInfo-Test Item Code for API Docs-500019",
-      "fabricId": null,
-      "orderId": null,
-      "ledgerInId": null,
-      "ledgerOutId": null,
-      "groupId": null,
-      "remnantGroupId": null,
-      "rejected": null,
-      "found": null,
-      "tempId": null,
-      "recutting": 0,
-      "chunkLength": null,
-      "left": 0,
-      "split": false,
-      "qty": 0,
-      "returned": false,
-      "returnedLength": 0,
-      "missed": false,
-      "index": 0
-}]
-</pre>
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-      "id": 2004,
-      "createdAt": 1587457763302,
-      "modifiedAt": 1587457763302,
-      "createdBy": "su_dev",
-      "lastModifiedBy": "su_dev",
-      "rollNumber": "500019",
-      "millLength": 106.3,
-      "millWidth": 144,
-      "length": 106.3,
-      "width": 144,
-      "shade": "A",
-      "effectiveShade": "A",
-      "color": null,
-      "csv": "No",
-      "warpShrinkage": null,
-      "weftShrinkage": null,
-      "qcStatus": false,
-      "reserveType": null,
-      "reserved": 0,
-      "rollType": "NORMAL",
-      "rakeNo": "Floor",
-      "used": 0,
-      "available": 106.3,
-      "unused": 106.3,
-      "shortageExcess": 0,
-      "endBits": 0,
-      "lost": 0,
-      "reCutGarment": 0,
-      "reCutPart": 0,
-      "status": "NOT_USED",
-      "remarks": "",
-      "uid": "RollInfo-Test Item Code for API Docs-500019",
-      "fabricId": null,
-      "orderId": null,
-      "ledgerInId": null,
-      "ledgerOutId": null,
-      "groupId": null,
-      "remnantGroupId": null,
-      "rejected": null,
-      "found": null,
-      "tempId": null,
-      "recutting": 0,
-      "chunkLength": null,
-      "left": 0,
-      "split": false,
-      "qty": 0,
-      "returned": false,
-      "returnedLength": 0,
-      "missed": false,
-      "index": 0
-}]
-```
-
-## Fabric [Update Rolls]
-
-```shell
-curl "~/api/fabrics/66/rolls/upload?action=upload-and-save" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/66/rolls/upload?action=default`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId  | The Id fabric to get rolls |
-| ledgerId  | Ledger Id |
-|action*    |  values - [`default`, `by-excel` , `new-roll-addition` , `remove-roll`]
-
-
-### Actions
-
-Action    | Description
--------   | -----------
-`default`    | Will Update Basic Info of Rolls
-`by-exce`  | this will update the roll info via Excel upload
-`new-roll-addition`  | New Roll will be updated to the Ledger and ledger id will be assigned to that roll
-`remove-roll`  | Roll will be removed from the Body ledger and will be removed to balance and ledger id will be removed
-
-### JSON Payload
-
-<pre class="center-column">
-  [{
-        "id": 2004,
-        "rollNumber": "500019",
-        "millLength": 106.3,
-        "millWidth": 144,
-        "length": 106.3,
-        "width": 144,
-        "shade": "A",
-        "effectiveShade": "A",
-        "color": null,
-        "csv": "No",
-        "warpShrinkage": null,
-        "weftShrinkage": null,
-        "qcStatus": false,
-        "reserveType": null,
-        "reserved": 0,
-        "rollType": "NORMAL",
-        "rakeNo": "Floor",
-        "used": 0,
-        "available": 106.3,
-        "unused": 106.3,
-        "shortageExcess": 0,
-        "endBits": 0,
-        "lost": 0,
-        "reCutGarment": 0,
-        "reCutPart": 0,
-        "status": "NOT_USED",
-        "remarks": "",
-        "uid": "RollInfo-Test Item Code for API Docs-500019",
-        "fabricId": null,
-        "orderId": null,
-        "ledgerInId": null,
-        "ledgerOutId": null,
-        "groupId": null,
-        "remnantGroupId": null,
-        "rejected": null,
-        "found": null,
-        "tempId": null,
-        "recutting": 0,
-        "chunkLength": null,
-        "left": 0,
-        "split": false,
-        "qty": 0,
-        "returned": false,
-        "returnedLength": 0,
-        "missed": false,
-        "index": 0
-  }]
-</pre>
-
-
-> The above command returns JSON structured like this:
-
-```json
-[{
-      "id": 2004,
-      "createdAt": 1587457763302,
-      "modifiedAt": 1587457763302,
-      "createdBy": "su_dev",
-      "lastModifiedBy": "su_dev",
-      "rollNumber": "500019",
-      "millLength": 106.3,
-      "millWidth": 144,
-      "length": 106.3,
-      "width": 144,
-      "shade": "A",
-      "effectiveShade": "A",
-      "color": null,
-      "csv": "No",
-      "warpShrinkage": null,
-      "weftShrinkage": null,
-      "qcStatus": false,
-      "reserveType": null,
-      "reserved": 0,
-      "rollType": "NORMAL",
-      "rakeNo": "Floor",
-      "used": 0,
-      "available": 106.3,
-      "unused": 106.3,
-      "shortageExcess": 0,
-      "endBits": 0,
-      "lost": 0,
-      "reCutGarment": 0,
-      "reCutPart": 0,
-      "status": "NOT_USED",
-      "remarks": "",
-      "uid": "RollInfo-Test Item Code for API Docs-500019",
-      "fabricId": null,
-      "orderId": null,
-      "ledgerInId": null,
-      "ledgerOutId": null,
-      "groupId": null,
-      "remnantGroupId": null,
-      "rejected": null,
-      "found": null,
-      "tempId": null,
-      "recutting": 0,
-      "chunkLength": null,
-      "left": 0,
-      "split": false,
-      "qty": 0,
-      "returned": false,
-      "returnedLength": 0,
-      "missed": false,
-      "index": 0
-}]
-```
-
-## Fabric Issue
-
-```shell
-curl "~/api/fabrics/{fabricId}/ledger?action=association&orderId=61" \
-  -X POST \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-  -d '<JSON Payload>'
-```
-
-This endpoint creates a fabric.
-
-### HTTP Request
-
-`POST ~/api/fabrics/{fabricId}/ledger?action=association&orderId=61`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId  | The Id fabric to get rolls |
-|action*    | values - [`association`, `sampling` , `write-off` , `return-mill`]
-| orderId   | Order Id |
-
-
-### Actions
-
-Action    | Description
--------   | -----------
-`association`    | Will Associate the fabric from balance ledger to specific order
-`sampling`  | Will add for sampling from balance to to sampling corresponding to any order
-`write-off`  | will allow to write off the fabric from balance
-`return-mill`  | Will allow to return to disassociate/return fabric from any order to balance
-
-### JSON Payload
-
-<pre class="center-column">
-{
-    "color": "Color A",
-    "invoiceList": [
-          0: "Test"
-    ],
-    "invoices": "Test",
-    "lot": 1,
-    "part": "Body",
-    "qty": 200
-}
-</pre>
-
-> The above command returns JSON structured like this:
-
-```json
-{
-   "returns": null
-}
-```
-
-## Fabric [Update Ledger]
-
-```shell
-curl "~/api/fabrics/{fabricId}/ledgers/{ledgerId}" \
-  -X PUT \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>" \
-  -d '<JSON Payload>'
-```
-
-This endpoint updates an existing estimation.
-
-### HTTP Request
-
-`PUT ~/api/fabrics/66/rolls/upload?action=upload-and-save&invoiceNo=Test&invoiceQty=391`
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric for Which the ledger is getting Updated |
-| ledgerId   | Ledger Id each ledger in the fabric has its id Either Body or Sampling|
-
-
-### JSON Payload
-
-<pre class="center-column">
-{
-     "createdAt": 1587797730430,
-     "createdBy": "su_dev",
-     "date": "Apr 25, 2020",
-     "fabricId": null,
-     "fabricQty": "200.0",
-     "grouped": null,
-     "id": 334,
-     "invoiceNo": null,
-     "invoices": "Test",
-     "isUsed": false,
-     "lastModifiedBy": "su_dev",
-     "lot": 1,
-     "modifiedAt": 1587797730430,
-     "orderId": 61,
-     "partId": 197,
-     "particulars": "Body: PO - Test Po For API Doc Updated, Color - Color A, Lot1",
-     "qcStatus": "",
-     "qty": 205,
-     "rollCount": 0,
-     "serialNo": 1,
-     "type": "OUT",
-     "uid": "Ledger-Body: PO - Test Po For API Doc Updated, Color - Color A, Lot1",
-}
-</pre>
-
-> The above command returns JSON structured like this:
-
-```json
-{
-     "createdAt": 1587797730430,
-     "createdBy": "su_dev",
-     "date": "Apr 25, 2020",
-     "fabricId": null,
-     "fabricQty": "205.0",
-     "grouped": null,
-     "id": 334,
-     "invoiceNo": null,
-     "invoices": "Test",
-     "isUsed": false,
-     "lastModifiedBy": "su_dev",
-     "lot": 1,
-     "modifiedAt": 1587797730430,
-     "orderId": 61,
-     "partId": 197,
-     "particulars": "Body: PO - Test Po For API Doc Updated, Color - Color A, Lot1",
-     "qcStatus": "",
-     "qty": 205,
-     "rollCount": 0,
-     "serialNo": 1,
-     "type": "OUT",
-     "uid": "Ledger-Body: PO - Test Po For API Doc Updated, Color - Color A, Lot1",
-}
-```
-
-## Delete  Ledger
-
-```shell
-curl "~/api/fabrics/{fabricId}/ledgers/{ledgerId}"
-  -X DELETE
-  -H "Authorization: Bearer <access_token>"
-```
-
-> The above command returns empty content with response status `204`
-
-This endpoint deletes a specific fabric.
-
-### HTTP Request
-
-`DELETE ~/api/fabrics/{fabricId}/ledgers/{ledgerId}`
-
-### URL Parameters
-
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id fabric for Which the ledger is getting Updated |
-| ledgerId   | Ledger Id each ledger in the fabric has its id Either Body or Sampling|
 
 ## Delete  Fabric
 
@@ -997,32 +227,63 @@ This endpoint deletes a specific fabric.
 
 ### URL Parameters
 
-| Parameter | Description                   |
-| --------- | ----------------------------- |
-| fabricId   | The Id of the fabric to delete |
+| Parameter | Description                    |
+|-----------|--------------------------------|
+| fabricId  | The Id of the fabric to delete |
 
-## Schema
+## Schema - Fabric
 
 ```json
 {
-  "modifiedAt": "timestamp",
-  "lastModifiedBy": "string",
   "id": "long",
   "itemCode": "string",
+  "supplierItemCode": "string",
   "articleName": "string",
-  "color": "string",
-  "width": "double",
+  "classification": "string",
+  "repeatLength": "float",
+  "repeatWidth": "float",
   "construction": "string",
   "content": "string",
-  "repeatLength": "double",
-  "repeatWidth": "double",
-  "desc": "string",
-  "millId": "long",
-  "fabricTypeId": "long",
+  "width": "float",
+  "gsm": "float",
+  "warpShrinkage": "float",
+  "weftShrinkage": "float",
+  "remarks": "string",
+  "fabricPatternId": "long",
   "fabricCategoryId": "long",
-  "rollInfoList": "RollInfo[]",
-  "ledgerList": "Ledger[]"
+  "colorList": [
+    { "id": "long", "color": "string", "swatchImage": "string" }
+  ]
 }
 ```
 
 This is schema of Fabric entity
+
+**Fabric Table**
+
+| Parameter        | Type   | Constraints | Description                                                     |
+|------------------|--------|-------------|-----------------------------------------------------------------|
+| id               | Long   | Primary Key | Internal ID                                                     |
+| itemCode         | String | Required    | Item Code in ERP                                                |
+| supplierItemCode | String |             | Item Code from Supplier                                         |
+| articleName      | String |             | Article Name                                                    |
+| classification   | String | Required    | Fabric classification. Values: (`Woven`,`Non-Woven`, `Knitted`) |
+| fabricPatternId  | long   | Required    | Fabric Pattern Internal ID                                      |
+| fabricCategoryId | long   | Required    | Fabric Category Internal ID                                     |
+| repeatLength     | Float  |             | Repeat value length wise                                        |
+| repeatWidth      | Float  |             | Repeat value width wise                                         |
+| width            | Float  |             | Booking width                                                   |
+| gsm              | Float  |             | GSM value (Gram per square meter), if available                 |
+| warpShrinkage    | Float  |             | Max booking Shrinkage tolerance length wise                     |
+| weftShrinkage    | Float  |             | Max booking Shrinkage tolerance width wise                      |
+| remarks          | String |             | Additional Remarks                                              |
+
+**Color Table**
+
+| Parameter   | Type   | Constraints | Description           |
+|-------------|--------|-------------|-----------------------|
+| id          | Long   | Primary Key | Internal ID           |
+| color       | String | Required    | Fabric color          |
+| swatchImage | String |             | swatch image filename |
+
+

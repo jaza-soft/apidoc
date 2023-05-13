@@ -11,7 +11,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 includes:
   #  - report
   - orders
-  #  - fabrics
+  - fabrics
   - customers
   - seasons
   - products
