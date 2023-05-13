@@ -12,6 +12,7 @@ includes:
   #  - report
   - orders
   - fabrics
+  - invoices
   - customers
   - seasons
   - products
