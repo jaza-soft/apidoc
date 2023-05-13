@@ -1,0 +1,2276 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-2e03ad1b.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-ee201e09.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#oauth-2-0" class="toc-h2 toc-link" data-title="OAuth 2.0">OAuth 2.0</a>
+                  </li>
+                  <li>
+                    <a href="#api-key" class="toc-h2 toc-link" data-title="API Key">API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pagination-and-sort" class="toc-h1 toc-link" data-title="Pagination and Sort">Pagination and Sort</a>
+          </li>
+          <li>
+            <a href="#filter-and-search" class="toc-h1 toc-link" data-title="Filter and Search">Filter and Search</a>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-orders" class="toc-h2 toc-link" data-title="Get All Orders">Get All Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-order" class="toc-h2 toc-link" data-title="Get a Specific Order">Get a Specific Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-order" class="toc-h2 toc-link" data-title="Update a Specific Order">Update a Specific Order</a>
+                  </li>
+                  <li>
+                    <a href="#delete-order" class="toc-h2 toc-link" data-title="Delete  Order">Delete  Order</a>
+                  </li>
+                  <li>
+                    <a href="#schema-order" class="toc-h2 toc-link" data-title="Schema - Order">Schema - Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-customers" class="toc-h2 toc-link" data-title="Get All Customers">Get All Customers</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-customer" class="toc-h2 toc-link" data-title="Get a Specific Customer">Get a Specific Customer</a>
+                  </li>
+                  <li>
+                    <a href="#create-customer" class="toc-h2 toc-link" data-title="Create Customer">Create Customer</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-customer" class="toc-h2 toc-link" data-title="Update a Specific Customer">Update a Specific Customer</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-customer" class="toc-h2 toc-link" data-title="Delete a Specific Customer">Delete a Specific Customer</a>
+                  </li>
+                  <li>
+                    <a href="#schema-customer" class="toc-h2 toc-link" data-title="Schema - Customer">Schema - Customer</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#seasons" class="toc-h1 toc-link" data-title="Seasons">Seasons</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-seasons" class="toc-h2 toc-link" data-title="Get All Seasons">Get All Seasons</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-season" class="toc-h2 toc-link" data-title="Get a Specific Season">Get a Specific Season</a>
+                  </li>
+                  <li>
+                    <a href="#create-season" class="toc-h2 toc-link" data-title="Create Season">Create Season</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-season" class="toc-h2 toc-link" data-title="Update a Specific Season">Update a Specific Season</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-season" class="toc-h2 toc-link" data-title="Delete a Specific Season">Delete a Specific Season</a>
+                  </li>
+                  <li>
+                    <a href="#schema-season" class="toc-h2 toc-link" data-title="Schema - Season">Schema - Season</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-products" class="toc-h2 toc-link" data-title="Get All Products">Get All Products</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-product" class="toc-h2 toc-link" data-title="Get a Specific Product">Get a Specific Product</a>
+                  </li>
+                  <li>
+                    <a href="#create-product" class="toc-h2 toc-link" data-title="Create Product">Create Product</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-product" class="toc-h2 toc-link" data-title="Update a Specific Product">Update a Specific Product</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-product" class="toc-h2 toc-link" data-title="Delete a Specific Product">Delete a Specific Product</a>
+                  </li>
+                  <li>
+                    <a href="#schema-product" class="toc-h2 toc-link" data-title="Schema - Product">Schema - Product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#suppliers" class="toc-h1 toc-link" data-title="Suppliers">Suppliers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-suppliers" class="toc-h2 toc-link" data-title="Get All Suppliers">Get All Suppliers</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-supplier" class="toc-h2 toc-link" data-title="Get a Specific Supplier">Get a Specific Supplier</a>
+                  </li>
+                  <li>
+                    <a href="#create-supplier" class="toc-h2 toc-link" data-title="Create Supplier">Create Supplier</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-supplier" class="toc-h2 toc-link" data-title="Update a Specific Supplier">Update a Specific Supplier</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-supplier" class="toc-h2 toc-link" data-title="Delete a Specific Supplier">Delete a Specific Supplier</a>
+                  </li>
+                  <li>
+                    <a href="#schema-supplier" class="toc-h2 toc-link" data-title="Schema - Supplier">Schema - Supplier</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fabric-categories" class="toc-h1 toc-link" data-title="Fabric Categories">Fabric Categories</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-fabric-categories" class="toc-h2 toc-link" data-title="Get All Fabric Categories">Get All Fabric Categories</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-fabric-category" class="toc-h2 toc-link" data-title="Get a Specific Fabric Category">Get a Specific Fabric Category</a>
+                  </li>
+                  <li>
+                    <a href="#create-fabric-category" class="toc-h2 toc-link" data-title="Create Fabric Category">Create Fabric Category</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-fabric-category" class="toc-h2 toc-link" data-title="Update a Specific Fabric Category">Update a Specific Fabric Category</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-fabric-category" class="toc-h2 toc-link" data-title="Delete a Specific Fabric Category">Delete a Specific Fabric Category</a>
+                  </li>
+                  <li>
+                    <a href="#schema-fabric-category" class="toc-h2 toc-link" data-title="Schema - Fabric Category">Schema - Fabric Category</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fabric-patterns" class="toc-h1 toc-link" data-title="Fabric Patterns">Fabric Patterns</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-fabric-patterns" class="toc-h2 toc-link" data-title="Get All Fabric Patterns">Get All Fabric Patterns</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-fabric-pattern" class="toc-h2 toc-link" data-title="Get a Specific Fabric Pattern">Get a Specific Fabric Pattern</a>
+                  </li>
+                  <li>
+                    <a href="#create-fabric-pattern" class="toc-h2 toc-link" data-title="Create Fabric Pattern">Create Fabric Pattern</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-specific-fabric-pattern" class="toc-h2 toc-link" data-title="Update a Specific Fabric Pattern">Update a Specific Fabric Pattern</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-fabric-pattern" class="toc-h2 toc-link" data-title="Delete a Specific Fabric Pattern">Delete a Specific Fabric Pattern</a>
+                  </li>
+                  <li>
+                    <a href="#schema-fabric-pattern" class="toc-h2 toc-link" data-title="Schema - Fabric Pattern">Schema - Fabric Pattern</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the OptaCut API! You can use our API to access OptaCut API endpoints.</p>
+
+<p>We have language bindings in Shell. You can view code examples in the dark area to the right, and you can switch the
+programming language of the examples with the tabs in the top right.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>In order to access OptaCut API, you will need authenticate. We support two modes of authentication</p>
+
+<ul>
+<li><code>OAuth 2.0</code>: When client is user who have user account and can enter username and password</li>
+<li><code>API Key</code>: When client is Machine/Application etc.</li>
+</ul>
+<h2 id='oauth-2-0'>OAuth 2.0</h2>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"{IAM_BASE_URL}/oauth/token?grant_type=password&amp;appId=optacut&amp;username={username}&amp;password={password}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic Y2xpZW50OnNlY3JldA=="</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>IAM_BASE_URL</code> with actual IAM Url and <code>username</code>, <code>password</code> with your username and password.</p>
+
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIsInR5c...oXLVc6YA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzI1NiIsIn...zbi3zCTTniTpmbJ1KeA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">43199</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"read,write"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"optacut"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"tenant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dev"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"jti"</span><span class="p">:</span><span class="w"> </span><span class="s2">"62e24a85-1e53-4797-a3cc-4d0e3357be45"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET {IAM_BASE_URL}/oauth/token</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>grant_type</td>
+<td></td>
+<td>value should be  <code>password</code></td>
+</tr>
+<tr>
+<td>appId</td>
+<td></td>
+<td>value should be  <code>optacut</code></td>
+</tr>
+<tr>
+<td>username</td>
+<td></td>
+<td>Your Username</td>
+</tr>
+<tr>
+<td>password</td>
+<td></td>
+<td>Your Password</td>
+</tr>
+</tbody></table>
+
+<p>OptaCut expects the Access Token to be included in all API requests to the server in a header that looks like the
+following:</p>
+
+<p><code>Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ...oXLVc6YA</code></p>
+<h2 id='api-key'>API Key</h2>
+<p>We will issue API Key with the appropriate privilege which can be used to access OptaCut endpoints by including API Key
+in
+HTTP Request header which will look like:</p>
+
+<p><code>x-api-key: p4VXJhzNZVujvqX2l1d9IJp9.b3B0YWN1dA==</code></p>
+<h1 id='pagination-and-sort'>Pagination and Sort</h1>
+<blockquote>
+<p>Response of Fetch all call looks like this</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name 2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"pageable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unpaged"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"totalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"totalElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unsorted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numberOfElements"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>All Fetch/Get API (with few exceptions) on each resource support pagination and sorting. Following parameters are used -</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>0</td>
+<td><code>Zero</code> indexed page number</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>20</td>
+<td>Number of records to fetch in one Page</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>id,desc</td>
+<td><code>id</code>: field on which sorting is applied, <code>desc</code>: Sort Direction. values - [<code>asc</code>, <code>desc</code>]</td>
+</tr>
+</tbody></table>
+<h1 id='filter-and-search'>Filter and Search</h1>
+<p>All Fetch/Get (with few exceptions) API on each resource support filtering and searching. Following parameters are
+used -</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search</td>
+<td></td>
+<td>filter and Search criteria using RSQL formating.</td>
+</tr>
+</tbody></table>
+
+<p>API uses <code>RSQL Parser</code> to achieve this. Refer <a href="https://github.com/jirutka/rsql-parser">RSQL</a> documentation for more
+details.</p>
+<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/orders"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the orders. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all orders. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/orders</code></p>
+<h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/orders/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"seasonId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerPoRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mens Formal Shirt-L/S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"styles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"flowInfoList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"flowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customerFlowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ratio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleNo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"groupDestination"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exFactoryDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1685404800000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Air"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleImage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">New</span><span class="se">\"</span><span class="s2">}]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">  </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shell"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entire Body"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trim1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neckband"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sizeBreakupList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific order.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/orders/{orderId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>The Id of the order to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-order'>Create Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/orders"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a order.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/orders</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+  "poRef": "T/100",
+  "customerPoRef": "B/100",
+  "customerId": 2,
+  "seasonId": 1,
+  "desc": "Test description",
+  "flowInfoList": [
+    {
+      "serialNo": 1,
+      "productId": 2,
+      "style": "A6",
+      "color": "Black",
+      "orderQty": 1000,
+      "extra": 5,
+      "destination": "US",
+      "delMode": "Air",
+      "exFactoryDate": "2023-05-30",
+      "partList": [
+        { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
+        { "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter" }
+      ],
+      "sizeBreakupList": [
+        { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+        { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+        { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+      ]
+    }
+  ]
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"seasonId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerPoRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mens Formal Shirt-L/S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"styles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"flowInfoList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"flowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customerFlowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ratio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleNo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"groupDestination"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exFactoryDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1685404800000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Air"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleImage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">New</span><span class="se">\"</span><span class="s2">}]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">  </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shell"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entire Body"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trim1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neckband"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sizeBreakupList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-order'>Update a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/orders/{orderId}"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing order.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/orders/{orderId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>The Id of the order to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+  "id": 1,
+  "customerId": 2,
+  "seasonId": 1,
+  "poRef": "T/100",
+  "customerPoRef": "B/100",
+  "desc": "Test description",
+  "orderQty": 2000,
+  "products": "Mens Formal Shirt-L/S",
+  "styles": "A6",
+  "flowInfoList": [
+    {
+      "id": 1,
+      "flowRef": null,
+      "customerFlowRef": null,
+      "parentId": null,
+      "serialNo": 2,
+      "productId": 2,
+      "ratio": null,
+      "style": "A6",
+      "styleNo": null,
+      "fit": null,
+      "color": "White",
+      "groupDestination": false,
+      "destination": "US",
+      "exFactoryDate": 1685404800000,
+      "delMode": "Air",
+      "orderQty": 1000,
+      "extra": 5.0,
+      "styleImage": null,
+      "state": "[{\"state\":\"New\"}]",
+      "partList": [
+        { "id": 10,  "serial": null, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
+        { "id": 11, "serial": null, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.1, "uom": "meter"}
+      ],
+      "sizeBreakupList": [
+        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+      ]
+    }
+  ]
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"seasonId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerPoRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B/100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mens Formal Shirt-L/S"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"styles"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"flowInfoList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"flowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customerFlowRef"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ratio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleNo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"groupDestination"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exFactoryDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1685404800000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Air"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleImage"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[{</span><span class="se">\"</span><span class="s2">state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">New</span><span class="se">\"</span><span class="s2">}]"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">  </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shell"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entire Body"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trim1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Neckband"</span><span class="p">,</span><span class="w"> </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"meter"</span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sizeBreakupList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w"> </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34"</span><span class="p">,</span><span class="w"> </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-order'>Delete  Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/orders/{orderId}"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific order.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/orders/{orderId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>The Id of the order to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-order'>Schema - Order</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"seasonId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"poRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customerPoRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"flowInfoList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"flowRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customerFlowRef"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"styleNo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exFactoryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyy-MM-dd"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"delMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"serial"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"partName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"placement"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bomCu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sizeBreakupList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"serialNo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sizeGroup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><strong>Order Table</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Long</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>poRef</td>
+<td>String</td>
+<td>Required</td>
+<td>Purchase Order Reference</td>
+</tr>
+<tr>
+<td>customerPoRef</td>
+<td>String</td>
+<td></td>
+<td>Customer Purchase Order Reference</td>
+</tr>
+<tr>
+<td>customerId</td>
+<td>Long</td>
+<td></td>
+<td>Internal ID of Customer</td>
+</tr>
+<tr>
+<td>seasonId</td>
+<td>Long</td>
+<td></td>
+<td>Internal ID of Season</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Order</td>
+</tr>
+</tbody></table>
+
+<p><strong>FlowInfo Table</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Long</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>serialNo</td>
+<td>Long</td>
+<td></td>
+<td>Sequence</td>
+</tr>
+<tr>
+<td>flowRef</td>
+<td>String</td>
+<td></td>
+<td>Flow Reference</td>
+</tr>
+<tr>
+<td>customerFlowRef</td>
+<td>String</td>
+<td></td>
+<td>Customer Flow Reference</td>
+</tr>
+<tr>
+<td>productId</td>
+<td>Long</td>
+<td>Required</td>
+<td>Internal ID of Product</td>
+</tr>
+<tr>
+<td>style</td>
+<td>String</td>
+<td>Required</td>
+<td>Style Name</td>
+</tr>
+<tr>
+<td>styleNo</td>
+<td>String</td>
+<td></td>
+<td>Style Long</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>String</td>
+<td></td>
+<td>Fit</td>
+</tr>
+<tr>
+<td>color</td>
+<td>String</td>
+<td>Required</td>
+<td>Style Color</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>String</td>
+<td></td>
+<td>Destination</td>
+</tr>
+<tr>
+<td>delMode</td>
+<td>String</td>
+<td></td>
+<td>Delivery Mode. Values: (<code>Air</code>, <code>Sea</code>, <code>Road</code>)</td>
+</tr>
+<tr>
+<td>exFactoryDate</td>
+<td>Date</td>
+<td></td>
+<td>Delivery Date. Format: <code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td>orderQty</td>
+<td>Int</td>
+<td>Required</td>
+<td>Order Qty in this flow</td>
+</tr>
+<tr>
+<td>extra</td>
+<td>Float</td>
+<td></td>
+<td>Allowed Extra percent</td>
+</tr>
+</tbody></table>
+
+<p><strong>Part Table</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Long</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>partName</td>
+<td>String</td>
+<td>Required</td>
+<td>Part Name</td>
+</tr>
+<tr>
+<td>placement</td>
+<td>String</td>
+<td></td>
+<td>Part Placement</td>
+</tr>
+<tr>
+<td>bomCu</td>
+<td>Float</td>
+<td></td>
+<td>BOM Consumption</td>
+</tr>
+<tr>
+<td>uom</td>
+<td>String</td>
+<td></td>
+<td>Unit of Measurement for BOM Consumption. Values: (<code>meter</code>, <code>gram</code>, <code>yard</code>)</td>
+</tr>
+</tbody></table>
+
+<p><strong>Size Breakup Table</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Long</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>serialNo</td>
+<td>Int</td>
+<td></td>
+<td>Sequence of Size</td>
+</tr>
+<tr>
+<td>sizeGroup</td>
+<td>String</td>
+<td></td>
+<td>Inseam if applicable</td>
+</tr>
+<tr>
+<td>size</td>
+<td>String</td>
+<td>Required</td>
+<td>Size  Name</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>Int</td>
+<td>Required</td>
+<td>Order qty in this size</td>
+</tr>
+</tbody></table>
+<h1 id='customers'>Customers</h1><h2 id='get-all-customers'>Get All Customers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/customers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the customers. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all customers. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/customers</code></p>
+<h2 id='get-a-specific-customer'>Get a Specific Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/customers/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GANT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GNT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific customer.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/customers/{customerId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customerId</td>
+<td>The Id of the customer to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-customer'>Create Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/customers"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a customer.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/customers</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "GANT",
+    "code": "GNT",
+    "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GANT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GNT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-customer'>Update a Specific Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/customers/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing customer.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/customers/{customerId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customerId</td>
+<td>The Id of the customer to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "GANT-Updated",
+      "code": "GNT",
+      "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GANT-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GNT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-customer'>Delete a Specific Customer</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/customers/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific customer.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/customers/{customerId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>customerId</td>
+<td>The Id of the customer to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-customer'>Schema - Customer</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of Customer entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Customer</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td></td>
+<td>Short code for Customer</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Customer</td>
+</tr>
+</tbody></table>
+<h1 id='seasons'>Seasons</h1><h2 id='get-all-seasons'>Get All Seasons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/seasons"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the seasons. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all seasons. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/seasons</code></p>
+<h2 id='get-a-specific-season'>Get a Specific Season</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/seasons/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AW 24"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific season.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/seasons/{seasonId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>seasonId</td>
+<td>The Id of the season to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-season'>Create Season</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/seasons"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a season.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/seasons</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "AW 24",
+    "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AW 24"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-season'>Update a Specific Season</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/seasons/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing season.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/seasons/{seasonId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>seasonId</td>
+<td>The Id of the season to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "AW 24-Updated",
+      "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AW 24-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-season'>Delete a Specific Season</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/seasons/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific season.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/seasons/{seasonId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>seasonId</td>
+<td>The Id of the season to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-season'>Schema - Season</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of season entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Season</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Season</td>
+</tr>
+</tbody></table>
+<h1 id='products'>Products</h1><h2 id='get-all-products'>Get All Products</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the products. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all products. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/products</code></p>
+<h2 id='get-a-specific-product'>Get a Specific Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/products/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shirt"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isSet"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productList"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific product.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/products/{productId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>The Id of the product to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-product'>Create Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/products"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a product.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/products</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "Shirt",
+    "desc": "Test Description",
+    "isSet": false,
+    "productList": []
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shirt"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isSet"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productList"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-product'>Update a Specific Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/products/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing product.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/products/{productId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>The Id of the product to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "Shirt-Updated",
+      "isSet": false,
+      "desc": "Test Description",
+      "productList": []
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shirt-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isSet"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productList"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-product'>Delete a Specific Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/products/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific product.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/products/{productId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productId</td>
+<td>The Id of the product to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-product'>Schema - Product</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isSet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productList"</span><span class="p">:</span><span class="w"> </span><span class="s2">"product[]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of product entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Product</td>
+</tr>
+<tr>
+<td>isSet</td>
+<td>Boolean</td>
+<td></td>
+<td>Whether product is set of products</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Product</td>
+</tr>
+</tbody></table>
+<h1 id='suppliers'>Suppliers</h1><h2 id='get-all-suppliers'>Get All Suppliers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/suppliers"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the suppliers. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all suppliers. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/suppliers</code></p>
+<h2 id='get-a-specific-supplier'>Get a Specific Supplier</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/suppliers/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monti"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific supplier.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/suppliers/{supplierId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>supplierId</td>
+<td>The Id of the supplier to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-supplier'>Create Supplier</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/suppliers"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a supplier.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/suppliers</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "Monti",
+    "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monti"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-supplier'>Update a Specific Supplier</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/suppliers/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing supplier.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/suppliers/{supplierId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>supplierId</td>
+<td>The Id of the supplier to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "Monti-Updated",
+      "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monti-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-supplier'>Delete a Specific Supplier</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/suppliers/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific supplier.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/suppliers/{supplierId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>supplierId</td>
+<td>The Id of the supplier to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-supplier'>Schema - Supplier</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of Supplier entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Supplier</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Supplier</td>
+</tr>
+</tbody></table>
+<h1 id='fabric-categories'>Fabric Categories</h1><h2 id='get-all-fabric-categories'>Get All Fabric Categories</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-categories"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the fabricCategories. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all fabricCategories. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/fabric-categories</code></p>
+<h2 id='get-a-specific-fabric-category'>Get a Specific Fabric Category</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-categories/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oxford"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific fabricCategory.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/fabric-categories/{fabricCategoryId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricCategoryId</td>
+<td>The Id of the fabricCategory to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-fabric-category'>Create Fabric Category</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-categories"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a fabricCategory.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/fabric-categories</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "Oxford",
+    "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oxford"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-fabric-category'>Update a Specific Fabric Category</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-categories/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing fabricCategory.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/fabric-categories/{fabricCategoryId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricCategoryId</td>
+<td>The Id of the fabricCategory to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "Oxford-Updated",
+      "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oxford-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-fabric-category'>Delete a Specific Fabric Category</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-categories/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific fabricCategory.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/fabric-categories/{fabricCategoryId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricCategoryId</td>
+<td>The Id of the fabricCategory to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-fabric-category'>Schema - Fabric Category</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of Fabric Category entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Fabric Category</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Fabric Category</td>
+</tr>
+</tbody></table>
+<h1 id='fabric-patterns'>Fabric Patterns</h1><h2 id='get-all-fabric-patterns'>Get All Fabric Patterns</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-patterns"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns list of all the fabricCategories. Refer <code>Pagination and Sort</code> and <code>Schema</code> Section for exact
+response structure</p>
+</blockquote>
+
+<p>This endpoint retrieves all fabric patterns. It supports pagination, sort, search and filter</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET ~/api/fabric-patterns</code></p>
+<h2 id='get-a-specific-fabric-pattern'>Get a Specific Fabric Pattern</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-patterns/1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Checks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a specific fabricCategory.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET ~/api/fabric-patterns/{fabricPatternId}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricPatternId</td>
+<td>The Id of the fabricCategory to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='create-fabric-pattern'>Create Fabric Pattern</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-patterns"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint creates a fabricCategory.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST ~/api/fabric-patterns</code></p>
+<h3 id='json-payload'>JSON Payload</h3>
+<pre class="center-column">
+{
+    "name": "Checks",
+    "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Checks"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='update-a-specific-fabric-pattern'>Update a Specific Fabric Pattern</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-patterns/1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'&lt;JSON Payload&gt;'</span>
+</code></pre></div>
+<p>This endpoint updates an existing fabricCategory.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT ~/api/fabric-patterns/{fabricPatternId}</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricPatternId</td>
+<td>The Id of the fabricCategory to update</td>
+</tr>
+</tbody></table>
+<h3 id='json-payload-2'>JSON Payload</h3>
+<pre class="center-column">
+{
+      "id": 1,
+      "name": "Checks-Updated",
+      "desc": "Test Description"
+}
+</pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Checks-Updated"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Description"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='delete-a-specific-fabric-pattern'>Delete a Specific Fabric Pattern</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"~/api/fabric-patterns/1"</span>
+  <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;access_token&gt;"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns empty content with response status <code>204</code></p>
+</blockquote>
+
+<p>This endpoint deletes a specific fabricCategory.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE ~/api/fabric-patterns/{fabricPatternId}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>fabricPatternId</td>
+<td>The Id of the fabricCategory to delete</td>
+</tr>
+</tbody></table>
+<h2 id='schema-fabric-pattern'>Schema - Fabric Pattern</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"long"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Schema of Fabric Pattern entity</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Constraints</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Number</td>
+<td>Primary Key</td>
+<td>Internal ID</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Required</td>
+<td>Name of Fabric Pattern</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>Text</td>
+<td></td>
+<td>description for Fabric Pattern</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The OptaCut API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API/Token key is invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The data requested is not available for your privilege.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified data could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a api with an invalid method.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflict -- There is constraint violation</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
