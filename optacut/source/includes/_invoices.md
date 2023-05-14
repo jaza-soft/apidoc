@@ -465,7 +465,7 @@ Schema of invoice entity
 | qty          | Int    | Required    | Ledger qty                                                                     |
 | remarks      | String |             | Remarks                                                                        |
 
-**Supplier Table**
+**SupplierRoll Table**
 
 | Field          | Type   | Constraints | Description             |
 |----------------|--------|-------------|-------------------------|
