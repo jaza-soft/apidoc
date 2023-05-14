@@ -166,9 +166,9 @@ This endpoint deletes a specific product.
 
 Schema of product entity
 
-| Parameter | Type    | Constraints | Description                        |
-|-----------|---------|-------------|------------------------------------|
-| id        | Number  | Primary Key | Internal ID                        |
-| name      | String  | Required    | Name of Product                    |
-| isSet     | Boolean |             | Whether product is set of products |
-| desc      | Text    |             | description for Product            |
+| Field | Type    | Constraints | Description                        |
+|-------|---------|-------------|------------------------------------|
+| id    | Number  | Primary Key | Internal ID                        |
+| name  | String  | Required    | Name of Product                    |
+| isSet | Boolean |             | Whether product is set of products |
+| desc  | Text    |             | description for Product            |

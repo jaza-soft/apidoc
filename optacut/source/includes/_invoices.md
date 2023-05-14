@@ -284,6 +284,8 @@ This endpoint created association of this fabric item to different styles.
     "style": "A6",
     "color": "Black",
     "partId": 121,
+    "type": "OUT",
+    "outType": "Association",
     "qty": 1450
   }
 ]
@@ -418,7 +420,7 @@ Schema of invoice entity
 
 **Invoice Table**
 
-| Parameter     | Type   | Constraints | Description                        |
+| Field         | Type   | Constraints | Description                        |
 |---------------|--------|-------------|------------------------------------|
 | id            | Number | Primary Key | Internal ID                        |
 | supplierId    | Long   | Required    | Supplier Internal ID               |
@@ -431,7 +433,7 @@ Schema of invoice entity
 
 **Fabric Item Table**
 
-| Parameter             | Type   | Constraints | Description                                          |
+| Field                 | Type   | Constraints | Description                                          |
 |-----------------------|--------|-------------|------------------------------------------------------|
 | id                    | Number | Primary Key | Internal ID                                          |
 | serial                | Int    |             | Sequence of Item                                     |
@@ -444,6 +446,24 @@ Schema of invoice entity
 | fpo                   | String |             | Fabric Purchase Order Number                         |
 | orderQty              | Float  | Required    | Fabric order qty                                     |
 | invoiceQty            | Float  | Required    | Invoice Qty                                          |
+
+
+**Ledger Table**
+
+| Field        | Type   | Constraints | Description                                                                    |
+|--------------|--------|-------------|--------------------------------------------------------------------------------|
+| id           | Number | Primary Key | Internal ID                                                                    |
+| invoiceId    | Long   | Required    | Invoice Internal ID                                                            |
+| fabricItemId | Long   | Required    | Fabric Item Internal ID                                                        |
+| fabricId     | Long   | Required    | Fabric Internal ID                                                             |
+| color        | String | Required    | Fabric Color                                                                   |
+| flowInfoId   | Long   |             | Flow Info Internal ID                                                          |
+| partId       | Long   |             | Part Internal ID                                                               |
+| particulars  | String |             | Particulars                                                                    |
+| type         | String |             | Ledger type - Inward or Outward. Values - (`IN`, `OUT`)                        |
+| outType      | String |             | Outward type. Values - (`Association`, `Sampling`, `Write-Off`, `Return-mill`) |
+| qty          | Int    | Required    | Ledger qty                                                                     |
+| remarks      | String |             | Remarks                                                                        |
 
 
 

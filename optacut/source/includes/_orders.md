@@ -371,7 +371,7 @@ This endpoint deletes a specific order.
 
 **Order Table**
 
-| Parameter     | Type   | Constraints | Description                       |
+| Field         | Type   | Constraints | Description                       |
 |---------------|--------|-------------|-----------------------------------|
 | id            | Long   | Primary Key | Internal ID                       |
 | poRef         | String | Required    | Purchase Order Reference          |
@@ -382,7 +382,7 @@ This endpoint deletes a specific order.
 
 **FlowInfo Table**
 
-| Parameter       | Type   | Constraints | Description                                   |
+| Field           | Type   | Constraints | Description                                   |
 |-----------------|--------|-------------|-----------------------------------------------|
 | id              | Long   | Primary Key | Internal ID                                   |
 | serialNo        | Long   |             | Sequence                                      |
@@ -401,7 +401,7 @@ This endpoint deletes a specific order.
 
 **Part Table**
 
-| Parameter | Type   | Constraints | Description                                                                |
+| Field     | Type   | Constraints | Description                                                                |
 |-----------|--------|-------------|----------------------------------------------------------------------------|
 | id        | Long   | Primary Key | Internal ID                                                                |
 | partName  | String | Required    | Part Name                                                                  |
@@ -412,7 +412,7 @@ This endpoint deletes a specific order.
 
 **Size Breakup Table**
 
-| Parameter | Type   | Constraints | Description            |
+| Field     | Type   | Constraints | Description            |
 |-----------|--------|-------------|------------------------|
 | id        | Long   | Primary Key | Internal ID            |
 | serialNo  | Int    |             | Sequence of Size       |

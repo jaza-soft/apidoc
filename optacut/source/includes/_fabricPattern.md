@@ -154,8 +154,8 @@ This endpoint deletes a specific fabricCategory.
 
 Schema of Fabric Pattern entity
 
-| Parameter | Type   | Constraints | Description                    |
-|-----------|--------|-------------|--------------------------------|
-| id        | Number | Primary Key | Internal ID                    |
-| name      | String | Required    | Name of Fabric Pattern         |
-| desc      | Text   |             | description for Fabric Pattern |
+| Field | Type   | Constraints | Description                    |
+|-------|--------|-------------|--------------------------------|
+| id    | Number | Primary Key | Internal ID                    |
+| name  | String | Required    | Name of Fabric Pattern         |
+| desc  | Text   |             | description for Fabric Pattern |

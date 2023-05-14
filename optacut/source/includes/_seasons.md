@@ -154,8 +154,8 @@ This endpoint deletes a specific season.
 
 Schema of season entity
 
-| Parameter | Type   | Constraints | Description            |
-|-----------|--------|-------------|------------------------|
-| id        | Number | Primary Key | Internal ID            |
-| name      | String | Required    | Name of Season         |
-| desc      | Text   |             | description for Season |
+| Field | Type   | Constraints | Description            |
+|-------|--------|-------------|------------------------|
+| id    | Number | Primary Key | Internal ID            |
+| name  | String | Required    | Name of Season         |
+| desc  | Text   |             | description for Season |

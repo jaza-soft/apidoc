@@ -261,7 +261,7 @@ This is schema of Fabric entity
 
 **Fabric Table**
 
-| Parameter        | Type   | Constraints | Description                                                     |
+| Field            | Type   | Constraints | Description                                                     |
 |------------------|--------|-------------|-----------------------------------------------------------------|
 | id               | Long   | Primary Key | Internal ID                                                     |
 | itemCode         | String | Required    | Item Code in ERP                                                |
@@ -280,7 +280,7 @@ This is schema of Fabric entity
 
 **Color Table**
 
-| Parameter   | Type   | Constraints | Description           |
+| Field       | Type   | Constraints | Description           |
 |-------------|--------|-------------|-----------------------|
 | id          | Long   | Primary Key | Internal ID           |
 | color       | String | Required    | Fabric color          |

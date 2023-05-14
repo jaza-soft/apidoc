@@ -160,9 +160,9 @@ This endpoint deletes a specific customer.
 
 Schema of Customer entity
 
-| Parameter | Type   | Constraints | Description              |
-|-----------|--------|-------------|--------------------------|
-| id        | Number | Primary Key | Internal ID              |
-| name      | String | Required    | Name of Customer         |
-| code      | String |             | Short code for Customer  |
-| desc      | Text   |             | description for Customer |
+| Field | Type   | Constraints | Description              |
+|-------|--------|-------------|--------------------------|
+| id    | Number | Primary Key | Internal ID              |
+| name  | String | Required    | Name of Customer         |
+| code  | String |             | Short code for Customer  |
+| desc  | Text   |             | description for Customer |

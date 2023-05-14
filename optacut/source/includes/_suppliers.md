@@ -154,8 +154,8 @@ This endpoint deletes a specific supplier.
 
 Schema of Supplier entity
 
-| Parameter | Type   | Constraints | Description              |
-|-----------|--------|-------------|--------------------------|
-| id        | Number | Primary Key | Internal ID              |
-| name      | String | Required    | Name of Supplier         |
-| desc      | Text   |             | description for Supplier |
+| Field | Type   | Constraints | Description              |
+|-------|--------|-------------|--------------------------|
+| id    | Number | Primary Key | Internal ID              |
+| name  | String | Required    | Name of Supplier         |
+| desc  | Text   |             | description for Supplier |
