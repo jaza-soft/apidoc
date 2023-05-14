@@ -474,8 +474,9 @@ Schema of invoice entity
 | rollNo         | String | Required    | Roll Number             |
 | supplierLength | Float  |             | Supplier Length         |
 | supplierWidth  | Float  |             | Supplier Width          |
+| supplierWeight | Float  |             | Supplier Weight         |
 | gsm            | Float  |             | GSM value               |
-| weight         | Float  |             | Roll Weight             |
 | length         | Float  |             | Inspected Length        |
 | width          | Float  |             | Cuttable Width          |
+| weight         | Float  |             | Inspected Weight        |
 
