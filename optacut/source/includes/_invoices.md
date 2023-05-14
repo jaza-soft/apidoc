@@ -465,6 +465,17 @@ Schema of invoice entity
 | qty          | Int    | Required    | Ledger qty                                                                     |
 | remarks      | String |             | Remarks                                                                        |
 
+**Supplier Table**
 
-
+| Field          | Type   | Constraints | Description             |
+|----------------|--------|-------------|-------------------------|
+| id             | Number | Primary Key | Internal ID             |
+| fabricItemId   | Long   | Required    | Fabric Item Internal ID |
+| rollNo         | String | Required    | Roll Number             |
+| supplierLength | Float  |             | Supplier Length         |
+| supplierWidth  | Float  |             | Supplier Width          |
+| gsm            | Float  |             | GSM value               |
+| weight         | Float  |             | Roll Weight             |
+| length         | Float  |             | Inspected Length        |
+| width          | Float  |             | Cuttable Width          |
 
