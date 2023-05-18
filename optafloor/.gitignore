@@ -12,6 +12,7 @@ test/tmp
 test/version_tmp
 tmp
 *.DS_STORE
+build/
 .cache
 .vagrant
 .sass-cache
@@ -24,8 +25,3 @@ doc/
 
 # Vagrant artifacts
 ubuntu-*-console.log
-
-public-html/optacut/
-public-html/optfloor/
-public-html/optaplan/
-apidoc.zip
