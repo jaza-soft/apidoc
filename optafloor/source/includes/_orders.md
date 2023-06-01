@@ -31,9 +31,12 @@ curl "~/v1/api/orders/1" \
   "buyerId": 2,
   "seasonId": 1,
   "poRef": "T/100",
+  "customerPoRef": "B/100",
   "desc": "Test description",
+  "orderQty": 2000,
   "products": "Mens Formal Shirt-L/S",
   "styles": "A6",
+  "state": "New",
   "flowInfoList": [
     {
       "id": 1,
@@ -53,31 +56,12 @@ curl "~/v1/api/orders/1" \
       "delMode": "Air",
       "orderQty": 1000,
       "extra": 5.0,
-      "techPacks": null,
-      "state": "[{\"state\":\"New\"}]",
-      "trackingMaterial": "Bundle - From Lay",
+      "styleImage": null,
+      "state": "New",
       "sizeBreakupList": [
-        {
-          "id": 1,
-          "type": "ORDER",
-          "serial": 1,
-          "size": "S",
-          "qty": 566
-        },
-        {
-          "id": 2,
-          "type": "ORDER",
-          "serial": 2,
-          "size": "M",
-          "qty": 775
-        },
-        {
-          "id": 3,
-          "type": "ORDER",
-          "serial": 3,
-          "size": "L",
-          "qty": 675
-        }
+        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
       ]
     }
   ]
@@ -610,7 +594,7 @@ This endpoint deletes a specific order.
 ```json
 {
   "id": "long",
-  "customerId": "long",
+  "buyerId": "long",
   "seasonId": "long",
   "poRef": "string",
   "customerPoRef": "string",
