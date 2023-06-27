@@ -82,25 +82,20 @@ This endpoint creates a fabric.
 
 <pre class="center-column">
 {
-  "itemCode": "HO/200",
-  "supplierItemCode": "200",
-  "articleName": "200",
+  "itemCode": "IT-200",
+  "itemDesc": "Test Description",
+  "articleName": "ART-200",
   "classification": "Woven",
-  "repeatLength": 2,
-  "repeatWidth": 2,
-  "construction": "Test construction",
-  "content": "100% cotton",
-  "width": 147.0,
-  "gsm": null,
-  "warpShrinkage": null,
-  "weftShrinkage": null,
-  "remarks": null,
-  "fabricPatternId": 4,
-  "fabricCategoryId": 5,
-  "supplierIds": [10],
+  "fabricCategoryId": 2,
+  "fabricPatternId": 1,
+  "construction": "4*4",
+  "content": "100% Cotton",
+  "repeatLength": 4,
+  "repeatWidth": 4,
+  "gsm": 1.2,
   "colorList": [
-    { "color": "Black"},
-    { "color": "White"}
+    {"color": "WHITE"},
+    {"color": "BLACK"}
   ]
 }
 </pre>
@@ -109,26 +104,21 @@ This endpoint creates a fabric.
 
 ```json
 {
-  "id": 1,
-  "itemCode": "HO/200",
-  "supplierItemCode": "200",
-  "articleName": "200",
+  "id": 2,
+  "itemCode": "IT-200",
+  "itemDesc": "Test Description",
+  "articleName": "ART-200",
   "classification": "Woven",
-  "repeatLength": 2,
-  "repeatWidth": 2,
-  "construction": "Test construction",
-  "content": "100% cotton",
-  "width": 147.0,
-  "gsm": null,
-  "warpShrinkage": null,
-  "weftShrinkage": null,
-  "remarks": null,
-  "fabricPatternId": 4,
-  "fabricCategoryId": 5,
-  "supplierIds": [10],
+  "fabricPatternId": 1,
+  "fabricCategoryId": 2,
+  "repeatLength": 4.0,
+  "repeatWidth": 4.0,
+  "construction": "4*4",
+  "content": "100% Cotton",
+  "gsm": 1.2,
   "colorList": [
-    { "id": 10, "color": "Black", "swatchImage": null },
-    { "id": 11,"color": "White", "swatchImage": null }
+    { "id": 2, "color": "WHITE" },
+    { "id": 3, "color": "BLACK" }
   ]
 }
 ```
@@ -157,26 +147,21 @@ This endpoint updates an existing fabric.
 
 <pre class="center-column">
 {
-  "id": 1,
-  "itemCode": "HO/200-updated",
-  "supplierItemCode": "200",
-  "articleName": "200",
+  "id": 2,
+  "itemCode": "IT-200-UPDATED",
+  "itemDesc": "Test Description",
+  "articleName": "ART-200",
   "classification": "Woven",
-  "repeatLength": 2,
-  "repeatWidth": 2,
-  "construction": "Test construction",
-  "content": "100% cotton",
-  "width": 147.0,
-  "gsm": null,
-  "warpShrinkage": null,
-  "weftShrinkage": null,
-  "remarks": null,
-  "fabricPatternId": 4,
-  "fabricCategoryId": 5,
-  "supplierIds": [10],
+  "fabricPatternId": 1,
+  "fabricCategoryId": 2,
+  "repeatLength": 4.0,
+  "repeatWidth": 4.0,
+  "construction": "4*4",
+  "content": "100% Cotton",
+  "gsm": 1.2,
   "colorList": [
-    { "id": 10, "color": "Black", "swatchImage": null },
-    { "id": 11,"color": "White", "swatchImage": null }
+    { "id": 2, "color": "WHITE" },
+    { "id": 3, "color": "BLACK" }
   ]
 }
 </pre>
@@ -185,26 +170,21 @@ This endpoint updates an existing fabric.
 
 ```json
 {
-  "id": 1,
-  "itemCode": "HO/200-updated",
-  "supplierItemCode": "200",
-  "articleName": "200",
+  "id": 2,
+  "itemCode": "IT-200-UPDATED",
+  "itemDesc": "Test Description",
+  "articleName": "ART-200",
   "classification": "Woven",
-  "repeatLength": 2,
-  "repeatWidth": 2,
-  "construction": "Test construction",
-  "content": "100% cotton",
-  "width": 147.0,
-  "gsm": null,
-  "warpShrinkage": null,
-  "weftShrinkage": null,
-  "remarks": null,
-  "fabricPatternId": 4,
-  "fabricCategoryId": 5,
-  "supplierIds": [10],
+  "fabricPatternId": 1,
+  "fabricCategoryId": 2,
+  "repeatLength": 4.0,
+  "repeatWidth": 4.0,
+  "construction": "4*4",
+  "content": "100% Cotton",
+  "gsm": 1.2,
   "colorList": [
-    { "id": 10, "color": "Black", "swatchImage": null },
-    { "id": 11,"color": "White", "swatchImage": null }
+    { "id": 2, "color": "WHITE" },
+    { "id": 3, "color": "BLACK" }
   ]
 }
 ```
@@ -246,9 +226,6 @@ This endpoint deletes a specific fabric.
   "content": "string",
   "width": "float",
   "gsm": "float",
-  "warpShrinkage": "float",
-  "weftShrinkage": "float",
-  "remarks": "string",
   "fabricPatternId": "long",
   "fabricCategoryId": "long",
   "colorList": [
@@ -274,9 +251,6 @@ This is schema of Fabric entity
 | repeatWidth      | Float  |             | Repeat value width wise                                         |
 | width            | Float  |             | Booking width                                                   |
 | gsm              | Float  |             | GSM value (Gram per square meter), if available                 |
-| warpShrinkage    | Float  |             | Max booking Shrinkage tolerance length wise                     |
-| weftShrinkage    | Float  |             | Max booking Shrinkage tolerance width wise                      |
-| remarks          | String |             | Additional Remarks                                              |
 
 **Color Table**
 

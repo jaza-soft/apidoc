@@ -84,23 +84,30 @@ This endpoint creates a invoice.
 
 <pre class="center-column">
 {
-  "supplierId": 16,
-  "invoiceNo": "IV/250",
-  "erpInvoiceNo": "250",
-  "grn": "G/250",
-  "invoiceDate": "2023-05-13",
+  "supplierId": 1,
+  "invoiceNo": "INV-100",
+  "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "serial": 1,
-      "fabricId": 653,
-      "orderingWidth": 147,
+      "fabricId": 1,
+      "orderId": 8,
+      "itemCode": "IT-100",
+      "itemDesc": "TEST DESC",
+      "articleName": "ART-100",
+      "classification": "Woven",
+      "color": "WHITE",
+      "invoiceQty": 12000,
+      "grn": "G-100",
+      "fpo": "FP-100",
+      "orderQty": 1000,
+      "construction": null,
+      "content": null,
+      "orderingWidth": "145",
       "orderingGsm": null,
-      "orderingWarpShrinkage": 3.5,
-      "orderingWeftShrinkage": 4.5,
-      "color": "Black",
-      "fpo": "FP/300",
-      "orderQty": 7500,
-      "invoiceQty": 7508
+      "orderingWarpShrinkage": null,
+      "orderingWeftShrinkage": null,
+      "grnQty": 5000,
+      "blanketQty": 1.2
     }
   ]
 }
@@ -111,25 +118,31 @@ This endpoint creates a invoice.
 ```json
 {
   "id": 1,
-  "invoiceDate": 1683936000000,
-  "invoiceNo": "IV/250",
-  "erpInvoiceNo": "250",
-  "consignmentNo": null,
-  "grn": "G/250",
-  "supplierId": 16,
+  "supplierId": 1,
+  "invoiceNo": "INV-100",
+  "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "id": 26,
-      "serial": 1,
+      "id": 2,
       "fabricId": 1,
-      "color": "Black",
-      "orderingWidth": 147.0,
+      "orderId": 8,
+      "itemCode": "IT-100",
+      "itemDesc": "TEST DESC",
+      "articleName": "ART-100",
+      "classification": "Woven",
+      "color": "WHITE",
+      "invoiceQty": 12000,
+      "grn": "G-100",
+      "fpo": "FP-100",
+      "orderQty": 1000,
+      "construction": null,
+      "content": null,
+      "orderingWidth": "145",
       "orderingGsm": null,
-      "orderingWarpShrinkage": 3.0,
-      "orderingWeftShrinkage": 4.0,
-      "fpo": "FP/300",
-      "orderQty": 7500.0,
-      "invoiceQty": 7508.0
+      "orderingWarpShrinkage": null,
+      "orderingWeftShrinkage": null,
+      "grnQty": 5000,
+      "blanketQty": 1.2
     }
   ]
 }
@@ -160,25 +173,31 @@ This endpoint updates an existing invoice.
 <pre class="center-column">
 {
   "id": 1,
-  "invoiceDate": 1683936000000,
-  "invoiceNo": "IV/250-updated",
-  "erpInvoiceNo": "250",
-  "consignmentNo": null,
-  "grn": "G/250",
-  "supplierId": 16,
+  "supplierId": 1,
+  "invoiceNo": "INV-100-UPDATED",
+  "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "id": 26,
-      "serial": 1,
-      "fabricId": 1
-      "color": "Black",
-      "orderingWidth": 147.0,
+      "id": 2,
+      "fabricId": 1,
+      "orderId": 8,
+      "itemCode": "IT-100",
+      "itemDesc": "TEST DESC",
+      "articleName": "ART-100",
+      "classification": "Woven",
+      "color": "WHITE",
+      "invoiceQty": 12000,
+      "grn": "G-100",
+      "fpo": "FP-100",
+      "orderQty": 1000,
+      "construction": null,
+      "content": null,
+      "orderingWidth": "145",
       "orderingGsm": null,
-      "orderingWarpShrinkage": 3.0,
-      "orderingWeftShrinkage": 4.0,
-      "fpo": "FP/300",
-      "orderQty": 7500.0,
-      "invoiceQty": 7508.0
+      "orderingWarpShrinkage": null,
+      "orderingWeftShrinkage": null,
+      "grnQty": 5000,
+      "blanketQty": 1.2
     }
   ]
 }
@@ -189,25 +208,31 @@ This endpoint updates an existing invoice.
 ```json
 {
   "id": 1,
-  "invoiceDate": 1683936000000,
-  "invoiceNo": "IV/250-updated",
-  "erpInvoiceNo": "250",
-  "consignmentNo": null,
-  "grn": "G/250",
-  "supplierId": 16,
+  "supplierId": 1,
+  "invoiceNo": "INV-100-UPDATED",
+  "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "id": 26,
-      "serial": 1,
+      "id": 2,
       "fabricId": 1,
-      "color": "Black",
-      "orderingWidth": 147.0,
+      "orderId": 8,
+      "itemCode": "IT-100",
+      "itemDesc": "TEST DESC",
+      "articleName": "ART-100",
+      "classification": "Woven",
+      "color": "WHITE",
+      "invoiceQty": 12000,
+      "grn": "G-100",
+      "fpo": "FP-100",
+      "orderQty": 1000,
+      "construction": null,
+      "content": null,
+      "orderingWidth": "145",
       "orderingGsm": null,
-      "orderingWarpShrinkage": 3.0,
-      "orderingWeftShrinkage": 4.0,
-      "fpo": "FP/300",
-      "orderQty": 7500.0,
-      "invoiceQty": 7508.0
+      "orderingWarpShrinkage": null,
+      "orderingWeftShrinkage": null,
+      "grnQty": 5000,
+      "blanketQty": 1.2
     }
   ]
 }
@@ -261,13 +286,18 @@ This endpoint created association of this fabric item to different styles.
 <pre class="center-column">
 [
   {
-    "orderId": 619,
-    "flowInfoId": 1985,
+    "orderId": 10,
     "productId": 2,
     "style": "A6",
     "color": "Black",
-    "partId": 121,
-    "qty": 1450
+    "partName": "Shell",
+    "orderQty": 1000,
+    "extra": 5,
+    "qty": 1200,
+    "fabricRequired": 1200,
+    "extraFabricRequired": 1260,
+    "part": "Shell",
+    "styleColor": "Black"
   }
 ]
 </pre>
@@ -305,19 +335,20 @@ This endpoint uploads packing list against a fabric item of the invoice.
 
 ### HTTP Request
 
-`PUT ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/rolls`
+`PUT ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/rolls?grn=<GRN Value>`
 
 | Parameter    | Description           |
 |--------------|-----------------------|
 | invoiceId    | The Id of the invoice |
 | fabricItemId | The Id of Fabric Item |
+| grn          | GRN Value             |
 
 ### JSON Payload
 
 <pre class="center-column">
 [
-  { "rollNo": "100", "supplierLength": 110.5, "supplierWidth": 148.5, "supplierWeight": 55.0, "gsm": 200 },
-  { "rollNo": "101", "supplierLength": 98.2, "supplierWidth": 149.0, "supplierWeight": 41.0, "gsm": 200 }
+  { "rollNo": "100", "supplierLength": 110.5, "supplierWeight": 55.0, "gsm": 200 },
+  { "rollNo": "101", "supplierLength": 98.2, "supplierWeight": 41.0, "gsm": 200 }
 ]
 </pre>
 
@@ -325,8 +356,8 @@ This endpoint uploads packing list against a fabric item of the invoice.
 
 ```json
 [
-  { "id": 1, "rollNo": "100", "supplierLength": 110.5, "supplierWidth": 148.5, "supplierWeight": 55.0, "gsm": 200 },
-  { "id": 2, "rollNo": "101", "supplierLength": 98.2, "supplierWidth": 149.0, "supplierWeight": 41.0, "gsm": 200 }
+  { "id": 1, "rollNo": "100", "supplierLength": 110.5, "supplierWeight": 55.0, "gsm": 200 },
+  { "id": 2, "rollNo": "101", "supplierLength": 98.2,  "supplierWeight": 41.0, "gsm": 200 }
 ]
 ```
 
@@ -360,8 +391,8 @@ Excel File in defined Format.
 
 ```json
 [
-  { "id": 1, "rollNo": "100", "supplierLength": 110.5, "supplierWidth": 148.5, "supplierWeight": 55.0, "gsm": 200 },
-  { "id": 2, "rollNo": "101", "supplierLength": 98.2, "supplierWidth": 149.0, "supplierWeight": 41.0, "gsm": 200 }
+  { "id": 1, "rollNo": "100", "supplierLength": 110.5, "supplierWeight": 55.0, "gsm": 200 },
+  { "id": 2, "rollNo": "101", "supplierLength": 98.2, "supplierWeight": 41.0, "gsm": 200 }
 ]
 ```
 
@@ -473,7 +504,6 @@ Schema of invoice entity
 | fabricItemId   | Long   | Required    | Fabric Item Internal ID |
 | rollNo         | String | Required    | Roll Number             |
 | supplierLength | Float  |             | Supplier Length         |
-| supplierWidth  | Float  |             | Supplier Width          |
 | supplierWeight | Float  |             | Supplier Weight         |
 | gsm            | Float  |             | GSM value               |
 | length         | Float  |             | Inspected Length        |

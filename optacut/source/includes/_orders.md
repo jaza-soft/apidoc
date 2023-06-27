@@ -102,33 +102,38 @@ This endpoint creates a order.
 
 <pre class="center-column">
 {
-  "poRef": "T/100",
-  "customerPoRef": "B/100",
-  "customerId": 2,
-  "seasonId": 1,
-  "desc": "Test description",
-  "flowInfoList": [
-    {
-      "serialNo": 1,
-      "productId": 2,
-      "style": "A6",
-      "color": "Black",
-      "orderQty": 1000,
-      "extra": 5,
-      "destination": "US",
-      "delMode": "Air",
-      "exFactoryDate": "2023-05-30",
-      "partList": [
-        { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
-        { "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter" }
-      ],
-      "sizeBreakupList": [
-        { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
-      ]
-    }
-  ]
+    "poRef": "J/102",
+    "customerPoRef": "B/100",
+    "customerId": 2,
+    "seasonId": 1,
+    "desc": "Test description",
+    "flowInfoList": [
+        {
+            "serialNo": 1,
+            "productId": 2,
+            "style": "A6",
+            "styleNo": "A1000",
+            "fit":"Slim Fit",
+            "color": "Black",
+            "orderQty": 1000,
+            "extra": 5,
+            "inseam":"32Inch",
+            "destination": "US",
+            "delMode": "Air",
+            "exFactoryDate": "2023-05-30",
+            "flowRef":"REF1",
+            "customerFlowRef": "BPO#01",
+            "partList": [
+                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
+                { "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
+            ],
+            "sizeBreakupList": [
+                { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+                { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+                { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+            ]
+        }
+    ]
 }
 </pre>
 
@@ -136,44 +141,37 @@ This endpoint creates a order.
 
 ```json
 {
-  "id": 1,
+  "id": 10,
+  "poRef": "J/102",
+  "customerPoRef": "B/100",
   "customerId": 2,
   "seasonId": 1,
-  "poRef": "T/100",
-  "customerPoRef": "B/100",
   "desc": "Test description",
-  "orderQty": 2000,
-  "products": "Mens Formal Shirt-L/S",
-  "styles": "A6",
   "flowInfoList": [
     {
-      "id": 1,
-      "flowRef": null,
-      "customerFlowRef": null,
-      "parentId": null,
-      "serialNo": 2,
+      "id": 64,
+      "serialNo": 1,
       "productId": 2,
-      "ratio": null,
       "style": "A6",
-      "styleNo": null,
-      "fit": null,
-      "color": "White",
-      "groupDestination": false,
-      "destination": "US",
-      "exFactoryDate": 1685404800000,
-      "delMode": "Air",
+      "styleNo": "A1000",
+      "fit":"Slim Fit",
+      "color": "Black",
       "orderQty": 1000,
-      "extra": 5.0,
-      "styleImage": null,
-      "state": "[{\"state\":\"New\"}]",
+      "extra": 5,
+      "inseam":"32Inch",
+      "destination": "US",
+      "delMode": "Air",
+      "exFactoryDate": "2023-05-30",
+      "flowRef":"REF1",
+      "customerFlowRef": "BPO#01",
       "partList": [
-        { "id": 10,  "serial": null, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
-        { "id": 11, "serial": null, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.1, "uom": "meter"}
+        { "id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
+        { "id": 38, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
       ],
       "sizeBreakupList": [
-        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+        { "id": 37, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+        { "id": 38, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+        { "id": 39, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
       ]
     }
   ]
@@ -204,44 +202,37 @@ This endpoint updates an existing order.
 
 <pre class="center-column">
 {
-  "id": 1,
+  "id": 10,
+  "poRef": "J/102",
+  "customerPoRef": "B/100",
   "customerId": 2,
   "seasonId": 1,
-  "poRef": "T/100",
-  "customerPoRef": "B/100",
   "desc": "Test description",
-  "orderQty": 2000,
-  "products": "Mens Formal Shirt-L/S",
-  "styles": "A6",
   "flowInfoList": [
     {
-      "id": 1,
-      "flowRef": null,
-      "customerFlowRef": null,
-      "parentId": null,
-      "serialNo": 2,
+      "id": 64,
+      "serialNo": 1,
       "productId": 2,
-      "ratio": null,
       "style": "A6",
-      "styleNo": null,
-      "fit": null,
-      "color": "White",
-      "groupDestination": false,
-      "destination": "US",
-      "exFactoryDate": 1685404800000,
-      "delMode": "Air",
+      "styleNo": "A1000",
+      "fit":"Slim Fit",
+      "color": "Black",
       "orderQty": 1000,
-      "extra": 5.0,
-      "styleImage": null,
-      "state": "[{\"state\":\"New\"}]",
+      "extra": 5,
+      "inseam":"32Inch",
+      "destination": "US",
+      "delMode": "Air",
+      "exFactoryDate": "2023-05-30",
+      "flowRef":"REF1",
+      "customerFlowRef": "BPO#01",
       "partList": [
-        { "id": 10,  "serial": null, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
-        { "id": 11, "serial": null, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.1, "uom": "meter"}
+        { "id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
+        { "id": 38, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
       ],
       "sizeBreakupList": [
-        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+        { "id": 37, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
+        { "id": 38, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
+        { "id": 39, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
       ]
     }
   ]
@@ -339,6 +330,7 @@ This endpoint deletes a specific order.
       "style": "string",
       "styleNo": "string",
       "fit": "string",
+      "inseam":"string"
       "color": "string",
       "destination": "string",
       "exFactoryDate": "yyyy-MM-dd",
@@ -352,7 +344,10 @@ This endpoint deletes a specific order.
           "partName": "string",
           "placement": "string",
           "bomCu": "float",
-          "uom": "string"
+          "uom": "string",
+          "bomFabricId": "long",
+          "bomFabColor": "string",
+          "fabOrderQty": "int"
         }
       ],
       "sizeBreakupList": [
@@ -392,6 +387,7 @@ This endpoint deletes a specific order.
 | style           | String | Required    | Style Name                                    |
 | styleNo         | String |             | Style Long                                    |
 | fit             | String |             | Fit                                           |
+| inseam          | String |             | Inseam                                        |
 | color           | String | Required    | Style Color                                   |
 | destination     | String |             | Destination                                   |
 | delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`) |
@@ -401,14 +397,16 @@ This endpoint deletes a specific order.
 
 **Part Table**
 
-| Field     | Type   | Constraints | Description                                                                |
-|-----------|--------|-------------|----------------------------------------------------------------------------|
-| id        | Long   | Primary Key | Internal ID                                                                |
-| partName  | String | Required    | Part Name                                                                  |
-| placement | String |             | Part Placement                                                             |
-| bomCu     | Float  |             | BOM Consumption                                                            |
-| uom       | String |             | Unit of Measurement for BOM Consumption. Values: (`meter`, `gram`, `yard`) |
-
+| Field       | Type   | Constraints | Description                                                                |
+|-------------|--------|-------------|----------------------------------------------------------------------------|
+| id          | Long   | Primary Key | Internal ID                                                                |
+| partName    | String | Required    | Part Name                                                                  |
+| placement   | String |             | Part Placement                                                             |
+| bomCu       | Float  |             | BOM Consumption                                                            |
+| uom         | String |             | Unit of Measurement for BOM Consumption. Values: (`meter`, `gram`, `yard`) |
+| bomFabricId | Long   |             | Item Master ID                                                             |
+| bomFabColor | String |             | Item Color                                                                 |
+| fabOrderQty | Int    |             | Fabric Order Qty                                                           |
 
 **Size Breakup Table**
 
