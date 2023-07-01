@@ -244,9 +244,9 @@ This is schema of Fabric entity
 | itemCode         | String | Required    | Item Code in ERP                                                |
 | supplierItemCode | String |             | Item Code from Supplier                                         |
 | articleName      | String |             | Article Name                                                    |
-| classification   | String | Required    | Fabric classification. Values: (`Woven`,`Non-Woven`, `Knitted`) |
-| fabricPatternId  | long   | Required    | Fabric Pattern Internal ID                                      |
-| fabricCategoryId | long   | Required    | Fabric Category Internal ID                                     |
+| classification   | String |             | Fabric classification. Values: (`Woven`,`Non-Woven`, `Knitted`) |
+| fabricPatternId  | long   |             | Fabric Pattern Internal ID                                      |
+| fabricCategoryId | long   |             | Fabric Category Internal ID                                     |
 | repeatLength     | Float  |             | Repeat value length wise                                        |
 | repeatWidth      | Float  |             | Repeat value width wise                                         |
 | width            | Float  |             | Booking width                                                   |
