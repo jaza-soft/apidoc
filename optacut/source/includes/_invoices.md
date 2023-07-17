@@ -97,7 +97,7 @@ This endpoint creates a invoice.
       "classification": "Woven",
       "color": "WHITE",
       "invoiceQty": 12000,
-      "grn": "G-100",
+      "grn": null,
       "fpo": "FP-100",
       "orderQty": 1000,
       "construction": null,
@@ -106,8 +106,8 @@ This endpoint creates a invoice.
       "orderingGsm": null,
       "orderingWarpShrinkage": null,
       "orderingWeftShrinkage": null,
-      "grnQty": 5000,
-      "blanketQty": 1.2
+      "grnQty": null,
+      "blanketQty": null
     }
   ]
 }
@@ -132,7 +132,7 @@ This endpoint creates a invoice.
       "classification": "Woven",
       "color": "WHITE",
       "invoiceQty": 12000,
-      "grn": "G-100",
+      "grn": null,
       "fpo": "FP-100",
       "orderQty": 1000,
       "construction": null,
@@ -141,8 +141,8 @@ This endpoint creates a invoice.
       "orderingGsm": null,
       "orderingWarpShrinkage": null,
       "orderingWeftShrinkage": null,
-      "grnQty": 5000,
-      "blanketQty": 1.2
+      "grnQty": null,
+      "blanketQty": null
     }
   ]
 }
@@ -187,7 +187,7 @@ This endpoint updates an existing invoice.
       "classification": "Woven",
       "color": "WHITE",
       "invoiceQty": 12000,
-      "grn": "G-100",
+      "grn": null,
       "fpo": "FP-100",
       "orderQty": 1000,
       "construction": null,
@@ -196,8 +196,8 @@ This endpoint updates an existing invoice.
       "orderingGsm": null,
       "orderingWarpShrinkage": null,
       "orderingWeftShrinkage": null,
-      "grnQty": 5000,
-      "blanketQty": 1.2
+      "grnQty": null,
+      "blanketQty": null
     }
   ]
 }
@@ -222,7 +222,7 @@ This endpoint updates an existing invoice.
       "classification": "Woven",
       "color": "WHITE",
       "invoiceQty": 12000,
-      "grn": "G-100",
+      "grn": null,
       "fpo": "FP-100",
       "orderQty": 1000,
       "construction": null,
@@ -231,8 +231,8 @@ This endpoint updates an existing invoice.
       "orderingGsm": null,
       "orderingWarpShrinkage": null,
       "orderingWeftShrinkage": null,
-      "grnQty": 5000,
-      "blanketQty": 1.2
+      "grnQty": null,
+      "blanketQty": null
     }
   ]
 }
@@ -274,7 +274,7 @@ This endpoint created association of this fabric item to different styles.
 
 ### HTTP Request
 
-`PUT ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/ledgers`
+`PUT ~/invoices/{invoiceId}/fabric-items/{fabricItemId}/ledgers`
 
 | Parameter    | Description           |
 |--------------|-----------------------|
@@ -324,7 +324,7 @@ This endpoint created association of this fabric item to different styles.
 ## GRN/Packing List Upload via JSON
 
 ```shell
-curl "~/invoices/1/fabricItems/26/rolls" \
+curl "~/invoices/1/fabric-items/26/rolls" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -335,7 +335,7 @@ This endpoint uploads packing list against a fabric item of the invoice.
 
 ### HTTP Request
 
-`PUT ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/rolls?grn=<GRN Value>`
+`PUT ~/invoices/{invoiceId}/fabric-items/{fabricItemId}/rolls?grn=<GRN Value>`
 
 | Parameter    | Description           |
 |--------------|-----------------------|
@@ -364,7 +364,7 @@ This endpoint uploads packing list against a fabric item of the invoice.
 ## GRN/Packing List Upload via Excel
 
 ```shell
-curl "~/invoices/1/fabricItems/26/rolls/upload" \
+curl "~/invoices/1/fabric-items/26/rolls/upload" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -375,7 +375,7 @@ This endpoint uploads packing list against a fabric item of the invoice.
 
 ### HTTP Request
 
-`PUT ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/rolls`
+`PUT ~/invoices/{invoiceId}/fabric-items/{fabricItemId}/rolls`
 
 | Parameter    | Description           |
 |--------------|-----------------------|
@@ -399,7 +399,7 @@ Excel File in defined Format.
 ## Delete Packing List
 
 ```shell
-curl "~/invoices/1/fabricItems/26/rolls" \
+curl "~/invoices/1/fabric-items/26/rolls" \
   -X DLEETE \
   -H "Authorization: Bearer <access_token>" \
 ```
@@ -410,7 +410,7 @@ This endpoint deletes the packing list against fabric item of invoice
 
 ### HTTP Request
 
-`DELETE ~/invoices/{invoiceId}/fabricItems/{fabricItemId}/rolls`
+`DELETE ~/invoices/{invoiceId}/fabric-items/{fabricItemId}/rolls`
 
 | Parameter    | Description           |
 |--------------|-----------------------|
