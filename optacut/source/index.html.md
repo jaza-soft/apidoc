@@ -17,6 +17,9 @@ includes:
   - seasons
   - products
   - suppliers
+  - departments
+  - units
+  - warehouses
   - fabricCategory
   - fabricPattern
   - errors
