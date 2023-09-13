@@ -13,6 +13,8 @@ includes:
   - buyers
   - seasons
   - products
+  - departments
+  - lines
   - errors
 
 search: true

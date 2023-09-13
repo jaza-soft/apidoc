@@ -66,6 +66,7 @@ This endpoint creates a customer.
 
 <pre class="center-column">
 {
+    "id": 1000,
     "name": "GANT",
     "code": "GNT",
     "desc": "Test Description"
@@ -76,11 +77,66 @@ This endpoint creates a customer.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "GANT",
   "code": "GNT",
   "desc": "Test Description"
 }
+```
+
+
+## Create Customer (Batch)
+
+```shell
+curl "~/api/customers/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a customer.
+
+### HTTP Request
+
+`POST ~/api/customers/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id": 1000,
+    "name": "GANT",
+    "code": "GNT",
+    "desc": "Test Description"
+},
+{
+    "id": 1001,
+    "name": "Dressmann",
+    "code": "DM",
+    "desc": "Test Description2"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 4000,
+    "name": "GANT",
+    "code": "GNT",
+    "desc": "Test Description"
+  },
+  {
+    "id": 4000,
+    "name": "Dressmann",
+    "code": "DM",
+    "desc": "Test Description2"
+  }
+]
 ```
 
 ## Update a Specific Customer

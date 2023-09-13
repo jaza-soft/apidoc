@@ -66,6 +66,7 @@ This endpoint creates a unit.
 
 <pre class="center-column">
 {
+    "id": 1000,
     "name": "Unit A49",
     "unitId": "A49",
     "desc": "Test Description"
@@ -76,11 +77,65 @@ This endpoint creates a unit.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "Unit A49",
   "unitId": "A49",
   "desc": "Test Description"
 }
+```
+
+## Create Unit (Batch)
+
+```shell
+curl "~/api/units/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a unit.
+
+### HTTP Request
+
+`POST ~/api/units/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id": 1000,
+    "name": "Unit A49",
+    "unitId": "A49",
+    "desc": "Test Description"
+},
+{
+    "id": 1001,
+    "name": "Unit A50",
+    "unitId": "A49",
+    "desc": "Test Description"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "name": "Unit A49",
+    "unitId": "A49",
+    "desc": "Test Description"
+  },
+  {
+    "id": 1001,
+    "name": "Unit A50",
+    "unitId": "A49",
+    "desc": "Test Description"
+  }
+]
 ```
 
 ## Update a Specific Unit

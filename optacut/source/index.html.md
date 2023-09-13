@@ -19,6 +19,7 @@ includes:
   - suppliers
   - departments
   - units
+  - tables
   - warehouses
   - fabricCategory
   - fabricPattern

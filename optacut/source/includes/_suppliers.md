@@ -65,6 +65,7 @@ This endpoint creates a supplier.
 
 <pre class="center-column">
 {
+    "id": 1000,
     "name": "Monti",
     "desc": "Test Description"
 }
@@ -74,10 +75,60 @@ This endpoint creates a supplier.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "Monti",
   "desc": "Test Description"
 }
+```
+
+## Create Supplier (Batch)
+
+```shell
+curl "~/api/suppliers/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a supplier.
+
+### HTTP Request
+
+`POST ~/api/suppliers/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id": 1000,
+    "name": "Monti",
+    "desc": "Test Description"
+},
+{
+    "id": 1001,
+    "name": "Arvind",
+    "desc": "Test Description"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "name": "Monti",
+    "desc": "Test Description"
+  },
+  {
+    "id": 1001,
+    "name": "Arvind",
+    "desc": "Test Description"
+  }
+]
 ```
 
 ## Update a Specific Supplier

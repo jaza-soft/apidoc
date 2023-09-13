@@ -65,6 +65,7 @@ This endpoint creates a warehouse.
 
 <pre class="center-column">
 {
+    "id": 1000,
     "name": "Warehouse 1",
     "desc": "Test Description"
 }
@@ -74,11 +75,62 @@ This endpoint creates a warehouse.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "Warehouse 1",
   "desc": "Test Description"
 }
 ```
+
+## Create Warehouse (Batch)
+
+```shell
+curl "~/api/warehouses/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a warehouse.
+
+### HTTP Request
+
+`POST ~/api/warehouses/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id": 1000,
+    "name": "Warehouse 1",
+    "desc": "Test Description"
+},
+{
+    "id": 1001,
+    "name": "Warehouse 2",
+    "desc": "Test Description"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "name": "Warehouse 1",
+    "desc": "Test Description"
+  },
+  {
+    "id": 1001,
+    "name": "Warehouse 2",
+    "desc": "Test Description"
+  }
+]
+```
+
 
 ## Update a Specific Warehouse
 

@@ -67,6 +67,7 @@ This endpoint creates a product.
 
 <pre class="center-column">
 {
+    "id": 1000,
     "name": "Shirt",
     "desc": "Test Description",
     "isSet": false,
@@ -84,6 +85,64 @@ This endpoint creates a product.
   "desc": "Test Description",
   "productList": []
 }
+```
+
+## Create Product (Batch)
+
+```shell
+curl "~/api/products/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a product.
+
+### HTTP Request
+
+`POST ~/api/products/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id": 1000,
+    "name": "Shirt",
+    "desc": "Test Description",
+    "isSet": false,
+    "productList": []
+},
+{
+    "id": 1001,
+    "name": "Trouser",
+    "desc": "Test Description",
+    "isSet": false,
+    "productList": []
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "name": "Shirt",
+    "desc": "Test Description",
+    "isSet": false,
+    "productList": []
+  },
+  {
+    "id": 1001,
+    "name": "Trouser",
+    "desc": "Test Description",
+    "isSet": false,
+    "productList": []
+  }
+]
 ```
 
 ## Update a Specific Product
