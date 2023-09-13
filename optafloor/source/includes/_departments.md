@@ -14,7 +14,7 @@ This endpoint retrieves all departments. It supports pagination, sort, search an
 
 ### HTTP Request
 
-`GET ~/v1/v1/api/departments`
+`GET ~/v1/api/departments`
 
 ## Get a Specific Department
 
@@ -29,7 +29,8 @@ curl "~/v1/api/departments/1" \
 {
   "id": 1,
   "serialNo": 1,
-  "name": "Packing"
+  "name": "Packing",
+  "desc": "Packing Department"
 }
 ```
 
@@ -67,6 +68,7 @@ This endpoint creates a department.
 {
    "serialNo": 1,
    "name": "Packing"
+   "desc": "Test Description"
 }
 </pre>
 
@@ -76,7 +78,8 @@ This endpoint creates a department.
 {
   "id": 1,
   "serialNo": 1,
-  "name": "Packing"
+  "name": "Packing",
+  "desc": "Test Description"
 }
 ```
 
@@ -108,6 +111,7 @@ This endpoint updates an existing department.
   "id": 1,
   "serialNo": 1,
   "name": "Packing-Update"
+  "desc": "Test Description"
 }
 </pre>
 
@@ -117,7 +121,8 @@ This endpoint updates an existing department.
 {
   "id": 1,
   "serialNo": 1,
-  "name": "Packing-Update"
+  "name": "Packing-Update",
+  "desc": "Test Description"
 }
 ```
 
