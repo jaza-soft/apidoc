@@ -10,6 +10,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 includes:
   - orders
+  - loading
+  - pieceInfo
   - buyers
   - seasons
   - products

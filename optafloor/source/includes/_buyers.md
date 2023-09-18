@@ -66,6 +66,7 @@ This endpoint creates a buyer.
 
 <pre class="center-column">
 {
+    "id" : 1000,
     "name": "GANT",
     "code": "GNT",
     "desc": "Test Description"
@@ -76,12 +77,67 @@ This endpoint creates a buyer.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "GANT",
   "code": "GNT",
   "desc": "Test Description"
 }
 ```
+
+## Create Buyer (Batch)
+
+```shell
+curl "~/v1/api/buyers/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a buyers.
+
+### HTTP Request
+
+`POST ~/api/customers/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+  {
+      "id": 1000,
+      "name": "GANT",
+      "code": "GNT",
+      "desc": "Test Description"
+  },
+  {
+      "id": 1001,
+      "name": "Dressmann",
+      "code": "DM",
+      "desc": "Test Description2"
+  }
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "name": "GANT",
+    "code": "GNT",
+    "desc": "Test Description"
+  },
+  {
+    "id": 1001,
+    "name": "Dressmann",
+    "code": "DM",
+    "desc": "Test Description2"
+  }
+]
+```
+
 
 ## Update a Specific Buyer
 

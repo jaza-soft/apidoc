@@ -65,6 +65,7 @@ This endpoint creates a season.
 
 <pre class="center-column">
 {
+    "id" : 1000,
     "name": "AW 24",
     "desc": "Test Description"
 }
@@ -74,10 +75,60 @@ This endpoint creates a season.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "name": "AW 24",
   "desc": "Test Description"
 }
+```
+
+## Create Season (Batch)
+
+```shell
+curl "~/v1/api/seasons/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a season.
+
+### HTTP Request
+
+`POST ~/v1/api/seasons/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+    "id" : 1000,
+    "name": "AW 24",
+    "desc": "Test Description"
+},
+{
+    "id" : 1001,
+    "name": "AW 24",
+    "desc": "Test Description"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id" : 1000,
+    "name": "AW 24",
+    "desc": "Test Description"
+  },
+  {
+    "id" : 1001,
+    "name": "AW 24",
+    "desc": "Test Description"
+  }
+]
 ```
 
 ## Update a Specific Season

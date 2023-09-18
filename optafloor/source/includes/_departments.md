@@ -66,6 +66,7 @@ This endpoint creates a department.
 
 <pre class="center-column">
 {
+   "id" : 1000,
    "serialNo": 1,
    "name": "Packing"
    "desc": "Test Description"
@@ -76,11 +77,65 @@ This endpoint creates a department.
 
 ```json
 {
-  "id": 1,
+  "id": 1000,
   "serialNo": 1,
   "name": "Packing",
   "desc": "Test Description"
 }
+```
+
+## Create Department (Batch)
+
+```shell
+curl "~/v1/api/departments/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint creates a department.
+
+### HTTP Request
+
+`POST ~/v1/api/departments/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+{
+   "id": 1000,
+   "serialNo": 1,
+   "name": "Packing",
+   "desc": "Test Description"
+},
+{
+   "id": 1001,
+   "serialNo": 1,
+   "name": "Packing",
+   "desc": "Test Description"
+}
+]
+</pre>
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1000,
+    "serialNo": 1,
+    "name": "Packing",
+    "desc": "Test Description"
+  },
+  {
+    "id": 1001,
+    "serialNo": 1,
+    "name": "Packing",
+    "desc": "Test Description"
+  }
+]
 ```
 
 
