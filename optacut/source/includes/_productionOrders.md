@@ -3,7 +3,7 @@
 ## Create Production Order
 
 ```shell
-curl "~/api/prod-orders?orderId=100" \
+curl "~/api/production-orders?externalOrderId=1000" \
   -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -14,13 +14,13 @@ This endpoint creates a order.
 
 ### HTTP Request
 
-`POST ~/api/orders?orderId=<Order Id>`
+`POST ~/api/production-orders?externalOrderId=<External Order Id>`
 
 ### URL Parameters
 
-| Parameter | Description         |
-|-----------|---------------------|
-| orderId   | The Id of the order |
+| Parameter       | Description                     |
+|-----------------|---------------------------------|
+| externalOrderId | The external ID of parent Order |
 
 ### JSON Payload
 
