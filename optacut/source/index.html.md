@@ -11,6 +11,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 includes:
   #  - report
   - orders
+  - productionOrders
   - fabrics
   - invoices
   - customers

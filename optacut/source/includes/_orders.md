@@ -7,7 +7,8 @@ curl "~/api/orders" \
   -H "Authorization: Bearer <access_token>"
 ```
 
-> The above command returns list of all the orders. Refer `Pagination and Sort` and `Schema` Section for exact response structure
+> The above command returns list of all the orders. Refer `Pagination and Sort` and `Schema` Section for exact response
+> structure
 
 This endpoint retrieves all orders. It supports pagination, sort, search and filter
 
@@ -57,13 +58,45 @@ curl "~/api/orders/1" \
       "styleImage": null,
       "state": "[{\"state\":\"New\"}]",
       "partList": [
-        { "id": 10,  "serial": null, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
-        { "id": 11, "serial": null, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.1, "uom": "meter"}
+        {
+          "id": 10,
+          "serial": null,
+          "partName": "Shell",
+          "placement": "Entire Body",
+          "bomCu": 1.2,
+          "uom": "meter"
+        },
+        {
+          "id": 11,
+          "serial": null,
+          "partName": "Trim1",
+          "placement": "Neckband",
+          "bomCu": 0.1,
+          "uom": "meter"
+        }
       ],
       "sizeBreakupList": [
-        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+        {
+          "id": 100,
+          "serialNo": 1,
+          "sizeGroup": "",
+          "size": "30",
+          "qty": 300
+        },
+        {
+          "id": 101,
+          "serialNo": 2,
+          "sizeGroup": "",
+          "size": "32",
+          "qty": 400
+        },
+        {
+          "id": 102,
+          "serialNo": 3,
+          "sizeGroup": "",
+          "size": "34",
+          "qty": 300
+        }
       ]
     }
   ]
@@ -79,7 +112,7 @@ This endpoint retrieves a specific order.
 ### URL Parameters
 
 | Parameter | Description                     |
-| --------- | ------------------------------- |
+|-----------|---------------------------------|
 | orderId   | The Id of the order to retrieve |
 
 ## Create Order
@@ -92,7 +125,7 @@ curl "~/api/orders" \
   -d '<JSON Payload>'
 ```
 
-This endpoint creates a order.
+This endpoint creates an order.
 
 ### HTTP Request
 
@@ -102,6 +135,7 @@ This endpoint creates a order.
 
 <pre class="center-column">
 {
+    "externalId": "1000",
     "poRef": "J/102",
     "customerPoRef": "B/100",
     "customerId": 2,
@@ -109,6 +143,7 @@ This endpoint creates a order.
     "desc": "Test description",
     "flowInfoList": [
         {
+            "externalId": "2000",
             "serialNo": 1,
             "productId": 2,
             "style": "A6",
@@ -142,6 +177,7 @@ This endpoint creates a order.
 ```json
 {
   "id": 10,
+  "externalId": "1000",
   "poRef": "J/102",
   "customerPoRef": "B/100",
   "customerId": 2,
@@ -150,39 +186,76 @@ This endpoint creates a order.
   "flowInfoList": [
     {
       "id": 64,
+      "externalId": "2000",
       "serialNo": 1,
       "productId": 2,
       "style": "A6",
       "styleNo": "A1000",
-      "fit":"Slim Fit",
+      "fit": "Slim Fit",
       "color": "Black",
       "orderQty": 1000,
       "extra": 5,
-      "inseam":"32Inch",
+      "inseam": "32Inch",
       "destination": "US",
       "delMode": "Air",
       "exFactoryDate": "2023-05-30",
-      "flowRef":"REF1",
+      "flowRef": "REF1",
       "customerFlowRef": "BPO#01",
       "partList": [
-        { "id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
-        { "id": 38, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
+        {
+          "id": 37,
+          "partName": "Shell",
+          "placement": "Entire Body",
+          "bomCu": 1.2,
+          "uom": "meter",
+          "bomFabricId": 1,
+          "bomFabColor": "WHITE",
+          "fabOrderQty": 1000
+        },
+        {
+          "id": 38,
+          "partName": "Trim1",
+          "placement": "Neckband",
+          "bomCu": 0.10,
+          "uom": "meter",
+          "bomFabricId": 1,
+          "bomFabColor": "WHITE",
+          "fabOrderQty": 1000
+        }
       ],
       "sizeBreakupList": [
-        { "id": 37, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 38, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 39, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+        {
+          "id": 37,
+          "serialNo": 1,
+          "sizeGroup": "",
+          "size": "30",
+          "qty": 300
+        },
+        {
+          "id": 38,
+          "serialNo": 2,
+          "sizeGroup": "",
+          "size": "32",
+          "qty": 400
+        },
+        {
+          "id": 39,
+          "serialNo": 3,
+          "sizeGroup": "",
+          "size": "34",
+          "qty": 300
+        }
       ]
     }
   ]
 }
 ```
 
-## Update a Specific Order
+## Update Order
 
 ```shell
-curl "~/api/orders/{orderId}" \
-  -X PUT \
+curl "~/api/orders?externalId=1000" \
+  -X PATCH \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
   -d '<JSON Payload>'
@@ -192,17 +265,18 @@ This endpoint updates an existing order.
 
 ### HTTP Request
 
-`PUT ~/api/orders/{orderId}`
+`PATCH ~/api/orders?externalId=<External ID>`
 
-| Parameter | Description                   |
-|-----------|-------------------------------|
-| orderId   | The Id of the order to update |
+| Parameter  | Description                                         |
+|------------|-----------------------------------------------------|
+| externalId | The Exetrnal ID  which was used to create the order |
 
 ### JSON Payload
 
 <pre class="center-column">
 {
   "id": 10,
+  "externalId": "1000",
   "poRef": "J/102",
   "customerPoRef": "B/100",
   "customerId": 2,
@@ -211,6 +285,7 @@ This endpoint updates an existing order.
   "flowInfoList": [
     {
       "id": 64,
+      "externalId": "2000",
       "serialNo": 1,
       "productId": 2,
       "style": "A6",
@@ -244,6 +319,7 @@ This endpoint updates an existing order.
 ```json
 {
   "id": 1,
+  "externalId": "1000",
   "customerId": 2,
   "seasonId": 1,
   "poRef": "T/100",
@@ -255,6 +331,7 @@ This endpoint updates an existing order.
   "flowInfoList": [
     {
       "id": 1,
+      "externalId": "2000",
       "flowRef": null,
       "customerFlowRef": null,
       "parentId": null,
@@ -274,13 +351,45 @@ This endpoint updates an existing order.
       "styleImage": null,
       "state": "[{\"state\":\"New\"}]",
       "partList": [
-        { "id": 10,  "serial": null, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter" },
-        { "id": 11, "serial": null, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.1, "uom": "meter"}
+        {
+          "id": 10,
+          "serial": null,
+          "partName": "Shell",
+          "placement": "Entire Body",
+          "bomCu": 1.2,
+          "uom": "meter"
+        },
+        {
+          "id": 11,
+          "serial": null,
+          "partName": "Trim1",
+          "placement": "Neckband",
+          "bomCu": 0.1,
+          "uom": "meter"
+        }
       ],
       "sizeBreakupList": [
-        { "id": 100, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 101, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 102, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+        {
+          "id": 100,
+          "serialNo": 1,
+          "sizeGroup": "",
+          "size": "30",
+          "qty": 300
+        },
+        {
+          "id": 101,
+          "serialNo": 2,
+          "sizeGroup": "",
+          "size": "32",
+          "qty": 400
+        },
+        {
+          "id": 102,
+          "serialNo": 3,
+          "sizeGroup": "",
+          "size": "34",
+          "qty": 300
+        }
       ]
     }
   ]
@@ -314,6 +423,7 @@ This endpoint deletes a specific order.
 ```json
 {
   "id": "long",
+  "externalId": "string",
   "customerId": "long",
   "seasonId": "long",
   "poRef": "string",
@@ -323,6 +433,7 @@ This endpoint deletes a specific order.
   "flowInfoList": [
     {
       "id": "long",
+      "externalId": "string",
       "flowRef": "string",
       "customerFlowRef": "string",
       "serialNo": "int",
@@ -330,7 +441,7 @@ This endpoint deletes a specific order.
       "style": "string",
       "styleNo": "string",
       "fit": "string",
-      "inseam":"string"
+      "inseam": "string",
       "color": "string",
       "destination": "string",
       "exFactoryDate": "yyyy-MM-dd",
@@ -369,6 +480,7 @@ This endpoint deletes a specific order.
 | Field         | Type   | Constraints | Description                       |
 |---------------|--------|-------------|-----------------------------------|
 | id            | Long   | Primary Key | Internal ID                       |
+| externalId    | String | Unique      | External ID                       |
 | poRef         | String | Required    | Purchase Order Reference          |
 | customerPoRef | String |             | Customer Purchase Order Reference |
 | customerId    | Long   |             | Internal ID of Customer           |
@@ -380,6 +492,7 @@ This endpoint deletes a specific order.
 | Field           | Type   | Constraints | Description                                   |
 |-----------------|--------|-------------|-----------------------------------------------|
 | id              | Long   | Primary Key | Internal ID                                   |
+| externalId      | String | Unique      | External ID                                   |
 | serialNo        | Long   |             | Sequence                                      |
 | flowRef         | String |             | Flow Reference                                |
 | customerFlowRef | String |             | Customer Flow Reference                       |
