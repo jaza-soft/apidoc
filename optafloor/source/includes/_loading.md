@@ -30,6 +30,7 @@ This endpoint creates loading.
   "departmentId": 2,
   "lineId": 21,
   "loadingMethod": "Pieces",
+  "cutNo": "23-9293",
   "size": "S",
   "qty": "50"
 }
@@ -43,10 +44,34 @@ This endpoint creates loading.
   "departmentId": 2,
   "lineId": 21,
   "loadingMethod": "Pieces",
+  "cutNo": "23-9293",
   "size": "S",
   "qty": "50"
 }
 ```
+
+## Delete a Specific Loading
+
+```shell
+curl "~/v1/api/loading?flowInfoId=100&loadingId=120" \
+  -X DELETE
+  -H "Authorization: Bearer <access_token>"
+```
+
+> The above command returns empty content with response status `204`
+
+This endpoint deletes a specific loading.
+
+### HTTP Request
+
+`DELETE ~/v1/api/loading?flowInfoId=<FlowInfoId>&loadingId=<loadingId>`
+
+### URL Parameters
+
+| Parameter  | Description                              |
+|------------|------------------------------------------|
+| flowInfoId | Flow Info Id retrieve from Order         |
+| loadingId  | Loading Id retrieve from Order (Loading) |
 
 ## Schema - Loading
 
@@ -56,6 +81,7 @@ This endpoint creates loading.
   "departmentId": "long",
   "lineId": "long",
   "loadingMethod": "string",
+  "cutNo": "string",
   "size": "string",
   "qty": "long"
 }
@@ -68,7 +94,8 @@ Schema of line entity
 | id            | Number | Primary Key | Internal ID                                                         |
 | departmentId  | Number | Required    | Department Id (Id of Department in which loading has to be created) |
 | lineId        | Number | Required    | Line Id (Id of Line in which loading has to be created)             |
-| loadingMethod | Number | Required    | Loading method , value [Pieces,Bundle]                              |
+| loadingMethod | String | Required    | Loading method , value [Pieces,Bundle]                              |
+| cutNo         | String | Required    | Cut Number / Lot Number                                             |
 | size          | Number | Required    | Size name of Garment/Piece                                          |
 | qty           | Number | Required    | Loading quantity                                                    |
 
