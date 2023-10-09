@@ -38,7 +38,7 @@ This endpoint creates a order.
     "color": "White",
     "inseam": null,
     "destination": null,
-    "deliveryDate": null,
+    "exFactoryDate": "2023-09-20",
     "delMode": null,
     "orderQty": 500,
     "customField1": null,
@@ -165,7 +165,7 @@ This endpoint creates a order.
     "inseam": "string",
     "color": "string",
     "destination": "string",
-    "deliveryDate": "yyyy-MM-dd",
+    "exFactoryDate": "yyyy-MM-dd",
     "delMode": "string",
     "orderQty": "int",
     "primaryUnitId": "string",
@@ -199,7 +199,7 @@ This endpoint creates a order.
 | color           | String | Required    | Style Color                                   |
 | destination     | String |             | Destination                                   |
 | delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`) |
-| deliveryDate    | Date   |             | Delivery Date. Format: `yyyy-MM-dd`           |
+| exFactoryDate   | Date   |             | Delivery Date. Format: `yyyy-MM-dd`           |
 | orderQty        | Int    | Required    | Order Qty in this flow                        |
 | primaryUnitId   | String | Required    | Unit in which this order is planned           |
 | fpo             | String |             | Factory Production Order number               |
