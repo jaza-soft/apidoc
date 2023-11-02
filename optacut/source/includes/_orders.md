@@ -399,7 +399,7 @@ This endpoint updates an existing order.
 ## Delete  Order
 
 ```shell
-curl "~/api/orders/{orderId}"
+curl "~/api/orders?externalId=1000"
   -X DELETE
   -H "Authorization: Bearer <access_token>"
 ```
@@ -410,13 +410,13 @@ This endpoint deletes a specific order.
 
 ### HTTP Request
 
-`DELETE ~/api/orders/{orderId}`
+`DELETE ~/api/orders?externalId=<External Order Id>`
 
 ### URL Parameters
 
-| Parameter | Description                   |
-|-----------|-------------------------------|
-| orderId   | The Id of the order to delete |
+| Parameter  | Description                                                |
+|------------|------------------------------------------------------------|
+| externalId | The external Id of the order which was sent while creating |
 
 ## Schema - Order
 

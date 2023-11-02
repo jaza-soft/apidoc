@@ -63,6 +63,7 @@ This endpoint creates a invoice.
           "color": "Blue",
           "parentColor": "Combo 1",
           "part": "Shell",
+          "placement": "Entire Body",
           "associationQty": 500
         },
         {
@@ -72,6 +73,7 @@ This endpoint creates a invoice.
           "color": "Blue",
           "parentColor": "Combo 1",
           "part": "Shell",
+          "placement": "Entire Body",
           "associationQty": 500
         }
       ]
@@ -266,6 +268,7 @@ This endpoint created association of this fabric item to different styles.
           "color": "string",
           "parentColor": "string",
           "part": "string",
+          "placement": "string",
           "associationQty": "float"
         }
       ]
