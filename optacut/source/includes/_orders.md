@@ -159,8 +159,9 @@ This endpoint creates an order.
             "flowRef":"REF1",
             "customerFlowRef": "BPO#01",
             "partList": [
-                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
-                { "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
+                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
+                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 }                
+                { "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
             ],
             "sizeBreakupList": [
                 { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
@@ -210,17 +211,30 @@ This endpoint creates an order.
           "uom": "meter",
           "bomFabricId": 1,
           "bomFabColor": "WHITE",
-          "fabOrderQty": 1000
+          "bomFabColorCode": "WH",
+          "fabOrderQty": 1200
         },
         {
           "id": 38,
-          "partName": "Trim1",
+          "partName": "Lining",
+          "placement": "Lining",
+          "bomCu": 0.86,
+          "uom": "meter",
+          "bomFabricId": 2,
+          "bomFabColor": "WHITE",
+          "bomFabColorCode": "WH",
+          "fabOrderQty": 860
+        },
+        {
+          "id": 39,
+          "partName": "Trim",
           "placement": "Neckband",
           "bomCu": 0.10,
           "uom": "meter",
-          "bomFabricId": 1,
+          "bomFabricId": 3,
           "bomFabColor": "WHITE",
-          "fabOrderQty": 1000
+          "bomFabColorCode": "WH",
+          "fabOrderQty": 100
         }
       ],
       "sizeBreakupList": [
@@ -301,9 +315,11 @@ This endpoint updates an existing order.
       "flowRef":"REF1",
       "customerFlowRef": "BPO#01",
       "partList": [
-        { "id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 },
-        { "id": 38, "partName": "Trim1", "placement": "Neckband", "bomCu": 0.10, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "fabOrderQty": 1000 }
+          {"id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
+          {"id": 38, "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },
+          {"id": 39, "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
       ],
+
       "sizeBreakupList": [
         { "id": 37, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
         { "id": 38, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
@@ -458,6 +474,7 @@ This endpoint deletes a specific order.
           "uom": "string",
           "bomFabricId": "long",
           "bomFabColor": "string",
+          "bomFabColorCode": "string",
           "fabOrderQty": "int"
         }
       ],
@@ -510,16 +527,17 @@ This endpoint deletes a specific order.
 
 **Part Table**
 
-| Field       | Type   | Constraints | Description                                                                |
-|-------------|--------|-------------|----------------------------------------------------------------------------|
-| id          | Long   | Primary Key | Internal ID                                                                |
-| partName    | String | Required    | Part Name                                                                  |
-| placement   | String |             | Part Placement                                                             |
-| bomCu       | Float  |             | BOM Consumption                                                            |
-| uom         | String |             | Unit of Measurement for BOM Consumption. Values: (`meter`, `gram`, `yard`) |
-| bomFabricId | Long   |             | Item Master ID                                                             |
-| bomFabColor | String |             | Item Color                                                                 |
-| fabOrderQty | Int    |             | Fabric Order Qty                                                           |
+| Field           | Type   | Constraints | Description                                                                |
+|-----------------|--------|-------------|----------------------------------------------------------------------------|
+| id              | Long   | Primary Key | Internal ID                                                                |
+| partName        | String | Required    | Part Name                                                                  |
+| placement       | String |             | Part Placement                                                             |
+| bomCu           | Float  |             | BOM Consumption                                                            |
+| uom             | String |             | Unit of Measurement for BOM Consumption. Values: (`meter`, `gram`, `yard`) |
+| bomFabricId     | Long   |             | Item Master ID                                                             |
+| bomFabColor     | String |             | Item Color                                                                 |
+| bomFabColorCode | String |             | Item Color Code                                                            |
+| fabOrderQty     | Int    |             | Fabric Order Qty                                                           |
 
 **Size Breakup Table**
 

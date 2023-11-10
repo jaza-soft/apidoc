@@ -29,8 +29,9 @@ This endpoint creates a invoice.
       "externalId": "1000",
       "fabricId": 1,
       "color": "Blue",
+      "colorCode": null,
       "colorShade": "Light",
-      "orderId": null,
+      "externalOrderIds": "1000,1001",
       "fpo": "FPO#100",
       "orderQty": 1000,
       "orderingWidth": "145",
@@ -45,36 +46,16 @@ This endpoint creates a invoice.
       "blanketQty": 0.5,
       "supplierRollList": [
         {
-          "rollNo": "R/100",
+          "supplierRollNo": "R/100",
+          "factoryRollNo": null,
           "supplierLength": 100.2,
           "supplierWidth": 145
         },
         {
-          "rollNo": "R/101",
+          "supplierRollNo": "R/101",
+          "factoryRollNo": null,
           "supplierLength": 110.6,
           "supplierWidth": 146
-        }
-      ],
-      "poList": [
-        {
-          "externalOrderId": "1000",
-          "productId": 10,
-          "style": "A6",
-          "color": "Blue",
-          "parentColor": "Combo 1",
-          "part": "Shell",
-          "placement": "Entire Body",
-          "associationQty": 500
-        },
-        {
-          "externalOrderId": "1001",
-          "productId": 10,
-          "style": "A6",
-          "color": "Blue",
-          "parentColor": "Combo 1",
-          "part": "Shell",
-          "placement": "Entire Body",
-          "associationQty": 500
         }
       ]
     }
@@ -114,7 +95,8 @@ This endpoint creates a invoice.
       "supplierRollList": [
         {
           "id": 6921,
-          "rollNo": "R/100",
+          "supplierRollNo": "R/100",
+          "factoryRollNo": null,
           "supplierLength": 100.2,
           "supplierWidth": 58.0,
           "uomLength": "meter",
@@ -126,7 +108,8 @@ This endpoint creates a invoice.
         },
         {
           "id": 6922,
-          "rollNo": "R/101",
+          "supplierRollNo": "R/101",
+          "factoryRollNo": null,
           "supplierLength": 110.6,
           "supplierWidth": 59.0,
           "uomLength": "meter",
@@ -255,21 +238,10 @@ This endpoint created association of this fabric item to different styles.
       "blanketQty": "float",
       "supplierRollList": [
         {
-          "rollNo": "string",
+          "supplierRollNo": "string",
+          "factoryRollNo": "string",
           "supplierLength": "float",
           "supplierWidth": "float"
-        }
-      ],
-      "poList": [
-        {
-          "externalOrderId": "string",
-          "productId": "long",
-          "style": "string",
-          "color": "string",
-          "parentColor": "string",
-          "part": "string",
-          "placement": "string",
-          "associationQty": "float"
         }
       ]
     }
@@ -292,39 +264,41 @@ Schema of invoice entity
 
 **Fabric Item Table**
 
-| Field           | Type   | Constraints | Description                                                           |
-|-----------------|--------|-------------|-----------------------------------------------------------------------|
-| id              | Number | Primary Key | Internal ID                                                           |
-| externalId      | String |             | External ID                                                           |
-| serial          | Int    |             | Sequence of Item                                                      |
-| fabricId        | Long   | Required    | Fabric Internal ID                                                    |
-| color           | String | Required    | Fabric Color                                                          |
-| colorShade      | String |             | Fabric Color Shade (e.g. Light, Dark)                                 |
-| orderId         | Long   |             | Internal Order ID                                                     |
-| externalOrderId | String |             | External Order ID                                                     |
-| fpo             | String |             | Fabric Purchase Order Number                                          |
-| orderQty        | Float  | Required    | Fabric order qty                                                      |
-| orderingWidth   | Float  | Required    | Ordering/Booking Width                                                |
-| orderingGsm     | Float  |             | Ordering/Booking value GSM                                            |
-| uomWidth        | string |             | Unit of measurement forwidth. Values - (`centimeter`, `inch`, `yard`) |
-| uomLength       | string |             | Unit of measurement for Length. Values - (`meter`, `yard`)            |
-| invoiceQty      | Float  | Required    | Invoice Qty                                                           |
-| grn             | String | Required    | GRN Number                                                            |
-| grnQty          | Float  |             | GRN Qty  (Derived from packing list)                                  |
-| grnDate         | Date   |             | GRN Date.  Format: `yyyy-MM-dd`                                       |
-| warehouse       | String |             | Warehouse where GRN is done                                           |
-| blanketQty      | Float  |             | Blanket qty issued per roll for Shade/Shrinkage Report                |
+| Field            | Type   | Constraints | Description                                                           |
+|------------------|--------|-------------|-----------------------------------------------------------------------|
+| id               | Number | Primary Key | Internal ID                                                           |
+| externalId       | String |             | External ID                                                           |
+| serial           | Int    |             | Sequence of Item                                                      |
+| fabricId         | Long   | Required    | Fabric Internal ID                                                    |
+| color            | String | Required    | Fabric Color                                                          |
+| colorCode        | String |             | Fabric Color Code                                                     |
+| colorShade       | String |             | Fabric Color Shade (e.g. Light, Dark)                                 |
+| orderId          | Long   |             | Internal Order ID                                                     |
+| externalOrderIds | String |             | External Order IDs                                                    |
+| fpo              | String |             | Fabric Purchase Order Number                                          |
+| orderQty         | Float  | Required    | Fabric order qty                                                      |
+| orderingWidth    | Float  | Required    | Ordering/Booking Width                                                |
+| orderingGsm      | Float  |             | Ordering/Booking value GSM                                            |
+| uomWidth         | string |             | Unit of measurement forwidth. Values - (`centimeter`, `inch`, `yard`) |
+| uomLength        | string |             | Unit of measurement for Length. Values - (`meter`, `yard`)            |
+| invoiceQty       | Float  | Required    | Invoice Qty                                                           |
+| grn              | String | Required    | GRN Number                                                            |
+| grnQty           | Float  |             | GRN Qty  (Derived from packing list)                                  |
+| grnDate          | Date   |             | GRN Date.  Format: `yyyy-MM-dd`                                       |
+| warehouse        | String |             | Warehouse where GRN is done                                           |
+| blanketQty       | Float  |             | Blanket qty issued per roll for Shade/Shrinkage Report                |
 
 **SupplierRoll Table**
 
-| Field          | Type   | Constraints | Description      |
-|----------------|--------|-------------|------------------|
-| id             | Number | Primary Key | Internal ID      |
-| rollNo         | String | Required    | Roll Number      |
-| supplierLength | Float  |             | Supplier Length  |
-| supplierWeight | Float  |             | Supplier Weight  |
-| gsm            | Float  |             | GSM value        |
-| length         | Float  |             | Inspected Length |
-| width          | Float  |             | Cuttable Width   |
-| weight         | Float  |             | Inspected Weight |
+| Field          | Type   | Constraints | Description                  |
+|----------------|--------|-------------|------------------------------|
+| id             | Number | Primary Key | Internal ID                  |
+| supplierRollNo | String | Required    | Roll Number                  |
+| factoryRollNo  | String |             | Factory/Internal Roll Number |
+| supplierLength | Float  |             | Supplier Length              |
+| supplierWeight | Float  |             | Supplier Weight              |
+| gsm            | Float  |             | GSM value                    |
+| length         | Float  |             | Inspected Length             |
+| width          | Float  |             | Cuttable Width               |
+| weight         | Float  |             | Inspected Weight             |
 
