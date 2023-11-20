@@ -27,8 +27,9 @@ This endpoint creates a order.
 <pre class="center-column">
 [
   {
-    "externalId": "2000"
+    "externalId": "2000",
     "primaryUnitId": "unit2",
+    "cancelled":false,
     "fpo": "FPO#200",
     "orderQty": 500,
     "sizeBreakupList": [
@@ -38,8 +39,9 @@ This endpoint creates a order.
     ]
   },
   {
-    "externalId": "2000"
+    "externalId": "2000",
     "primaryUnitId": "unit3",
+    "cancelled":false,
     "fpo": "FPO#201",
     "orderQty": 500,
     "sizeBreakupList": [
