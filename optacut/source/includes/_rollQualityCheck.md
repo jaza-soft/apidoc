@@ -73,7 +73,7 @@ This endpoint creates a order.
 }
 </pre>
 
-## Schema - Production Order
+## Schema - Roll QC
 
 ```json
 {
