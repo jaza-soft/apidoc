@@ -26,7 +26,7 @@ This endpoint creates a invoice.
   "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "externalId": "1000",
+      "externalId": "200",
       "fabricId": 1,
       "color": "Blue",
       "colorCode": null,
@@ -46,14 +46,14 @@ This endpoint creates a invoice.
       "blanketQty": 0.5,
       "supplierRollList": [
         {
-          "supplierRollNo": "R/100",
-          "factoryRollNo": null,
+          "supplierRollNo": "R100",
+          "factoryRollNo": "INV-100/R100",
           "supplierLength": 100.2,
           "supplierWidth": 145
         },
         {
-          "supplierRollNo": "R/101",
-          "factoryRollNo": null,
+          "supplierRollNo": "R101",
+          "factoryRollNo": "INV-100/R101",
           "supplierLength": 110.6,
           "supplierWidth": 146
         }
@@ -75,7 +75,7 @@ This endpoint creates a invoice.
   "erpInvoiceNo": "ERP INVOICE-100",
   "fabricItemList": [
     {
-      "externalId": "1000",
+      "externalId": "200",
       "id": 126,
       "warehouse": "wh-central",
       "fabricId": 1,

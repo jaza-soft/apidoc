@@ -1,6 +1,6 @@
-# Production Order
+# Factory Production Order
 
-## Create Production Order
+## Create Factory Production Order
 
 ```shell
 curl "~/api/production-orders?externalOrderId=1000" \

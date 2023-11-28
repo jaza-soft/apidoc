@@ -14,6 +14,7 @@ includes:
   - productionOrders
   - fabrics
   - invoices
+  - rollQualityCheck
   - customers
   - seasons
   - products
