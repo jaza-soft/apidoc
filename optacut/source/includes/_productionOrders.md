@@ -28,26 +28,30 @@ This endpoint creates a order.
 [
   {
     "externalId": "2000",
-    "primaryUnitId": "unit2",
+    "primaryUnitId": "unit1",
     "cancelled":false,
     "fpo": "FPO#200",
-    "orderQty": 500,
+    "orderQty": 1000,
     "sizeBreakupList": [
-      { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 150 },
-      { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 200 },
-      { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 150 }
+        { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+        { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+        { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+        { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+        { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
     ]
   },
   {
-    "externalId": "2000",
-    "primaryUnitId": "unit3",
+    "externalId": "2001",
+    "primaryUnitId": "unit1",
     "cancelled":false,
-    "fpo": "FPO#201",
-    "orderQty": 500,
+    "fpo": "FPO#200",
+    "orderQty": 1000,
     "sizeBreakupList": [
-      { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 150 },
-      { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 200 },
-      { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 150 }
+        { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+        { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+        { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+        { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+        { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
     ]
   }
 ]

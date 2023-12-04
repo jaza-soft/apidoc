@@ -145,7 +145,7 @@ This endpoint creates an order.
         {
             "externalId": "2000",
             "serialNo": 1,
-            "productId": 2,
+            "productId": 1,
             "style": "A6",
             "styleNo": "A1000",
             "fit":"Slim Fit",
@@ -160,110 +160,49 @@ This endpoint creates an order.
             "customerFlowRef": "BPO#01",
             "partList": [
                 { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
-                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 }                
+                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },                
                 { "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
             ],
             "sizeBreakupList": [
-                { "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-                { "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-                { "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
+                { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+                { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+                { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+                { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+                { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+            ]
+        },
+        {
+            "externalId": "2001",
+            "serialNo": 1,
+            "productId": 1,
+            "style": "A6",
+            "styleNo": "A1000",
+            "fit":"Slim Fit",
+            "color": "Black",
+            "orderQty": 1000,
+            "extra": 5,
+            "inseam":"32Inch",
+            "destination": "UK",
+            "delMode": "Air",
+            "exFactoryDate": "2023-05-30",
+            "flowRef":"REF1",
+            "customerFlowRef": "BPO#02",
+            "partList": [
+                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
+                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },                
+                { "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
+            ],
+            "sizeBreakupList": [
+                { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+                { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+                { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+                { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+                { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
             ]
         }
     ]
 }
 </pre>
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 10,
-  "externalId": "1000",
-  "poRef": "J/102",
-  "customerPoRef": "B/100",
-  "customerId": 2,
-  "seasonId": 1,
-  "desc": "Test description",
-  "flowInfoList": [
-    {
-      "id": 64,
-      "externalId": "2000",
-      "serialNo": 1,
-      "productId": 2,
-      "style": "A6",
-      "styleNo": "A1000",
-      "fit": "Slim Fit",
-      "color": "Black",
-      "orderQty": 1000,
-      "extra": 5,
-      "inseam": "32Inch",
-      "destination": "US",
-      "delMode": "Air",
-      "exFactoryDate": "2023-05-30",
-      "flowRef": "REF1",
-      "customerFlowRef": "BPO#01",
-      "partList": [
-        {
-          "id": 37,
-          "partName": "Shell",
-          "placement": "Entire Body",
-          "bomCu": 1.2,
-          "uom": "meter",
-          "bomFabricId": 1,
-          "bomFabColor": "WHITE",
-          "bomFabColorCode": "WH",
-          "fabOrderQty": 1200
-        },
-        {
-          "id": 38,
-          "partName": "Lining",
-          "placement": "Lining",
-          "bomCu": 0.86,
-          "uom": "meter",
-          "bomFabricId": 2,
-          "bomFabColor": "WHITE",
-          "bomFabColorCode": "WH",
-          "fabOrderQty": 860
-        },
-        {
-          "id": 39,
-          "partName": "Trim",
-          "placement": "Neckband",
-          "bomCu": 0.10,
-          "uom": "meter",
-          "bomFabricId": 3,
-          "bomFabColor": "WHITE",
-          "bomFabColorCode": "WH",
-          "fabOrderQty": 100
-        }
-      ],
-      "sizeBreakupList": [
-        {
-          "id": 37,
-          "serialNo": 1,
-          "sizeGroup": "",
-          "size": "30",
-          "qty": 300
-        },
-        {
-          "id": 38,
-          "serialNo": 2,
-          "sizeGroup": "",
-          "size": "32",
-          "qty": 400
-        },
-        {
-          "id": 39,
-          "serialNo": 3,
-          "sizeGroup": "",
-          "size": "34",
-          "qty": 300
-        }
-      ]
-    }
-  ]
-}
-```
 
 ## Update Order
 
@@ -289,128 +228,74 @@ This endpoint updates an existing order.
 
 <pre class="center-column">
 {
-  "id": 10,
-  "externalId": "1000",
-  "poRef": "J/102",
-  "customerPoRef": "B/100",
-  "customerId": 2,
-  "seasonId": 1,
-  "desc": "Test description",
-  "flowInfoList": [
-    {
-      "id": 64,
-      "externalId": "2000",
-      "serialNo": 1,
-      "productId": 2,
-      "style": "A6",
-      "styleNo": "A1000",
-      "fit":"Slim Fit",
-      "color": "Black",
-      "orderQty": 1000,
-      "extra": 5,
-      "inseam":"32Inch",
-      "destination": "US",
-      "delMode": "Air",
-      "exFactoryDate": "2023-05-30",
-      "flowRef":"REF1",
-      "customerFlowRef": "BPO#01",
-      "partList": [
-          {"id": 37, "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
-          {"id": 38, "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },
-          {"id": 39, "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
-      ],
-
-      "sizeBreakupList": [
-        { "id": 37, "serialNo": 1, "sizeGroup": "", "size": "30", "qty": 300 },
-        { "id": 38, "serialNo": 2, "sizeGroup": "", "size": "32", "qty": 400 },
-        { "id": 39, "serialNo": 3, "sizeGroup": "", "size": "34", "qty": 300 }
-      ]
-    }
-  ]
+    "externalId": "1000",
+    "poRef": "J/102",
+    "customerPoRef": "B/100",
+    "customerId": 2,
+    "seasonId": 1,
+    "desc": "Test description",
+    "flowInfoList": [
+        {
+            "externalId": "2000",
+            "serialNo": 1,
+            "productId": 1,
+            "style": "A6",
+            "styleNo": "A1000",
+            "fit":"Slim Fit",
+            "color": "Black",
+            "orderQty": 1000,
+            "extra": 5,
+            "inseam":"32Inch",
+            "destination": "US",
+            "delMode": "Air",
+            "exFactoryDate": "2023-05-30",
+            "flowRef":"REF1",
+            "customerFlowRef": "BPO#01",
+            "partList": [
+                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
+                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },                
+                { "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
+            ],
+            "sizeBreakupList": [
+                { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+                { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+                { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+                { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+                { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+            ]
+        },
+        {
+            "externalId": "2001",
+            "serialNo": 1,
+            "productId": 1,
+            "style": "A6",
+            "styleNo": "A1000",
+            "fit":"Slim Fit",
+            "color": "Black",
+            "orderQty": 1000,
+            "extra": 5,
+            "inseam":"32Inch",
+            "destination": "UK",
+            "delMode": "Air",
+            "exFactoryDate": "2023-05-30",
+            "flowRef":"REF1",
+            "customerFlowRef": "BPO#02",
+            "partList": [
+                { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
+                { "partName": "Lining", "placement": "Lining", "bomCu": 0.86, "uom": "meter", "bomFabricId": 2, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 860 },                
+                { "partName": "Trim", "placement": "Collar", "bomCu": 0.10, "uom": "meter", "bomFabricId": 3, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 100 }
+            ],
+            "sizeBreakupList": [
+                { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+                { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+                { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+                { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+                { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+            ]
+        }
+    ]
 }
 </pre>
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 1,
-  "externalId": "1000",
-  "customerId": 2,
-  "seasonId": 1,
-  "poRef": "T/100",
-  "customerPoRef": "B/100",
-  "desc": "Test description",
-  "orderQty": 2000,
-  "products": "Mens Formal Shirt-L/S",
-  "styles": "A6",
-  "flowInfoList": [
-    {
-      "id": 1,
-      "externalId": "2000",
-      "flowRef": null,
-      "customerFlowRef": null,
-      "parentId": null,
-      "serialNo": 2,
-      "productId": 2,
-      "ratio": null,
-      "style": "A6",
-      "styleNo": null,
-      "fit": null,
-      "color": "White",
-      "groupDestination": false,
-      "destination": "US",
-      "exFactoryDate": 1685404800000,
-      "delMode": "Air",
-      "orderQty": 1000,
-      "extra": 5.0,
-      "styleImage": null,
-      "state": "[{\"state\":\"New\"}]",
-      "partList": [
-        {
-          "id": 10,
-          "serial": null,
-          "partName": "Shell",
-          "placement": "Entire Body",
-          "bomCu": 1.2,
-          "uom": "meter"
-        },
-        {
-          "id": 11,
-          "serial": null,
-          "partName": "Trim1",
-          "placement": "Neckband",
-          "bomCu": 0.1,
-          "uom": "meter"
-        }
-      ],
-      "sizeBreakupList": [
-        {
-          "id": 100,
-          "serialNo": 1,
-          "sizeGroup": "",
-          "size": "30",
-          "qty": 300
-        },
-        {
-          "id": 101,
-          "serialNo": 2,
-          "sizeGroup": "",
-          "size": "32",
-          "qty": 400
-        },
-        {
-          "id": 102,
-          "serialNo": 3,
-          "sizeGroup": "",
-          "size": "34",
-          "qty": 300
-        }
-      ]
-    }
-  ]
-}
-```
 
 ## Delete  Order
 
