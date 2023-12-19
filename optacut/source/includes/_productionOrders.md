@@ -38,6 +38,11 @@ This endpoint creates a order.
         { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
         { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
         { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+    ],
+    "departmentList": [
+      { "id": 1, "name": "Cutting" },
+      { "id": 2, "name": "Sewing" },
+      { "id": 3, "name": "Finishing" },
     ]
   },
   {
@@ -52,6 +57,11 @@ This endpoint creates a order.
         { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
         { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
         { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+    ],
+    "departmentList": [
+      { "id": 1, "name": "Cutting" },
+      { "id": 2, "name": "Sewing" },
+      { "id": 3, "name": "Finishing" },
     ]
   }
 ]
