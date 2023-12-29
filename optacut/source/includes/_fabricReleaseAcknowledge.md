@@ -4,6 +4,7 @@
 
 ```shell
 curl "~/api/fabric-release/ack?externalId=1000" \
+  -X PUT \
   -H "Authorization: Bearer <access_token>"
 ```
 

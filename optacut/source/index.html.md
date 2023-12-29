@@ -15,6 +15,7 @@ includes:
   - fabrics
   - invoices
   - rollQualityCheck
+  - fabricRelease
   - fabricReleaseAcknowledge
   - customers
   - seasons
