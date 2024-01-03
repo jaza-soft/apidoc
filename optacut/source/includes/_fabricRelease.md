@@ -55,6 +55,7 @@ curl "~/api/fabric-release?externalOrderId=1000&search=styleColor=='White'" \
      
           "id": 11744,
           "rollNo": "R/4",
+          "supplierRollNo": "4",
           "length": 176.0,
           "width": 142.0,
           "shade": "A",
@@ -67,6 +68,7 @@ curl "~/api/fabric-release?externalOrderId=1000&search=styleColor=='White'" \
         {
           "id": 11747,
           "rollNo": "Ranger/7",
+          "supplierRollNo": "7",
           "length": 40.87,
           "width": 142.0,
           "shade": "A",
@@ -79,6 +81,7 @@ curl "~/api/fabric-release?externalOrderId=1000&search=styleColor=='White'" \
         {
           "id": 11768,
           "rollNo": "R/28",
+          "supplierRollNo": "28",
           "length": 117.0,
           "width": 143.0,
           "shade": "B",
