@@ -14,7 +14,7 @@ includes:
   - productionOrders
   - fabrics
   - invoices
-  - rollQualityCheck
+  - externalRoll
   - fabricRelease
   - fabricReleaseAcknowledge
   - customers

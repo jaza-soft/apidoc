@@ -1,20 +1,20 @@
-# Roll QC
+# External Roll QC
 
-## Update Roll QC
+## Update Roll QC (from External System)
 
 ```shell
-curl "~/api/external-roll-qc?externalOrderId=1000" \
+curl "~/api/external-roll/qc?externalOrderId=1000" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
   -d '<JSON Payload>'
 ```
 
-This endpoint creates a order.
+This endpoint updates QC for Roll in OptaCut from External System
 
 ### HTTP Request
 
-`PUT ~/api/external-roll-qc?externalOrderId=<External Order Id>`
+`PUT ~/api/external-roll/qc?externalOrderId=<External Order Id>`
 
 ### URL Parameters
 
@@ -146,3 +146,98 @@ This endpoint creates a order.
 | skewnessValue          | Double | Required    | Skewness value                                                                      |
 | skewnessGroup          | String | Required    | Skewness Group                                                                      |
 | qcStatus               | String | Required    | QC Status of Roll. Accepted values - (`Pass`, `Fail`)                               |
+
+## Roll RE-QC
+
+```shell
+curl "~/api/external-roll/re-qc" \
+  -X PUT \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint marks already QCied roll in OptaCut for Re-QC.
+
+### HTTP Request
+
+`PUT ~/api/external-roll/re-qc`
+
+### JSON Payload
+
+<pre class="center-column">
+{
+  "externalId": "100",
+  "fabricItemList": [
+    {
+      "externalId": "200",
+      "fabricId": 1,
+      "color": "Blue",
+      "colorCode": "Blue,
+      "colorShade": null,
+      "fpo": "FPO#100",
+      "grn": "GRN#100",
+      "supplierRollList": [
+        {
+          "factoryRollNo": "INV-100/R100"
+        },
+        {
+          "factoryRollNo": "INV-100/R101"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+
+## Schema - Roll Re-QC
+
+```json
+{
+  "externalId": "string",
+  "fabricItemList": [
+    {
+      "externalId": "string",
+      "fabricId": "long",
+      "color": "string",
+      "colorCode": "string",
+      "colorShade": "string",
+      "fpo": "string",
+      "grn": "string",
+      "supplierRollList": [
+        {
+          "factoryRollNo": "string"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Schema of invoice entity
+
+**Invoice Table**
+
+| Field      | Type   | Constraints | Description             |
+|------------|--------|-------------|-------------------------|
+| externalId | String | Required    | External ID  of Invoice |
+
+**Fabric Item Table**
+
+| Field      | Type   | Constraints | Description                           |
+|------------|--------|-------------|---------------------------------------|
+| externalId | String | Required    | RE-QC Transaction Number              |
+| fabricId   | Long   | Required    | Fabric Internal ID                    |
+| color      | String | Required    | Fabric Color                          |
+| colorCode  | String | Required    | Fabric Color Code                     |
+| colorShade | String |             | Fabric Color Shade (e.g. Light, Dark) |
+| fpo        | String | Required    | Fabric Purchase Order Number          |
+| grn        | String | Required    | GRN Number                            |
+
+**SupplierRoll Table**
+
+| Field         | Type   | Constraints | Description                  |
+|---------------|--------|-------------|------------------------------|
+| factoryRollNo | String | Required    | Factory/Internal Roll Number |
+
+
