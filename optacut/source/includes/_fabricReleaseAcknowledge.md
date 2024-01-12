@@ -39,7 +39,7 @@ At least one parameter is required
 <pre class="center-column">
 {
     "challanNo": "C/100",
-    "ackNo": "GDN/100",
+    "ackNo": "A/100",
     "rollInfoList": [
         { "rollNo": "R/100" },
         { "rollNo": "R/101" }
@@ -49,9 +49,9 @@ At least one parameter is required
 
 ### Schema Fabric Release Acknowledgement
 
-| Field     | Description                                                             |
-|-----------|-------------------------------------------------------------------------|
-| challanNo | Challan Number in ERP for Fabric Release (Pick List)                    |
-| ackNo     | Acknowledgement Number for current acknowledgment Request               |
-| rollNo    | Factory Roll Number. This roll should be part pick list sent by OptaCut |
+| Field     | Description                                                                |
+|-----------|----------------------------------------------------------------------------|
+| challanNo | Challan Number in ERP for Fabric Release (Pick List)                       |
+| ackNo     | Acknowledgement Number for current acknowledgment Request                  |
+| rollNo    | Factory Roll Number. This roll should be part of pick list sent by OptaCut |
 
