@@ -65,7 +65,7 @@ curl "~/api/fabric-release/ack?externalId=1000" \
 }
 ```
 
-This endpoint acknowledges a fabric release from an external system.
+This endpoint deletes fabric release acknowledgment from an external system.
 
 ### HTTP Request
 
