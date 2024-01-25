@@ -99,7 +99,7 @@ This endpoint creates a factory production order.
 
 ### HTTP Request
 
-`DELETE ~/api/fpo?fpo=externalOrderId=<External Order Id>&<FPO No>`
+`DELETE ~/api/fpo?externalOrderId=<External Order Id>&fpo=<FPO No>`
 
 ### URL Parameters
 
