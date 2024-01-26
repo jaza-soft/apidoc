@@ -89,7 +89,7 @@ This endpoint creates a factory production order.
 ## Delete FPO (v2)
 
 ```shell
-curl "~/api/fpo?externalOrderId=1000&fpo=FP-100" \
+curl "~/api/fpo?action=delete&externalOrderId=1000&fpo=FP-100" \
   -X DELETE \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -99,14 +99,15 @@ This endpoint creates a factory production order.
 
 ### HTTP Request
 
-`DELETE ~/api/fpo?externalOrderId=<External Order Id>&fpo=<FPO No>`
+`DELETE ~/api/fpo?action=<delete|cancel>externalOrderId=<External Order Id>&fpo=<FPO No>`
 
 ### URL Parameters
 
-| Parameter       | Description                     |
-|-----------------|---------------------------------|
-| externalOrderId | The external ID of parent Order |
-| fpo             | FPO Number to be deleted        |
+| Parameter       | Description                                                           |
+|-----------------|-----------------------------------------------------------------------|
+| action          | `delete`: Delete record, `cancel`: Cancel FPO without deleting record |
+| externalOrderId | The external ID of parent Order                                       |
+| fpo             | FPO Number to be deleted                                              |
 
 ## Schema - FPO (v2)
 
