@@ -104,9 +104,9 @@ Schema of Bundle entity
 | color      | String | Required    | Color of the bundle        |
 | cutNo      | String | Required    | Cut number of the bundle   |
 | bundleNo   | Number | Required    | Bundle number              |
-| code       | String | optional    | Bundle code                |
-| size       | String | optional    | Size of the bundle         |
-| qty        | Number | optional    | Qty in the bundle          |
+| code       | String | Required    | Bundle code                |
+| size       | String | Required    | Size of the bundle         |
+| qty        | Number | Required    | Qty in the bundle          |
 | start      | Number | optional    | Serial start of the bundle |
 | end        | Number | optional    | serial end of the bundle   |
 | pieceCodes | Number | optional    | Piece codes in the bundle  |
