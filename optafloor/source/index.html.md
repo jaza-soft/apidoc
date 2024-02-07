@@ -12,6 +12,7 @@ includes:
   - orders
   - loading
   - pieceInfo
+  - bundleInfo
   - buyers
   - seasons
   - products
