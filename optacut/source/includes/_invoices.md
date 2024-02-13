@@ -31,7 +31,6 @@ This endpoint creates a invoice.
       "color": "Blue",
       "colorCode": null,
       "colorShade": "Light",
-      "externalOrderIds": "1000,1001",
       "fpo": "FPO#100",
       "orderQty": 1000,
       "orderingWidth": "145",
@@ -44,6 +43,10 @@ This endpoint creates a invoice.
       "grnDate": "2023-10-06",
       "warehouse": "wh-central",
       "blanketQty": 0.5,
+      "externalOrderIdList": [
+        { "externalOrderId": "1000", "qty": 450 },
+        { "externalOrderId": "1001", "qty": 550 }
+      ]
       "supplierRollList": [
         {
           "supplierRollNo": "R100",
