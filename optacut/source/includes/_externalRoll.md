@@ -1,20 +1,133 @@
 # External Roll QC
 
-## Update Roll QC (from External System)
+## Fetch Roll QC
 
 ```shell
-curl "~/api/external-roll/qc?externalOrderId=1000" \
+curl "~/api/external/rolls/qc?search=qcAt=ge=1707762600000" \
+  -X GET \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+```
+
+This endpoint updates QC for Roll in OptaCut from External System.
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "invoiceExternalId": "110",
+    "fabricItemExternalId": "210",
+    "itemCode": "F000002337",
+    "itemColor": "BLACK",
+    "fpo": "FPO#100",
+    "grn": "GRN#100",
+    "width": 145.0,
+    "uomWidth": "centimeter",
+    "uomLength": "meter",
+    "qcDate": "2024-02-13",
+    "checkQty": 429.0,
+    "passQty": 328.0,
+    "rejectQty": 101.2,
+    "rollList": [
+      {
+        "factoryRollNo": "INV-100/5477",
+        "supplierRollNo": "5477",
+        "supplierLength": 129.0,
+        "inspectedLength": 127.5,
+        "shade": "A",
+        "csv": "No",
+        "qcStatus": "Pass"
+      },
+      {
+        "factoryRollNo": "INV-100/5479",
+        "supplierRollNo": "5479",
+        "supplierLength": 100.0,
+        "inspectedLength": 101.2,
+        "shade": "C",
+        "qcStatus": "Fail"
+      },
+      {
+        "factoryRollNo": "INV-100/5480",
+        "supplierRollNo": "5480",
+        "supplierLength": 200.0,
+        "inspectedLength": 200.5,
+        "shade": "D",
+        "csv": "No",
+        "qcStatus": "Pass"
+      }
+    ]
+  },
+  {
+    "invoiceExternalId": "111",
+    "fabricItemExternalId": "211",
+    "itemCode": "F000002337",
+    "itemColor": "BLACK",
+    "fpo": "FPO#101",
+    "grn": "GRN#101",
+    "width": 145.0,
+    "uomWidth": "centimeter",
+    "uomLength": "meter",
+    "qcDate": "2024-02-13",
+    "checkQty": 290.0,
+    "passQty": 287.5,
+    "rejectQty": 0.0,
+    "rollList": [
+      {
+        "factoryRollNo": "INV-101/5483",
+        "supplierRollNo": "5483",
+        "supplierLength": 114.0,
+        "inspectedLength": 110.5,
+        "warpShrPercent": 2.5,
+        "weftShrPercent": 1.5,
+        "shade": "A",
+        "csv": "Yes",
+        "qcStatus": "Pass"
+      },
+      {
+        "factoryRollNo": "INV-101/5484",
+        "supplierRollNo": "5484",
+        "supplierLength": 176.0,
+        "inspectedLength": 177.0,
+        "warpShrPercent": 1.0,
+        "weftShrPercent": 1.6,
+        "shade": "B",
+        "csv": "Yes",
+        "qcStatus": "Pass"
+      }
+    ]
+  }
+]
+```
+
+### HTTP Request
+
+`GET ~/api/external/rolls/qc?search=<Search Query>`
+
+### URL Parameters
+
+| Parameter | Description                                                                                       |
+|-----------|---------------------------------------------------------------------------------------------------|
+| search    | Search Query. e.g. `qcAt=ge=1707762600000` for `qcAt` greater than equal to timestamp (in millis) |
+
+## Update Roll QC
+
+```shell
+curl "~/api/external/rolls/qc?externalOrderId=1000" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
   -d '<JSON Payload>'
 ```
 
-This endpoint updates QC for Roll in OptaCut from External System
+This endpoint updates QC for Roll in OptaCut from External System.
 
 ### HTTP Request
 
-`PUT ~/api/external-roll/qc?externalOrderId=<External Order Id>`
+`PUT ~/api/external/rolls/qc?externalOrderId=<External Order Id>`
+
+**Note:** URL has been changed from `~/api/external-roll/qc` to `~/api/external/rolls/qc`. Old API will continue to work
+but will be removed in the future. Please, update URL to avoid breaking API
 
 ### URL Parameters
 
@@ -73,7 +186,7 @@ This endpoint updates QC for Roll in OptaCut from External System
 }
 </pre>
 
-## Schema - Roll QC
+## Schema - Update Roll QC
 
 ```json
 {
@@ -147,10 +260,68 @@ This endpoint updates QC for Roll in OptaCut from External System
 | skewnessGroup          | String | Required    | Skewness Group                                                                      |
 | qcStatus               | String | Required    | QC Status of Roll. Accepted values - (`Pass`, `Fail`)                               |
 
+## Lock Roll QC
+
+```shell
+curl "~/api/external/rolls/lock-qc" \
+  -X PUT \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint Locks Roll QC in OptaCut
+
+### HTTP Request
+
+`PUT ~/api/external/rolls/lock-qc`
+
+### JSON Payload
+
+<pre class="center-column">
+{
+  "externalId": "TXN/1000",
+  "fabricItemExternalId": "210",
+  "rollList": [
+    {
+      "factoryRollNo": "INV-100/5477"
+    },
+    {
+      "factoryRollNo": "INV-100/5479"
+    },
+    {
+      "factoryRollNo": "INV-100/5480"
+    }
+  ]
+}
+</pre>
+
+## Schema - Lock Roll QC
+
+```json
+{
+  "externalId": "string",
+  "fabricItemExternalId": "string",
+  "rollList": [
+    {
+      "factoryRollNo": "string"
+    }
+  ]
+}
+```
+
+**Table**
+
+| Field                | Type   | Constraints | Description                                    |
+|----------------------|--------|-------------|------------------------------------------------|
+| externalId           | String |             | Transaction number of External System (if any) |
+| fabricItemExternalId | String | Required    | External ID of Fabric Item                     |
+| factoryRollNo        | String | Required    | Factory Roll Number                            |
+
 ## Roll RE-QC
 
 ```shell
-curl "~/api/external-roll/re-qc" \
+curl "~/api/external/rolls/re-qc" \
   -X PUT \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -161,9 +332,14 @@ This endpoint marks already QCied roll in OptaCut for Re-QC.
 
 ### HTTP Request
 
-`PUT ~/api/external-roll/re-qc`
+`PUT ~/api/external/rolls/re-qc`
 
-### JSON Payload
+**Note:** URL has been changed from `~/api/external-roll/re-qc` to `~/api/external/rolls/re-qc`. Old API will continue
+to work but will be removed in the future. Please, update URL to avoid breaking API
+
+Re-QC API accepts on of two Payload Structure
+
+### JSON Payload 1
 
 <pre class="center-column">
 {
@@ -185,6 +361,25 @@ This endpoint marks already QCied roll in OptaCut for Re-QC.
           "factoryRollNo": "INV-100/R101"
         }
       ]
+    }
+  ]
+}
+</pre>
+
+### JSON Payload 2
+
+<pre class="center-column">
+{
+  "fabricItemExternalId": "210",
+  "rollList": [
+    {
+      "factoryRollNo": "INV-100/5477"
+    },
+    {
+      "factoryRollNo": "INV-100/5479"
+    },
+    {
+      "factoryRollNo": "INV-100/5480"
     }
   ]
 }

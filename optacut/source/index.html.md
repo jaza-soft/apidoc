@@ -17,7 +17,8 @@ includes:
   - externalRoll
   - fabricRelease
   - fabricReleaseAcknowledge
-  - layslip
+  - externalFabricRelease
+  - externalLay
   - customers
   - seasons
   - products
