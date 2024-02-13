@@ -3,7 +3,7 @@
 ## Upload Piece Tag
 
 ```shell
-curl "~/v1/api/piece-info?flowInfoId=100" \
+curl "~/v1/api/external-piece-info?flowInfoId=100" \
   -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
@@ -14,7 +14,7 @@ This endpoint uploads piece tags.
 
 ### HTTP Request
 
-`POST ~/v1/api/piece-info?flowInfoId=<FlowInfoId>`
+`POST ~/v1/api/external-piece-info?flowInfoId=<FlowInfoId>`
 
 ### URL Parameters
 
