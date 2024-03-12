@@ -163,6 +163,7 @@ but will be removed in the future. Please, update URL to avoid breaking API
           "patternNo": "P1",
           "skewnessValue": 2.0,
           "skewnessGroup": "Less than 3.0%",
+          "consignment": "1",
           "qcStatus": "Pass"
         },
         {
@@ -178,6 +179,7 @@ but will be removed in the future. Please, update URL to avoid breaking API
           "patternNo": "P1",
           "skewnessValue": 5.0,
           "skewnessGroup": "Between 3.0% to 6.0%",
+          "consignment": "1",
           "qcStatus": "Pass"
         }
       ]
@@ -214,6 +216,7 @@ but will be removed in the future. Please, update URL to avoid breaking API
           "patternNo": "string",
           "skewnessValue": "double",
           "skewnessGroup": "string",
+          "consignment": "string",
           "qcStatus": "Pass|Fail"
         }
       ]
@@ -248,17 +251,18 @@ but will be removed in the future. Please, update URL to avoid breaking API
 |------------------------|--------|-------------|-------------------------------------------------------------------------------------|
 | factoryRollNo          | String | Required    | Factory Roll Number                                                                 |
 | length                 | Double | Required    | Inspected Length                                                                    |
-| cuttableWidth          | Double | Required    | Cuttable Width                                                                      |
-| shade                  | String | Required    | Roll Shade                                                                          |
-| csv                    | String | Required    | Roll CSV values. Accepted values - (`Yes`, `No`, `Grade 3`, `Grade 3-4`, `Grade 4`) |
-| lengthShrinkagePercent | Double | Required    | Length wise shrinkage value                                                         |
-| widthShrinkagePercent  | Double | Required    | Width wise shrinkage value                                                          |
-| lengthPatternValue     | Double | Required    | Length wise pattern value                                                           |
-| widthPatternValue      | Double | Required    | Width wise pattern value                                                            |
-| patternNo              | String | Required    | Pattern No                                                                          |
-| skewnessValue          | Double | Required    | Skewness value                                                                      |
-| skewnessGroup          | String | Required    | Skewness Group                                                                      |
-| qcStatus               | String | Required    | QC Status of Roll. Accepted values - (`Pass`, `Fail`)                               |
+| cuttableWidth          | Double |             | Cuttable Width                                                                      |
+| shade                  | String |             | Roll Shade                                                                          |
+| csv                    | String |             | Roll CSV values. Accepted values - (`Yes`, `No`, `Grade 3`, `Grade 3-4`, `Grade 4`) |
+| lengthShrinkagePercent | Double |             | Length wise shrinkage value                                                         |
+| widthShrinkagePercent  | Double |             | Width wise shrinkage value                                                          |
+| lengthPatternValue     | Double |             | Length wise pattern value                                                           |
+| widthPatternValue      | Double |             | Width wise pattern value                                                            |
+| patternNo              | String |             | Pattern No                                                                          |
+| skewnessValue          | Double |             | Skewness value                                                                      |
+| skewnessGroup          | String |             | Skewness Group                                                                      |
+| consignment            | String |             | Consignment Number                                                                  |
+| qcStatus               | String |             | QC Status of Roll. Accepted values - (`Pass`, `Fail`)                               |
 
 ## Lock Roll QC
 
