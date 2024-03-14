@@ -29,6 +29,8 @@ This endpoint is for allocating material in an Order
       "itemColorShade": "",
       "fabricPo": "FAB/PO/1",
       "grn": "GRN/10",
+      "width": 150,
+      "uomWidth": "centimeter,
       "externalOrderIdList": [
         { "externalOrderId": "1000", "qty": 450 },
         { "externalOrderId": "1001", "qty": 550 }
@@ -67,6 +69,8 @@ This endpoint is for deallocating material from an Order
       "itemColorShade": "",
       "fabricPo": "FAB/PO/1",
       "grn": "GRN/10",
+      "width": 150,
+      "uomWidth": "centimeter,
       "externalOrderIdList": [
         { "externalOrderId": "1000", "qty": 450 },
         { "externalOrderId": "1001", "qty": 550 }
@@ -105,6 +109,8 @@ This endpoint is for reallocating material from one Order to Other Order
       "itemColorShade": "",
       "fabricPo": "FAB/PO/1",
       "grn": "GRN/10",
+      "width": 150,
+      "uomWidth": "centimeter,
       "externalOrderIdList": [
         { "prevExternalOrderId": "900", "externalOrderId": "1000", "qty": 450 },
         { "prevExternalOrderId": "901", "externalOrderId": "1001", "qty": 550 }

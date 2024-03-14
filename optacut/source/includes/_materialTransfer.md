@@ -29,6 +29,8 @@ This endpoint is for transferring material from one Warehouse to other warehouse
   "itemColorShade": "",
   "fabricPo": "FAB/PO/1",
   "grn": "GRN/10",
+  "width": 150,
+  "uomWidth": "centimeter,
   "fromWarehouse": "wh1",
   "toWarehouse": "wh2",
   "rollList": [
@@ -122,7 +124,8 @@ This endpoint is for transferring material from one Item to other Item
   "itemColorShade": "",
   "fabricPo": "FAB/PO/1",
   "grn": "GRN/10",
-
+  "width": 150,
+  "uomWidth": "centimeter,
   "fromItemCode": "HO/101",
   "fromItemColor": "Black",
   "fromItemColorCode": "Black",
