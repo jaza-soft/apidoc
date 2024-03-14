@@ -14,8 +14,10 @@ includes:
   - fpo
   - fabrics
   - invoices
+  - externalInvoices
   - externalRoll
   - fabricRelease
+  - materialTransfer
   - fabricReleaseAcknowledge
   - externalFabricRelease
   - externalLay

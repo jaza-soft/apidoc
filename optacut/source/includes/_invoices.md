@@ -52,13 +52,15 @@ This endpoint creates a invoice.
           "supplierRollNo": "R100",
           "factoryRollNo": "INV-100/R100",
           "supplierLength": 100.2,
-          "supplierWidth": 145
+          "supplierWidth": 145,
+          "extQcStatus": "",
         },
         {
           "supplierRollNo": "R101",
           "factoryRollNo": "INV-100/R101",
           "supplierLength": 110.6,
-          "supplierWidth": 146
+          "supplierWidth": 146,
+          "extQcStatus": "",
         }
       ]
     }
@@ -244,7 +246,8 @@ This endpoint created association of this fabric item to different styles.
           "supplierRollNo": "string",
           "factoryRollNo": "string",
           "supplierLength": "float",
-          "supplierWidth": "float"
+          "supplierWidth": "float",
+          "extQcStatus": ""
         }
       ]
     }
@@ -293,15 +296,16 @@ Schema of invoice entity
 
 **SupplierRoll Table**
 
-| Field          | Type   | Constraints | Description                  |
-|----------------|--------|-------------|------------------------------|
-| id             | Number | Primary Key | Internal ID                  |
-| supplierRollNo | String | Required    | Roll Number                  |
-| factoryRollNo  | String |             | Factory/Internal Roll Number |
-| supplierLength | Float  |             | Supplier Length              |
-| supplierWeight | Float  |             | Supplier Weight              |
-| gsm            | Float  |             | GSM value                    |
-| length         | Float  |             | Inspected Length             |
-| width          | Float  |             | Cuttable Width               |
-| weight         | Float  |             | Inspected Weight             |
+| Field          | Type   | Constraints | Description                     |
+|----------------|--------|-------------|---------------------------------|
+| id             | Number | Primary Key | Internal ID                     |
+| supplierRollNo | String | Required    | Roll Number                     |
+| factoryRollNo  | String |             | Factory/Internal Roll Number    |
+| supplierLength | Float  |             | Supplier Length                 |
+| supplierWeight | Float  |             | Supplier Weight                 |
+| gsm            | Float  |             | GSM value                       |
+| length         | Float  |             | Inspected Length                |
+| width          | Float  |             | Cuttable Width                  |
+| weight         | Float  |             | Inspected Weight                |
+| extQcStatus    | String |             | Value: (`Pending`, `Completed`) |
 
