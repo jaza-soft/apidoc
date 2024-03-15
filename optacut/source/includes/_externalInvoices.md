@@ -84,7 +84,7 @@ This endpoint is for deallocating material from an Order
 
 ```shell
 curl "~/api/external/invoices/reallocate" \
-  -X PUT \
+  -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>" \
   -d '<JSON Payload>'
@@ -94,7 +94,7 @@ This endpoint is for reallocating material from one Order to Other Order
 
 ### HTTP Request
 
-`PUT ~/api/external/invoices/reallocate`
+`POST ~/api/external/invoices/reallocate`
 
 ### JSON Payload
 
