@@ -18,6 +18,7 @@ includes:
   - externalRoll
   - fabricRelease
   - materialTransfer
+  - materialOut
   - fabricReleaseAcknowledge
   - externalFabricRelease
   - externalLay

@@ -42,6 +42,7 @@ This endpoint creates a invoice.
       "grnQty": 1000,
       "grnDate": "2023-10-06",
       "warehouse": "wh-central",
+      "unitId": "unit1",
       "blanketQty": 0.5,
       "externalOrderIdList": [
         { "externalOrderId": "1000", "qty": 450 },
