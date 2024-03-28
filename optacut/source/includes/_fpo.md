@@ -86,6 +86,92 @@ This endpoint creates a factory production order.
 }
 </pre>
 
+## Update FPO (v2)
+
+```shell
+curl "~/api/fpo?externalOrderId=1000" \
+  -X PUT \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint updates a factory production order.
+
+### HTTP Request
+
+`PUT ~/api/fpo?externalOrderId=<External Order Id>`
+
+### URL Parameters
+
+| Parameter       | Description                     |
+|-----------------|---------------------------------|
+| externalOrderId | The external ID of parent Order |
+
+### JSON Payload
+
+<pre class="center-column">
+{
+  "fpo": "FPO#200",
+  "unitId": "unit1",
+  "fpoLevel": "BPO",
+  "flowInfoList": [
+    {
+      "externalId": "2000",
+      "productId": 1,
+      "style": "A6",
+      "color": "Black",
+      "inseam": "32Inch",
+      "destination": "US",
+      "delMode": "Air",
+      "deliveryDate": "2023-05-30",
+      "flowRef": "REF1",
+      "customerFlowRef": "BPO#01",
+      "orderQty": 1000,
+      "extra": 5,
+      "sizeBreakupList": [
+        { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+        { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+        { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+        { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+        { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+      ],
+      "departmentList": [
+        { "id": 1, "name": "Cutting" },
+        { "id": 2, "name": "Sewing" },
+        { "id": 3, "name": "Finishing" }
+      ]
+    },
+    {
+      "externalId": "2001",
+      "productId": 1,
+      "style": "A6",
+      "color": "Black",
+      "inseam": "32Inch",
+      "destination": "UK",
+      "delMode": "Air",
+      "deliveryDate": "2023-05-30",
+      "flowRef": "REF1",
+      "customerFlowRef": "BPO#01",
+      "orderQty": 1000,
+      "extra": 5,
+      "sizeBreakupList": [
+        { "serialNo": 1, "sizeGroup": "", "size": "S", "qty": 150 },
+        { "serialNo": 2, "sizeGroup": "", "size": "M", "qty": 200 },
+        { "serialNo": 3, "sizeGroup": "", "size": "L", "qty": 300 },
+        { "serialNo": 4, "sizeGroup": "", "size": "XL", "qty": 200 },
+        { "serialNo": 5, "sizeGroup": "", "size": "2XL", "qty": 150 }
+      ],
+      "departmentList": [
+        { "id": 1, "name": "Cutting" },
+        { "id": 2, "name": "Sewing" },
+        { "id": 3, "name": "Finishing" }
+      ]
+    }
+  ]
+}
+</pre>
+
 ## Delete FPO (v2)
 
 ```shell
