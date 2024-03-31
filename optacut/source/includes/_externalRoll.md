@@ -1,4 +1,4 @@
-# External Roll QC
+# External Roll
 
 ## Fetch Roll QC
 
@@ -440,3 +440,29 @@ Schema of invoice entity
 | factoryRollNo | String | Required    | Factory/Internal Roll Number |
 
 
+## Roll Splitting
+
+```shell
+curl "~/api/external/rolls/splitting" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint can be used for splitting roll.
+
+### HTTP Request
+
+`POST ~/api/external/rolls/splitting`
+
+### JSON Payload
+
+<pre class="center-column">
+{
+  "originalFactoryRollNo": "INV-100/R100"
+  "factoryRollNo": "INV-100/R100/1",
+  "originalLength": 120.5,
+  "splitLength": 30.0
+}
+</pre>
