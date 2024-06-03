@@ -53,6 +53,67 @@ This endpoint is for transferring material from one Warehouse to other warehouse
 }
 </pre>
 
+## Warehouse Transfer (Batch)
+
+```shell
+curl "~/api/material-transfer/warehouse/batch?type=internal" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint is for transferring material from one Warehouse to other warehouse
+
+### HTTP Request
+
+`POST ~/api/material-transfer/warehouse/batch?type=internal`
+
+### URL Parameters
+
+| Parameter | Description                                                                                                                  |
+|-----------|------------------------------------------------------------------------------------------------------------------------------|
+| type      | `internal`: If both warehouse are registered in OptaCut. `external`: If either of one Warehouse is not registered in OptaCut |
+
+### JSON Payload
+
+<pre class="center-column">
+[
+  {
+    "externalTxn": "TXN/10",
+    "challanNo": "",
+    "invoiceId": 1,
+    "invoiceNo": "INV/100",
+    "externalInvoiceId": "100",
+    "fabricItemId": 10,
+    "itemCode": "HO/100",
+    "itemColor": "Black",
+    "itemColorCode": "Black",
+    "itemColorShade": "",
+    "fabricPo": "FAB/PO/1",
+    "grn": "GRN/10",
+    "width": 150,
+    "uomWidth": "centimeter, 
+    "fromWarehouse": "wh1",
+    "fromUnitId": "unit1",
+    "toWarehouse": "wh2",
+    "toUnitId": "unit2",
+    "rollList": [
+      {
+        "supplierRollNo": "R100",
+        "factoryRollNo": "INV-100/R100",
+        "length": 100.2
+      },
+      {
+        "supplierRollNo": "R101",
+        "factoryRollNo": "INV-100/R101",
+        "length": 110.6
+      }
+    ]
+  }
+]
+</pre>
+
 ## Delete Warehouse Transfer
 
 ```shell
@@ -183,6 +244,62 @@ This endpoint is for transferring material from one Item to other Item
     }
   ]
 }
+</pre>
+
+## Item Transfer (Batch)
+
+```shell
+curl "~/api/material-transfer/item/batch" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>" \
+  -d '<JSON Payload>'
+```
+
+This endpoint is for transferring material from one Item to other Item
+
+### HTTP Request
+
+`POST ~/api/material-transfer/item/batch`
+
+### JSON Payload
+
+<pre class="center-column">
+[
+  {
+    "externalTxn": "TXN/10",
+    "invoiceNo": "INV/100",
+    "invoiceId": 1,
+    "externalInvoiceId": "100",
+    "fabricItemId": 10,
+    "itemCode": "HO/100",
+    "itemColor": "Black",
+    "itemColorCode": "Black",
+    "itemColorShade": "",
+    "fabricPo": "FAB/PO/1",
+    "grn": "GRN/10",
+    "width": 150,
+    "uomWidth": "centimeter,
+    "fromItemCode": "HO/101",
+    "fromItemColor": "Black",
+    "fromItemColorCode": "Black",
+    "toItemCode": "HO/105",
+    "toItemColor": "Black",
+    "toItemColorCode": "Black",
+    "rollList": [
+      {
+        "supplierRollNo": "R100",
+        "factoryRollNo": "INV-100/R100",
+        "length": 100.2
+      },
+      {
+        "supplierRollNo": "R101",
+        "factoryRollNo": "INV-100/R101",
+        "length": 110.6
+      }
+    ]
+  }
+]
 </pre>
 
 ## Delete Item Transfer
