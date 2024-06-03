@@ -98,6 +98,7 @@ This endpoint is for transferring material from one Warehouse to other warehouse
     "fromUnitId": "unit1",
     "toWarehouse": "wh2",
     "toUnitId": "unit2",
+    "remarks": "",
     "rollList": [
       {
         "supplierRollNo": "R100",
