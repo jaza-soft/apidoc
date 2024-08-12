@@ -14,6 +14,7 @@ includes:
   - loading
   - pieceInfo
   - bundleInfo
+  - orderStatusDetails
   - buyers
   - seasons
   - products
