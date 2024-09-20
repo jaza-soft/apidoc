@@ -15,6 +15,7 @@ includes:
   - pieceInfo
   - bundleInfo
   - orderStatusDetails
+  - rejectionDetails
   - buyers
   - seasons
   - products
