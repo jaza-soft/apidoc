@@ -29,6 +29,7 @@ This endpoint returns rejection details department wise, section wise Line wise 
     "operationName": "1st Checking",
     "defectId": 684,
     "defectName": "D04 - Fil Non Coupé / Uncut Thread",
+    "size": "S",
     "rejectedPcs": 5.0
   },
   {
@@ -45,6 +46,7 @@ This endpoint returns rejection details department wise, section wise Line wise 
     "operationName": "1st Checking",
     "defectId": 757,
     "defectName": "Tache (Dirty Stain)",
+    "size": "M",
     "rejectedPcs": 11.0
   }
 ]
