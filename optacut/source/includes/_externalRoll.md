@@ -439,7 +439,6 @@ Schema of invoice entity
 |---------------|--------|-------------|------------------------------|
 | factoryRollNo | String | Required    | Factory/Internal Roll Number |
 
-
 ## Roll Splitting
 
 ```shell
@@ -455,6 +454,12 @@ This endpoint can be used for splitting roll.
 ### HTTP Request
 
 `POST ~/api/external/rolls/splitting`
+
+### URL Parameters
+
+| Parameter | Description                                                                    |
+|-----------|--------------------------------------------------------------------------------|
+| action    | `default`: Normal Splitting, `return`: Splitting while returning issued fabric |
 
 ### JSON Payload
 
