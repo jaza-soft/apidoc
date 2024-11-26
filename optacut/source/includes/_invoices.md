@@ -37,6 +37,7 @@ This endpoint creates a invoice.
       "uomWidth": "centimeter",
       "uomLength": "meter",
       "orderingGsm": null,
+      "rollForm": "Open"
       "invoiceQty": 1000,
       "grn": "GRN#100",
       "grnQty": 1000,
@@ -55,6 +56,7 @@ This endpoint creates a invoice.
           "supplierLength": 100.2,
           "supplierWidth": 145,
           "weight": 50.2,
+          "gsm": 1.2,
           "extQcStatus": "",
         },
         {
@@ -63,6 +65,7 @@ This endpoint creates a invoice.
           "supplierLength": 110.6,
           "supplierWidth": 146,
           "weight": 50.2,
+          "gsm": 1.2,
           "extQcStatus": "",
         }
       ]
@@ -99,6 +102,7 @@ This endpoint creates a invoice.
       "blanketQty": 0.5,
       "rollCount": 2,
       "uomLength": "meter",
+      "rollForm": "Open",
       "uomWidth": "centimeter",
       "supplierRollList": [
         {
@@ -112,6 +116,7 @@ This endpoint creates a invoice.
           "length": 100.2,
           "width": 58.0,
           "weight": 50.2,
+          "gsm": 1.2,
           "blanketQty": 0.0,
           "effectiveLength": 100.2
         },
@@ -126,6 +131,7 @@ This endpoint creates a invoice.
           "length": 110.6,
           "width": 59.0,
           "weight": 50.2,
+          "gsm": 1.2,
           "blanketQty": 0.0,
           "effectiveLength": 110.6
         }
@@ -240,6 +246,7 @@ This endpoint created association of this fabric item to different styles.
       "uomWidth": "centimeter|inch|yard",
       "uomLength": "meter|yard",
       "orderingGsm": "float",
+      "rollForm": "string",
       "invoiceQty": "float",
       "grn": "string",
       "grnQty": "float",
@@ -252,7 +259,8 @@ This endpoint created association of this fabric item to different styles.
           "factoryRollNo": "string",
           "supplierLength": "float",
           "supplierWidth": "float",
-          "weight": "double",
+          "weight": "float",
+          "gsm": "float",
           "extQcStatus": ""
         }
       ]
@@ -291,6 +299,7 @@ Schema of invoice entity
 | orderQty         | Float  | Required    | Fabric order qty                                                       |
 | orderingWidth    | Float  | Required    | Ordering/Booking Width                                                 |
 | orderingGsm      | Float  |             | Ordering/Booking value GSM                                             |
+| rollForm         | String |             | Roll can come in tube form or open form.                               |
 | uomWidth         | string |             | Unit of measurement for width. Values - (`centimeter`, `inch`)         |
 | uomLength        | string |             | Unit of measurement for Length. Values - (`meter`, `yard`, `kilogram`) |
 | invoiceQty       | Float  | Required    | Invoice Qty                                                            |
