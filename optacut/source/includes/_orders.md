@@ -40,6 +40,7 @@ curl "~/api/orders/1" \
     {
       "id": 1,
       "flowRef": null,
+      "delFlowRef": null,
       "customerFlowRef": null,
       "parentId": null,
       "serialNo": 2,
@@ -157,6 +158,7 @@ This endpoint creates an order.
             "delMode": "Air",
             "exFactoryDate": "2023-05-30",
             "flowRef":"REF1",
+            "delFlowRef":"D.REF1",
             "customerFlowRef": "BPO#01",
             "partList": [
                 { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
@@ -186,6 +188,7 @@ This endpoint creates an order.
             "delMode": "Air",
             "exFactoryDate": "2023-05-30",
             "flowRef":"REF1",
+            "delFlowRef":"D. REF1",
             "customerFlowRef": "BPO#02",
             "partList": [
                 { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
@@ -250,6 +253,7 @@ This endpoint updates an existing order.
             "delMode": "Air",
             "exFactoryDate": "2023-05-30",
             "flowRef":"REF1",
+            "delFlowRef":"D. REF1",
             "customerFlowRef": "BPO#01",
             "partList": [
                 { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
@@ -279,6 +283,7 @@ This endpoint updates an existing order.
             "delMode": "Air",
             "exFactoryDate": "2023-05-30",
             "flowRef":"REF1",
+            "delFlowRef":"D. REF1",
             "customerFlowRef": "BPO#02",
             "partList": [
                 { "partName": "Shell", "placement": "Entire Body", "bomCu": 1.2, "uom": "meter", "bomFabricId": 1, "bomFabColor": "WHITE", "bomFabColorCode": "WH", "fabOrderQty": 1200 },
@@ -336,6 +341,7 @@ This endpoint deletes a specific order.
       "id": "long",
       "externalId": "string",
       "flowRef": "string",
+      "delFlowRef": "string",
       "customerFlowRef": "string",
       "serialNo": "int",
       "productId": "long",
@@ -391,24 +397,25 @@ This endpoint deletes a specific order.
 
 **FlowInfo Table**
 
-| Field           | Type   | Constraints | Description                                   |
-|-----------------|--------|-------------|-----------------------------------------------|
-| id              | Long   | Primary Key | Internal ID                                   |
-| externalId      | String | Unique      | External ID                                   |
-| serialNo        | Long   |             | Sequence                                      |
-| flowRef         | String |             | Flow Reference                                |
-| customerFlowRef | String |             | Customer Flow Reference                       |
-| productId       | Long   | Required    | Internal ID of Product                        |
-| style           | String | Required    | Style Name                                    |
-| styleNo         | String |             | Style Long                                    |
-| fit             | String |             | Fit                                           |
-| inseam          | String |             | Inseam                                        |
-| color           | String | Required    | Style Color                                   |
-| destination     | String |             | Destination                                   |
-| delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`) |
-| exFactoryDate   | Date   |             | Delivery Date. Format: `yyyy-MM-dd`           |
-| orderQty        | Int    | Required    | Order Qty in this flow                        |
-| extra           | Float  |             | Allowed Extra percent                         |
+| Field           | Type   | Constraints | Description                                     |
+|-----------------|--------|-------------|-------------------------------------------------|
+| id              | Long   | Primary Key | Internal ID                                     |
+| externalId      | String | Unique      | External ID                                     |
+| serialNo        | Long   |             | Sequence                                        |
+| flowRef         | String |             | ERP Reference number at Color Level             |
+| delFlowRef      | String |             | Customer+ERP Reference number at Delivery Level |
+| customerFlowRef | String |             | Customer Reference  number at Color Level       |
+| productId       | Long   | Required    | Internal ID of Product                          |
+| style           | String | Required    | Style Name                                      |
+| styleNo         | String |             | Style Long                                      |
+| fit             | String |             | Fit                                             |
+| inseam          | String |             | Inseam                                          |
+| color           | String | Required    | Style Color                                     |
+| destination     | String |             | Destination                                     |
+| delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`)   |
+| exFactoryDate   | Date   |             | Delivery Date. Format: `yyyy-MM-dd`             |
+| orderQty        | Int    | Required    | Order Qty in this flow                          |
+| extra           | Float  |             | Allowed Extra percent                           |
 
 **Part Table**
 

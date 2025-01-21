@@ -40,6 +40,7 @@ This endpoint creates a factory production order.
       "delMode": "Air",
       "deliveryDate": "2023-05-30",
       "flowRef": "REF1",
+      "delFlowRef": "D. REF1",
       "customerFlowRef": "BPO#01",
       "orderQty": 1000,
       "extra": 5,
@@ -66,6 +67,7 @@ This endpoint creates a factory production order.
       "delMode": "Air",
       "deliveryDate": "2023-05-30",
       "flowRef": "REF1",
+      "delFlowRef": "D. REF1",
       "customerFlowRef": "BPO#01",
       "orderQty": 1000,
       "extra": 5,
@@ -126,6 +128,7 @@ This endpoint updates a factory production order.
       "delMode": "Air",
       "deliveryDate": "2023-05-30",
       "flowRef": "REF1",
+      "delFlowRef": "D. REF1",
       "customerFlowRef": "BPO#01",
       "orderQty": 1000,
       "extra": 5,
@@ -152,6 +155,7 @@ This endpoint updates a factory production order.
       "delMode": "Air",
       "deliveryDate": "2023-05-30",
       "flowRef": "REF1",
+      "delFlowRef": "D. REF1",
       "customerFlowRef": "BPO#01",
       "orderQty": 1000,
       "extra": 5,
@@ -213,6 +217,7 @@ This endpoint creates a factory production order.
       "delMode": "string",
       "deliveryDate": "yyyy-MM-dd",
       "flowRef": "string",
+      "delFlowRef": "string",
       "customerFlowRef": "string",
       "orderQty": "int",
       "extra": "double",
@@ -246,20 +251,21 @@ This endpoint creates a factory production order.
 
 **FlowInfo Table**
 
-| Field           | Type   | Constraints | Description                                   |
-|-----------------|--------|-------------|-----------------------------------------------|
-| externalId      | String | Unique      | External ID                                   |
-| flowRef         | String |             | Flow Reference                                |
-| customerFlowRef | String |             | Customer Flow Reference                       |
-| productId       | Long   | Required    | Internal ID of Product                        |
-| style           | String | Required    | Style Name                                    |
-| color           | String | Required    | Style Color                                   |
-| inseam          | String |             | Inseam                                        |
-| destination     | String |             | Destination                                   |
-| delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`) |
-| deliveryDate    | Date   |             | Delivery Date. Format: `yyyy-MM-dd`           |
-| orderQty        | Int    | Required    | Order Qty in this flow                        |
-| extra           | Float  |             | Allowed Extra percent                         |
+| Field           | Type   | Constraints | Description                                     |
+|-----------------|--------|-------------|-------------------------------------------------|
+| externalId      | String | Unique      | External ID                                     |
+| flowRef         | String |             | ERP Reference number at Color Level             |
+| delFlowRef      | String |             | Customer+ERP Reference number at Delivery Level |
+| customerFlowRef | String |             | Customer Reference  number at Color Level       |
+| productId       | Long   | Required    | Internal ID of Product                          |
+| style           | String | Required    | Style Name                                      |
+| color           | String | Required    | Style Color                                     |
+| inseam          | String |             | Inseam                                          |
+| destination     | String |             | Destination                                     |
+| delMode         | String |             | Delivery Mode. Values: (`Air`, `Sea`, `Road`)   |
+| deliveryDate    | Date   |             | Delivery Date. Format: `yyyy-MM-dd`             |
+| orderQty        | Int    | Required    | Order Qty in this flow                          |
+| extra           | Float  |             | Allowed Extra percent                           |
 
 **Size Breakup Table**
 
