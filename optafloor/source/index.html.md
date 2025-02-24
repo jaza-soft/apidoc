@@ -16,6 +16,7 @@ includes:
   - bundleInfo
   - orderStatusDetails
   - rejectionDetails
+  - lineBalancing
   - buyers
   - seasons
   - products
