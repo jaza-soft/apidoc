@@ -16,38 +16,116 @@ This endpoint retrieves an array of **Skill matrix** data. It supports paginatio
 ### Response Example
 
 ```json
-[
-  {
-    "operatorName": "Riya Sharma",
-    "employeeId": "JZ001",
-    "lines": ["Line 1", "Line 2", "Line 3"],
-    "type": "Primary",
-    "peakCapacity": 24,
-    "peakPerformance": 24.01,
-    "avgCapacity": 24,
-    "avgPerformance": 24.01,
-    "lastUpdatedAt": "2025-02-17T12:34:56Z",
-    "section": "Section 1",
-    "operationName": "D04 - Fil Non Coupé / Uncut Thread",
-    "operationCode": "OP001",
-    "machinist": true
+{
+  "content": [
+    {
+      "operatorName": "Shilpa",
+      "employeeId": "22941",
+      "lines": [
+        "Line 1"
+      ],
+      "type": "",
+      "peakCapacity": 54,
+      "peakPerformance": 36.0,
+      "avgCapacity": 54,
+      "avgPerformance": 36.0,
+      "lastUpdatedAt": "2023-01-19T18:30:00Z",
+      "section": "Collar",
+      "operationName": "Collar Panel Attach",
+      "operationCode": null,
+      "machinist": true
+    },
+    {
+      "operatorName": "Mahesh M",
+      "employeeId": "22291",
+      "lines": [
+        "Line 1"
+      ],
+      "type": "",
+      "peakCapacity": 21,
+      "peakPerformance": 25.2,
+      "avgCapacity": 21,
+      "avgPerformance": 25.2,
+      "lastUpdatedAt": "2023-02-02T18:30:00Z",
+      "section": "Front",
+      "operationName": "Concealed Placket Finishing",
+      "operationCode": "FR91",
+      "machinist": true
+    },
+    {
+      "operatorName": "Sumithra",
+      "employeeId": "23980",
+      "lines": [
+        "Line 4"
+      ],
+      "type": "",
+      "peakCapacity": 30,
+      "peakPerformance": 40.0,
+      "avgCapacity": 30,
+      "avgPerformance": 40.0,
+      "lastUpdatedAt": "2023-09-12T18:30:00Z",
+      "section": "Cuff",
+      "operationName": "Cuff Button Hole (8 Hole in Shirt)",
+      "operationCode": "CU24",
+      "machinist": true
+    },
+    {
+      "operatorName": "SPUORTHI",
+      "employeeId": "25618",
+      "lines": [],
+      "type": "Primary",
+      "peakCapacity": 33,
+      "peakPerformance": 82.5,
+      "avgCapacity": 18,
+      "avgPerformance": 45.0,
+      "lastUpdatedAt": "2023-08-02T18:30:00Z",
+      "section": "Finishing",
+      "operationName": "Trim & Exam",
+      "operationCode": "FN01",
+      "machinist": false
+    },
+    {
+      "operatorName": "Mangala",
+      "employeeId": "25575",
+      "lines": [],
+      "type": "Secondary",
+      "peakCapacity": 31,
+      "peakPerformance": 31.0,
+      "avgCapacity": 24,
+      "avgPerformance": 24.0,
+      "lastUpdatedAt": "2023-11-30T18:30:00Z",
+      "section": "Assembly",
+      "operationName": "Top Stitch Front Placket",
+      "operationCode": "AS63",
+      "machinist": true
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "empty": true,
+      "unsorted": true
+    },
+    "pageNumber": 0,
+    "pageSize": 5,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
   },
-  {
-    "operatorName": "ShahRukh Khan",
-    "employeeId": "JZ002",
-    "lines": ["Line 1", "Line 2", "Line 3"],
-    "type": "Secondary",
-    "peakCapacity": 23,
-    "peakPerformance": 23.01,
-    "avgCapacity": 21,
-    "avgPerformance": 21.01,
-    "lastUpdatedAt": "2025-02-15T12:34:56Z",
-    "section": "Section 1",
-    "operationName": "D04 - Fil Non Coupé / Uncut Thread",
-    "operationCode": "OP001",
-    "machinist": true
-  }
-]
+  "last": false,
+  "totalElements": 15381,
+  "totalPages": 3077,
+  "size": 5,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "empty": true,
+    "unsorted": true
+  },
+  "first": true,
+  "numberOfElements": 5,
+  "empty": false
+}
 ```
 
 ### URL Parameters
@@ -124,28 +202,85 @@ This endpoint retrieves an array of **Master operations** data. It supports pagi
 ### Response Example
 
 ```json
-[
-  {
-    "department": "Sewing",
-    "section": "Front",
-    "name": "Operation 1",
-    "code": "OP001",
-    "machinist": true,
-    "type": "No Tracking",
-    "sam": 0.5,
-    "machineType": "Machine Type"
+{
+  "content": [
+    {
+      "department": "Sewing",
+      "section": "Front",
+      "name": "Exam Front",
+      "code": "FR25",
+      "machinist": false,
+      "type": "QC",
+      "sam": 0.24,
+      "machineType": "INSPECTION TABLE"
+    },
+    {
+      "department": "Sewing",
+      "section": "Front",
+      "name": "Left Front BIB Attach",
+      "code": "FR93",
+      "machinist": true,
+      "type": "Tracking",
+      "sam": 1.97,
+      "machineType": "SNLS"
+    },
+    {
+      "department": "Sewing",
+      "section": "Front",
+      "name": "Flap Button Attach",
+      "code": "FR118",
+      "machinist": true,
+      "type": "Tracking",
+      "sam": 0.28,
+      "machineType": "BUTTON SEW "
+    },
+    {
+      "department": "Sewing",
+      "section": "Front",
+      "name": "Flap Button Hole",
+      "code": "FR119",
+      "machinist": true,
+      "type": "Tracking",
+      "sam": 0.28,
+      "machineType": "BUTTON HOLE"
+    },
+    {
+      "department": "Sewing",
+      "section": "Front",
+      "name": "Front Panel Top Stitch",
+      "code": "FR120",
+      "machinist": true,
+      "type": "Tracking",
+      "sam": 1.8,
+      "machineType": "SNLS"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "empty": true,
+      "unsorted": true
+    },
+    "pageNumber": 0,
+    "pageSize": 5,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
   },
-  {
-    "department": "Sewing",
-    "section": "Front",
-    "name": "Operation 2",
-    "code": "OP002",
-    "machinist": true,
-    "type":"Tracking",
-    "sam": 0.3,
-    "machineType": "Machine Type"
-  }
-]
+  "last": false,
+  "totalElements": 617,
+  "totalPages": 124,
+  "size": 5,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "empty": true,
+    "unsorted": true
+  },
+  "first": true,
+  "numberOfElements": 5,
+  "empty": false
+}
 ```
 
 ### URL Parameters
