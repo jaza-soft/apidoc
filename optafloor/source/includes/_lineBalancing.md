@@ -172,7 +172,7 @@ This endpoint retrieves the **Operation Bulletin** along with its operations. It
       "type": "Tracking",
       "section": "Sleeve",
       "machinist": true,
-      "dependencies": ["Operation 1"]
+      "dependencies": []
     },
     {
       "name": "Operation 3",
@@ -180,7 +180,7 @@ This endpoint retrieves the **Operation Bulletin** along with its operations. It
       "type":"QC",
       "section": "Back",
       "machinist": true,
-      "dependencies": ["Operation 2"]
+      "dependencies": ["Operation 1", "Operation 2"]
     }
   ]
 }
