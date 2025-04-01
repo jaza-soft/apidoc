@@ -136,27 +136,139 @@ This endpoint retrieves an array of **Skill matrix** data. It supports paginatio
 
 ---
 
-## Fetch Operation Bulletin
+[//]: # ()
+[//]: # (## Fetch Operation Bulletin)
+
+[//]: # ()
+[//]: # (### HTTP Request)
+
+[//]: # ()
+[//]: # (```shell)
+
+[//]: # (curl "/v1/api/external/ob?poRef=15435&style=300342&color=WHITE" \)
+
+[//]: # (  -X GET \)
+
+[//]: # (  -H "Content-Type: application/json" \)
+
+[//]: # (  -H "Authorization: Bearer <access_token>")
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (This endpoint retrieves the **Operation Bulletin** along with its operations. It supports pagination, sorting, searching, and filtering.)
+
+[//]: # ()
+[//]: # (### Response Example)
+
+[//]: # ()
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (  "poRef": "15435",)
+
+[//]: # (  "style": "300342",)
+
+[//]: # (  "color": "WHITE",)
+
+[//]: # (  "lastUpdatedAt": "2025-02-17T12:34:56Z",)
+
+[//]: # (  "operationList": [)
+
+[//]: # (    {)
+
+[//]: # (      "name": "Operation 1",)
+
+[//]: # (      "code": "OP001",)
+
+[//]: # (      "type": "Tracking",)
+
+[//]: # (      "section": "Front",)
+
+[//]: # (      "machinist": true,)
+
+[//]: # (      "dependencies": [])
+
+[//]: # (    },)
+
+[//]: # (    {)
+
+[//]: # (      "name": "Operation 2",)
+
+[//]: # (      "code": "OP002",)
+
+[//]: # (      "type": "Tracking",)
+
+[//]: # (      "section": "Sleeve",)
+
+[//]: # (      "machinist": true,)
+
+[//]: # (      "dependencies": [])
+
+[//]: # (    },)
+
+[//]: # (    {)
+
+[//]: # (      "name": "Operation 3",)
+
+[//]: # (      "code": "OP003",)
+
+[//]: # (      "type":"QC",)
+
+[//]: # (      "section": "Back",)
+
+[//]: # (      "machinist": true,)
+
+[//]: # (      "dependencies": ["Operation 1", "Operation 2"])
+
+[//]: # (    })
+
+[//]: # (  ])
+
+[//]: # (})
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### URL Parameters)
+
+[//]: # ()
+[//]: # (| Parameter | Required | Description                                                  |)
+
+[//]: # (|-----------|----------|--------------------------------------------------------------|)
+
+[//]: # (| `poRef`   | Yes      | **PO Reference No./ OC No / Con. No** of the Order.          |)
+
+[//]: # (| `style`   | Yes      | **Style** for which the Operation Bulletin is being fetched. |)
+
+[//]: # (| `color`   | Yes      | **Color** for which the Operation Bulletin is being fetched. |)
+
+[//]: # ()
+[//]: # (---)
+
+## Fetch Operation Bulletin Templates
 
 ### HTTP Request
 
 ```shell
-curl "/v1/api/external/ob?poRef=15435&style=300342&color=WHITE" \
+curl "/v1/api/external/ob-templates" \
   -X GET \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>"
 ```
 
-This endpoint retrieves the **Operation Bulletin** along with its operations. It supports pagination, sorting, searching, and filtering.
+This endpoint retrieves the **Operation Bulletin Template** along with its operations. It supports pagination, sorting, searching, and filtering.
 
 ### Response Example
 
 ```json
 {
-  "poRef": "15435",
-  "style": "300342",
-  "color": "WHITE",
-  "lastUpdatedAt": "2025-02-17T12:34:56Z",
+  "name": "15435",
+  "department": "300342",
+  "productGroup": "SHIRT",
+  "products": ["CASUAL SHIRT", "FORMAL SHIRT"],
+  "lastUpdatedAt": "2025-04-01T12:34:56Z",
   "operationList": [
     {
       "name": "Operation 1",
@@ -188,11 +300,10 @@ This endpoint retrieves the **Operation Bulletin** along with its operations. It
 
 ### URL Parameters
 
-| Parameter | Required | Description                                                  |
-|-----------|----------|--------------------------------------------------------------|
-| `poRef`   | Yes      | **PO Reference No./ OC No / Con. No** of the Order.          |
-| `style`   | Yes      | **Style** for which the Operation Bulletin is being fetched. |
-| `color`   | Yes      | **Color** for which the Operation Bulletin is being fetched. |
+| Parameter    | Required | Description                                                                                 |
+|--------------|----------|---------------------------------------------------------------------------------------------|
+| `search`     | No       | Additional filter for Operation Bulletin Template.                                          |
+| `department` | No       | Department name for which Operation Bulletin Templates should be fetched (Default: Sewing). |
 
 ---
 
