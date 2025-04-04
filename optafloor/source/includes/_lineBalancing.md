@@ -163,14 +163,16 @@ This endpoint retrieves the **Operation Bulletin** along with its operations. It
       "code": "OP001",
       "type": "Tracking",
       "section": "Front",
-      "machinist": true
+      "machinist": true,
+      "dependencies": []
     },
     {
       "name": "Operation 2",
       "code": "OP002",
       "type":"QC",
       "section": "Back",
-      "machinist": true
+      "machinist": true,
+      "dependencies": ["Operation 1"]
     }
   ]
 }
