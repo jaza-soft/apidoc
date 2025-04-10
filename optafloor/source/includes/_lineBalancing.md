@@ -136,64 +136,106 @@ This endpoint retrieves an array of **Skill matrix** data. It supports paginatio
 
 ---
 
-## Fetch Operation Bulletin
+[//]: # (## Fetch Operation Bulletin)
 
-### HTTP Request
+[//]: # ()
+[//]: # (### HTTP Request)
 
-```shell
-curl "/v1/api/external/ob?poRef=15435&style=300342&color=WHITE" \
-  -X GET \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <access_token>"
-```
+[//]: # ()
+[//]: # (```shell)
 
-This endpoint retrieves the **Operation Bulletin** along with its operations. It supports pagination, sorting, searching, and filtering.
+[//]: # (curl "/v1/api/external/ob?poRef=15435&style=300342&color=WHITE" \)
 
-### Response Example
+[//]: # (  -X GET \)
 
-```json
-{
-  "poRef": "15435",
-  "style": "300342",
-  "color": "WHITE",
-  "lastUpdatedAt": "2025-02-17T12:34:56Z",
-  "operationList": [
-    {
-      "name": "Operation 1",
-      "code": "OP001",
-      "type": "Tracking",
-      "section": "Front",
-      "machinist": true,
-      "dependencies": []
-    },
-    {
-      "name": "Operation 2",
-      "code": "OP002",
-      "type":"QC",
-      "section": "Back",
-      "machinist": true,
-      "dependencies": ["Operation 1"]
-    }
-  ]
-}
-```
+[//]: # (  -H "Content-Type: application/json" \)
 
-### URL Parameters
+[//]: # (  -H "Authorization: Bearer <access_token>")
 
-| Parameter | Required | Description                                                  |
-|-----------|----------|--------------------------------------------------------------|
-| `poRef`   | Yes      | **PO Reference No./ OC No / Con. No** of the Order.          |
-| `style`   | Yes      | **Style** for which the Operation Bulletin is being fetched. |
-| `color`   | Yes      | **Color** for which the Operation Bulletin is being fetched. |
+[//]: # (```)
 
----
+[//]: # ()
+[//]: # (This endpoint retrieves the **Operation Bulletin** along with its operations. It supports pagination, sorting, searching, and filtering.)
+
+[//]: # ()
+[//]: # (### Response Example)
+
+[//]: # ()
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (  "poRef": "15435",)
+
+[//]: # (  "style": "300342",)
+
+[//]: # (  "color": "WHITE",)
+
+[//]: # (  "lastUpdatedAt": "2025-02-17T12:34:56Z",)
+
+[//]: # (  "operationList": [)
+
+[//]: # (    {)
+
+[//]: # (      "name": "Operation 1",)
+
+[//]: # (      "code": "OP001",)
+
+[//]: # (      "type": "Tracking",)
+
+[//]: # (      "section": "Front",)
+
+[//]: # (      "machinist": true,)
+
+[//]: # (      "dependencies": [])
+
+[//]: # (    },)
+
+[//]: # (    {)
+
+[//]: # (      "name": "Operation 2",)
+
+[//]: # (      "code": "OP002",)
+
+[//]: # (      "type":"QC",)
+
+[//]: # (      "section": "Back",)
+
+[//]: # (      "machinist": true,)
+
+[//]: # (      "dependencies": ["Operation 1"])
+
+[//]: # (    })
+
+[//]: # (  ])
+
+[//]: # (})
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### URL Parameters)
+
+[//]: # ()
+[//]: # (| Parameter | Required | Description                                                  |)
+
+[//]: # (|-----------|----------|--------------------------------------------------------------|)
+
+[//]: # (| `poRef`   | Yes      | **PO Reference No./ OC No / Con. No** of the Order.          |)
+
+[//]: # (| `style`   | Yes      | **Style** for which the Operation Bulletin is being fetched. |)
+
+[//]: # (| `color`   | Yes      | **Color** for which the Operation Bulletin is being fetched. |)
+
+[//]: # ()
+[//]: # (---)
 
 ## Fetch Operation Bulletin Template
 
 ### HTTP Request
 
 ```shell
-curl "/v1/api/external/ob-templates?search=name==<stylename>" \
+curl "/v1/api/external/ob-templates?search=name=='710733596008 - CLBDPPCS'" \
   -X GET \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <access_token>"
@@ -218,50 +260,38 @@ searching, and filtering.
           "name": "Premium Label Attach",
           "code": "BA04",
           "type": "Tracking",
-          "section": null,
+          "section": "Back",
           "machinist": true,
-          "dependencies": [
-            "Main Label Attach With Size Label"
-          ]
+          "dependencies": []
         },
         {
           "name": "Yoke Centre Tacking",
           "code": "BA51",
           "type": "Tracking",
-          "section": null,
+          "section": "Back",
           "machinist": true,
-          "dependencies": [
-            "Premium Label Attach",
-            "CENTRE PLEAT"
-          ]
+          "dependencies": []
         },
         {
           "name": "Washcare Label attach",
           "code": "BA40",
           "type": "Tracking",
-          "section": null,
+          "section": "Back",
           "machinist": true,
           "dependencies": [
-            "YOKE ATTACH (PLEAT/ SPLIT DOUBLE)"
+            "Yoke Centre Tacking",
+            "Premium Label Attach"
           ]
         },
         {
           "name": "Back-Endline QC",
           "code": "BA64",
           "type": "QC",
-          "section": null,
+          "section": "Back",
           "machinist": false,
           "dependencies": [
             "Washcare Label attach"
           ]
-        },
-        {
-          "name": "SPLIT YOKE ATTACH DOUBLE",
-          "code": "BA50",
-          "type": "Tracking",
-          "section": null,
-          "machinist": true,
-          "dependencies": []
         }
       ]
     }
@@ -296,9 +326,9 @@ searching, and filtering.
 
 ### URL Parameters
 
-| Parameter | Required | Description                                                                            |
-|-----------|----------|----------------------------------------------------------------------------------------|
-| `search`  | No       | Can be searched on OB Templated name (In OB Template put style name and search on that |
+| Parameter | Required | Description                                                                             |
+|-----------|----------|-----------------------------------------------------------------------------------------|
+| `search`  | No       | Can be searched on OB Templated name (In OB Template put style name and search on that) |
 
 ---
 
