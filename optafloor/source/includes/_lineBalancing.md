@@ -188,6 +188,120 @@ This endpoint retrieves the **Operation Bulletin** along with its operations. It
 
 ---
 
+## Fetch Operation Bulletin Template
+
+### HTTP Request
+
+```shell
+curl "/v1/api/external/ob-templates?search=name==<stylename>" \
+  -X GET \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <access_token>"
+```
+
+This endpoint retrieves the **Operation Bulletin** along with its operations. It supports pagination, sorting,
+searching, and filtering.
+
+### Response Example
+
+```json
+{
+  "content": [
+    {
+      "name": "710733596008 - CLBDPPCS",
+      "department": "Sewing",
+      "productGroup": "Shirt",
+      "products": [],
+      "createdAt": "2025-04-03T16:32:40Z",
+      "operationList": [
+        {
+          "name": "Premium Label Attach",
+          "code": "BA04",
+          "type": "Tracking",
+          "section": null,
+          "machinist": true,
+          "dependencies": [
+            "Main Label Attach With Size Label"
+          ]
+        },
+        {
+          "name": "Yoke Centre Tacking",
+          "code": "BA51",
+          "type": "Tracking",
+          "section": null,
+          "machinist": true,
+          "dependencies": [
+            "Premium Label Attach",
+            "CENTRE PLEAT"
+          ]
+        },
+        {
+          "name": "Washcare Label attach",
+          "code": "BA40",
+          "type": "Tracking",
+          "section": null,
+          "machinist": true,
+          "dependencies": [
+            "YOKE ATTACH (PLEAT/ SPLIT DOUBLE)"
+          ]
+        },
+        {
+          "name": "Back-Endline QC",
+          "code": "BA64",
+          "type": "QC",
+          "section": null,
+          "machinist": false,
+          "dependencies": [
+            "Washcare Label attach"
+          ]
+        },
+        {
+          "name": "SPLIT YOKE ATTACH DOUBLE",
+          "code": "BA50",
+          "type": "Tracking",
+          "section": null,
+          "machinist": true,
+          "dependencies": []
+        }
+      ]
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "empty": true,
+      "unsorted": true
+    },
+    "pageSize": 20,
+    "pageNumber": 0,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalElements": 1,
+  "totalPages": 1,
+  "size": 20,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "empty": true,
+    "unsorted": true
+  },
+  "first": true,
+  "numberOfElements": 1,
+  "empty": false
+}
+```
+
+### URL Parameters
+
+| Parameter | Required | Description                                                                            |
+|-----------|----------|----------------------------------------------------------------------------------------|
+| `search`  | No       | Can be searched on OB Templated name (In OB Template put style name and search on that |
+
+---
+
 ## Fetch Master Operations
 
 ### HTTP Request
