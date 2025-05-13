@@ -41,6 +41,11 @@ This endpoint creates a factory production order.
       { "serial": 1, "size": "S", "qty": 150 },
       { "serial": 2, "size": "M", "qty": 200 },
       { "serial": 3, "size": "L", "qty": 150 }
+    ],
+    "departmentList": [
+      { "id": 1, "name": "Cutting" },
+      { "id": 2, "name": "Sewing" },
+      { "id": 3, "name": "Finishing" }
     ]
   },
   {
@@ -64,6 +69,11 @@ This endpoint creates a factory production order.
       { "serial": 1, "size": "S", "qty": 150 },
       { "serial": 2, "size": "M", "qty": 150 },
       { "serial": 3, "size": "L", "qty": 150 }
+    ],
+    "departmentList": [
+      { "id": 1, "name": "Cutting" },
+      { "id": 2, "name": "Sewing" },
+      { "id": 3, "name": "Finishing" }
     ]
   }
 ]
