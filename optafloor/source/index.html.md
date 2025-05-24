@@ -23,6 +23,7 @@ includes:
   - products
   - departments
   - lines
+  - device
   - errors
 
 search: true

@@ -84,7 +84,8 @@ Scan Bundle/Piece RFID Tag to punch user output
   "tag": "Bundle/Piece RFID TAG Value",
   "userId": 1,
   "lineId": 1,
-  "machineId": 100
+  "machineId": 100,
+  "deviceId": 100
 }
 </pre>
 
