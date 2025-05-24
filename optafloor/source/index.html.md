@@ -14,6 +14,7 @@ includes:
   - loading
   - pieceInfo
   - bundleInfo
+  - rfid
   - orderStatusDetails
   - rejectionDetails
   - lineBalancing
