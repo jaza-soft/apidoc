@@ -311,16 +311,21 @@ Schema of invoice entity
 
 **SupplierRoll Table**
 
-| Field          | Type   | Constraints | Description                            |
-|----------------|--------|-------------|----------------------------------------|
-| id             | Number | Primary Key | Internal ID                            |
-| supplierRollNo | String | Required    | Roll Number                            |
-| factoryRollNo  | String |             | Factory/Internal Roll Number           |
-| supplierLength | Float  |             | Supplier Length                        |
-| supplierWeight | Float  |             | Supplier Weight                        |
-| gsm            | Float  |             | GSM value                              |
-| length         | Float  |             | Inspected Length                       |
-| width          | Float  |             | Cuttable Width                         |
-| weight         | Float  |             | Inspected Weight (In Case of Knitwear) |
-| extQcStatus    | String |             | Value: (`Pending`, `Completed`)        |
+| Field          | Type   | Constraints | Description                                                         |
+|----------------|--------|-------------|---------------------------------------------------------------------|
+| id             | Number | Primary Key | Internal ID                                                         |
+| supplierRollNo | String | Required    | Roll Number                                                         |
+| factoryRollNo  | String |             | Factory/Internal Roll Number                                        |
+| supplierLength | Float  |             | Supplier Length                                                     |
+| supplierWeight | Float  |             | Supplier Weight                                                     |
+| gsm            | Float  |             | GSM value                                                           |
+| length         | Float  |             | Inspected Length                                                    |
+| width          | Float  |             | Cuttable Width                                                      |
+| weight         | Float  |             | Inspected Weight (In Case of Knitwear)                              |
+| warpShrPercent | Float  |             | Warp/Length Shrinkage Percent                                       |
+| weftShrPercent | Float  |             | Weft/Width Shrinkage Percent                                        |
+| shade          | String |             | Roll Shade                                                          |
+| csv            | String |             | Roll CSV. Values - (`No`, `Yes`, `Grade 3`, `Grade 3-4`, `Grade 4`) |
+| skewnessValue  | Float  |             | Roll Skewness Value                                                 |
+| extQcStatus    | String |             | Value: (`Pending`, `Pass`, `Fail`)                                  |
 
