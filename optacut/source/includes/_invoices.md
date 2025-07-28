@@ -337,12 +337,13 @@ Schema of invoice entity
 | supplierWeight | Float  |             | Supplier Weight                                                              |
 | gsm            | Float  |             | GSM value of Roll                                                            |
 | length         | Float  |             | Length after QC                                                              |
-| cuttableWidth  | Float  |             | Cuttable Width  after QC                                                     |
 | weight         | Float  |             | Weight after QC (Only In Case of Knitwear)                                   |
+| finishedWidth  | Float  |             | Finished Width                                                               |
+| cuttableWidth  | Float  |             | Cuttable Width  after QC                                                     |
 | warpShrPercent | Float  |             | Warp/Length Shrinkage Percent   after QC                                     |
 | weftShrPercent | Float  |             | Weft/Width Shrinkage Percent   after QC                                      |
 | shade          | String |             | Roll Shade after QC                                                          |
 | csv            | String |             | Roll CSV after QC. Values - (`No`, `Yes`, `Grade 3`, `Grade 3-4`, `Grade 4`) |
 | skewnessValue  | Float  |             | Roll Skewness Value  after QC                                                |
-| extQcStatus    | String |             | Value: (`Pending`, `Pass`, `Fail`)                                           |
+| extQcStatus    | String |             | Value: (`Pending`, `Completed`, `Pass`, `Fail`)                              |
 
